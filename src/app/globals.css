@@ -217,6 +217,52 @@ body {
 }
 
 /* ============================================
+   GLOBAL GOLD EFFECTS (Anti-Gravity Theme)
+   ============================================ */
+
+/* Make all text-gold inherently glowing */
+.text-gold {
+    text-shadow: 0 0 10px var(--color-gold-glow-subtle);
+}
+
+/* Base glow injected directly into tailwind bg-gold utility target */
+.bg-gold {
+    box-shadow: 0 0 16px var(--color-gold-glow), inset 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Shiny sweeping effect for large CTAs (Magic UI style) */
+.shiny-sweep {
+    position: relative;
+    overflow: hidden;
+}
+
+.shiny-sweep::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: skewX(-25deg);
+    animation: shiny-sweep 4.5s infinite;
+}
+
+@keyframes shiny-sweep {
+    0% {
+        left: -150%;
+    }
+
+    15% {
+        left: 150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+/* ============================================
    STAT BARS
    ============================================ */
 

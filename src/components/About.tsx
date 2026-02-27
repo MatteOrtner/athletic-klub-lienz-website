@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { Shield, Users, Zap } from "lucide-react";
 import { aboutFeatures } from "@/lib/constants";
+import { useRef, useState } from "react";
 
 // Map icon names from constants to Lucide components
 const iconMap: Record<string, React.ReactNode> = {
@@ -10,6 +11,98 @@ const iconMap: Record<string, React.ReactNode> = {
     Zap: <Zap className="w-6 h-6 text-gold" />,
     Users: <Users className="w-6 h-6 text-gold" />,
 };
+
+function SpotlightCard({ feature, index }: { feature: any; index: number }) {
+    const divRef = useRef<HTMLDivElement>(null);
+    const [isFocused, setIsFocused] = useState(false);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [opacity, setOpacity] = useState(0);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!divRef.current || isFocused) return;
+
+        const div = divRef.current;
+        const rect = div.getBoundingClientRect();
+
+        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    };
+
+    const handleFocus = () => {
+        setIsFocused(true);
+        setOpacity(1);
+    };
+
+    const handleBlur = () => {
+        setIsFocused(false);
+        setOpacity(0);
+    };
+
+    const handleMouseEnter = () => {
+        setOpacity(1);
+    };
+
+    const handleMouseLeave = () => {
+        setOpacity(0);
+    };
+
+    return (
+        <motion.div
+            key={feature.title}
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2, duration: 0.6 }}
+            whileHover={{ y: -8 }}
+            className="bg-binblau-card/60 backdrop-blur-sm p-8 rounded-2xl border border-white/10 transition-all duration-500 group relative overflow-hidden"
+        >
+            {/* Core Spotlight Background */}
+            <div
+                className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 z-0"
+                style={{
+                    opacity,
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(212,175,55,.15), transparent 40%)`,
+                }}
+            />
+            {/* Spotlight Border Ring */}
+            <div
+                className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100 z-0"
+                style={{
+                    background: `radial-gradient(350px circle at ${position.x}px ${position.y}px, rgba(212,175,55,.8), transparent 100%) border-box`,
+                    border: "1px solid transparent",
+                    WebkitMask: "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude"
+                }}
+            />
+
+            {/* Floating Icon */}
+            <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 3 + index,
+                    ease: "easeInOut",
+                }}
+                className="relative z-10 w-14 h-14 bg-binblau-bg rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:border-gold/30 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500"
+            >
+                {iconMap[feature.icon]}
+            </motion.div>
+
+            <h3 className="relative z-10 text-xl font-bold mb-4 text-white group-hover:text-gold-light transition-colors">
+                {feature.title}
+            </h3>
+            <p className="relative z-10 text-white/70 leading-relaxed text-sm">
+                {feature.description}
+            </p>
+        </motion.div>
+    );
+}
 
 export default function About() {
     return (
@@ -37,38 +130,7 @@ export default function About() {
                 {/* Feature Cards */}
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {aboutFeatures.map((feature, index) => (
-                        <motion.div
-                            key={feature.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2, duration: 0.6 }}
-                            whileHover={{ y: -8 }}
-                            className="bg-binblau-card/60 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-gold/30 transition-all duration-500 group relative overflow-hidden"
-                        >
-                            {/* Hover glow overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-gold/0 via-gold/0 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                            {/* Floating Icon */}
-                            <motion.div
-                                animate={{ y: [0, -6, 0] }}
-                                transition={{
-                                    repeat: Infinity,
-                                    duration: 3 + index,
-                                    ease: "easeInOut",
-                                }}
-                                className="relative z-10 w-14 h-14 bg-binblau-bg rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:border-gold/40 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500"
-                            >
-                                {iconMap[feature.icon]}
-                            </motion.div>
-
-                            <h3 className="relative z-10 text-xl font-bold mb-4 text-white group-hover:text-gold-light transition-colors">
-                                {feature.title}
-                            </h3>
-                            <p className="relative z-10 text-white/70 leading-relaxed text-sm">
-                                {feature.description}
-                            </p>
-                        </motion.div>
+                        <SpotlightCard key={feature.title} feature={feature} index={index} />
                     ))}
                 </div>
             </div>

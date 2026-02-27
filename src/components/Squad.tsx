@@ -147,11 +147,6 @@ function PlayerCard({
                 <span className="text-sm text-gold font-medium">{player.position}</span>
             </div>
 
-            {/* Quote */}
-            <p className="relative z-10 text-xs text-white/60 mb-4 leading-relaxed italic border-l-2 border-gold/40 pl-3">
-                &ldquo;{player.introduction}&rdquo;
-            </p>
-
             {/* Stats */}
             <div className="relative z-10 space-y-2.5">
                 {Object.entries(player.stats).map(([statName, value], i) => (

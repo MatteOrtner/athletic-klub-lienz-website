@@ -113,7 +113,7 @@ export default function Hero() {
                             href="#bento"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-6 md:px-8 py-3.5 md:py-4 bg-gold text-binblau-bg font-bold rounded-xl flex items-center justify-center gap-2 gold-glow-hover text-base md:text-lg w-full sm:w-auto"
+                            className="shiny-sweep px-6 md:px-8 py-3.5 md:py-4 bg-gold text-binblau-bg font-bold rounded-xl flex items-center justify-center gap-2 gold-glow-hover text-base md:text-lg w-full sm:w-auto"
                         >
                             Zum Match-Center
                             <ChevronRight className="w-5 h-5" />

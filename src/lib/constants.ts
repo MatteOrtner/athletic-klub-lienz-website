@@ -15,9 +15,9 @@ export const clubInfo: ClubInfo = {
     season: "2026",
     location: {
         name: "Dolomitenstadion Lienz",
-        address: "Dolomitenstraße, 9900 Lienz, Österreich",
-        lat: 46.8297,
-        lng: 12.7693,
+        address: "Amlacher Str. 16, 9900 Lienz",
+        lat: 46.8255677,
+        lng: 12.7641646,
     },
 };
 

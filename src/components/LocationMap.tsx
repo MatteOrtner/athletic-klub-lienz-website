@@ -8,7 +8,7 @@ export default function LocationMap() {
     // Google Maps dark mode embed URL with the Lienz location
     const mapEmbedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2765.5!2d${clubInfo.location.lng}!3d${clubInfo.location.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s${encodeURIComponent(clubInfo.location.name)}!5e0!3m2!1sde!2sat!4v1`;
 
-    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${clubInfo.location.lat},${clubInfo.location.lng}`;
+    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(clubInfo.location.address)}`;
 
     return (
         <section id="location" className="section-padding relative z-10">
