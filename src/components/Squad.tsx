@@ -264,9 +264,9 @@ export default function Squad() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-white/50 text-sm max-w-md mx-auto mb-5"
+                        className="text-white/70 text-lg md:text-xl font-medium max-w-md mx-auto mb-5"
                     >
-                        10 Spieler. Eine Familie. Die Walkouts spielen automatisch — Reihe für Reihe.
+                        10 Spieler. Eine Familie.
                     </motion.p>
                     <motion.div
                         initial={{ width: 0 }}

@@ -64,6 +64,7 @@ export const navItems = [
 // ============================================
 
 export const mockPlayers: Player[] = [
+    // ── ROW 1: Defenders ──────────────────────────────────
     {
         id: "player-matte",
         name: "Matte",
@@ -75,16 +76,6 @@ export const mockPlayers: Player[] = [
         walkoutVideo: "/players/matte.mp4",
     },
     {
-        id: "player-veit",
-        name: "Veit",
-        position: "Stürmer",
-        number: 10,
-        introduction:
-            "Der Knipser. Kaltschnäuzig vor dem Tor und immer bereit, den Ball ins Netz zu hämmern.",
-        stats: { Schnelligkeit: 90, Ausdauer: 85, Teamgeist: 93 },
-        walkoutVideo: "/players/veit.mp4",
-    },
-    {
         id: "player-luca",
         name: "Luca",
         position: "Verteidiger",
@@ -93,26 +84,6 @@ export const mockPlayers: Player[] = [
             "Souverän und abgeklärt in der Defensive. Mit seiner Übersicht leitet er unsere Angriffe schon von hinten ein.",
         stats: { Schnelligkeit: 82, Ausdauer: 94, Teamgeist: 96 },
         walkoutVideo: "/players/luca.mp4",
-    },
-    {
-        id: "player-raphi",
-        name: "Raphi",
-        position: "Stürmer",
-        number: 11,
-        introduction:
-            "Pfeilschnell und brandgefährlich. Wenn er den Ball hat, läuten bei den gegnerischen Abwehrspielern die Alarmglocken.",
-        stats: { Schnelligkeit: 84, Ausdauer: 90, Teamgeist: 91 },
-        walkoutVideo: "/players/raphi.mp4",
-    },
-    {
-        id: "player-fabi",
-        name: "Fabi",
-        position: "Torwart",
-        number: 1,
-        introduction:
-            "Unser sicherer Rückhalt zwischen den Pfosten. Mit seinen Reflexen hat er uns schon oft den Sieg gerettet.",
-        stats: { Schnelligkeit: 75, Ausdauer: 88, Teamgeist: 99 },
-        walkoutVideo: "/players/fabi.mp4",
     },
     {
         id: "player-clemens",
@@ -126,7 +97,7 @@ export const mockPlayers: Player[] = [
     },
     {
         id: "player-dani",
-        name: "Dani",
+        name: "Daniel",
         position: "Verteidiger",
         number: 16,
         introduction:
@@ -135,14 +106,45 @@ export const mockPlayers: Player[] = [
         walkoutVideo: "/players/dani.mp4",
     },
     {
+        id: "player-rene",
+        name: "Rene",
+        position: "Verteidiger",
+        number: 3,
+        introduction:
+            "Der Kämpfer. Gibt in jedem Spiel alles und geht voran, wenn es hart auf hart kommt.",
+        stats: { Schnelligkeit: 81, Ausdauer: 93, Teamgeist: 96 },
+        walkoutVideo: "/players/rene.mp4",
+    },
+    // ── ROW 2: Mittelfeld → Stürmer → Torwart ────────────
+    {
         id: "player-eli",
-        name: "Eli",
+        name: "Elias",
         position: "Mittelfeld",
         number: 9,
         introduction:
             "Technisch versiert und mit einem Auge für den perfekten Pass. Still, aber tödlich effektiv.",
         stats: { Schnelligkeit: 79, Ausdauer: 91, Teamgeist: 95 },
         walkoutVideo: "/players/eli.mp4",
+    },
+    {
+        id: "player-veit",
+        name: "Veit",
+        position: "Stürmer",
+        number: 10,
+        introduction:
+            "Der Knipser. Kaltschnäuzig vor dem Tor und immer bereit, den Ball ins Netz zu hämmern.",
+        stats: { Schnelligkeit: 90, Ausdauer: 85, Teamgeist: 93 },
+        walkoutVideo: "/players/veit.mp4",
+    },
+    {
+        id: "player-raphi",
+        name: "Raphi",
+        position: "Stürmer",
+        number: 11,
+        introduction:
+            "Pfeilschnell und brandgefährlich. Wenn er den Ball hat, läuten bei den gegnerischen Abwehrspielern die Alarmglocken.",
+        stats: { Schnelligkeit: 84, Ausdauer: 90, Teamgeist: 91 },
+        walkoutVideo: "/players/raphi.mp4",
     },
     {
         id: "player-paul",
@@ -155,14 +157,14 @@ export const mockPlayers: Player[] = [
         walkoutVideo: "/players/paul.mp4",
     },
     {
-        id: "player-rene",
-        name: "Rene",
-        position: "Verteidiger",
-        number: 3,
+        id: "player-fabi",
+        name: "Fabi",
+        position: "Torwart",
+        number: 1,
         introduction:
-            "Der Kämpfer. Gibt in jedem Spiel alles und geht voran, wenn es hart auf hart kommt.",
-        stats: { Schnelligkeit: 81, Ausdauer: 93, Teamgeist: 96 },
-        walkoutVideo: "/players/rene.mp4",
+            "Unser sicherer Rückhalt zwischen den Pfosten. Mit seinen Reflexen hat er uns schon oft den Sieg gerettet.",
+        stats: { Schnelligkeit: 75, Ausdauer: 88, Teamgeist: 99 },
+        walkoutVideo: "/players/fabi.mp4",
     },
 ];
 
