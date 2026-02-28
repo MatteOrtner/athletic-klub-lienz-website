@@ -236,9 +236,9 @@ export default function BentoGrid() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="md:col-span-2 lg:col-span-4 bg-binblau-card/60 backdrop-blur-sm rounded-3xl p-8 border border-white/10 relative overflow-hidden group"
+                        className="md:col-span-2 lg:col-span-4 bg-binblau-card/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-white/10 relative overflow-hidden group"
                     >
-                        <div className="flex justify-between items-start mb-8 relative z-10">
+                        <div className="flex justify-between items-start mb-6 md:mb-8 relative z-10">
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
                                     <Newspaper className="w-5 h-5 text-gold" />
@@ -253,7 +253,7 @@ export default function BentoGrid() {
                             </button>
                         </div>
 
-                        <div className="flex overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 gap-6 relative z-10 pb-4 md:pb-0 -mx-8 px-8 md:mx-0 md:px-0 scroll-pl-8">
+                        <div className="flex overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 gap-4 md:gap-6 relative z-10 pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scroll-pl-6 after:content-[''] after:w-1 after:shrink-0 md:after:hidden">
                             {mockNews.map((news, i) => (
                                 <motion.div
                                     key={news.id}
@@ -262,7 +262,7 @@ export default function BentoGrid() {
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.3 + i * 0.1 }}
                                     whileHover={{ y: -4 }}
-                                    className="bg-binblau-bg/80 p-5 rounded-2xl border border-white/10 hover:border-gold/20 transition-all duration-300 cursor-pointer group/news min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-start shrink-0"
+                                    className="bg-binblau-bg/80 p-5 rounded-2xl border border-white/10 hover:border-gold/20 transition-all duration-300 cursor-pointer group/news w-[260px] sm:w-[320px] md:w-auto snap-start shrink-0"
                                 >
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="text-xs font-semibold text-gold bg-gold/10 px-2.5 py-1 rounded-md">
