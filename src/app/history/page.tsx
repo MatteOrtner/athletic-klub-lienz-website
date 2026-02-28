@@ -5,7 +5,6 @@ import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import MobileCTA from "@/components/MobileCTA";
 
 const timelineEvents = [
     {
@@ -109,7 +108,6 @@ export default function HistoryPage() {
             </section>
 
             <Footer />
-            <MobileCTA />
         </main>
     );
 }

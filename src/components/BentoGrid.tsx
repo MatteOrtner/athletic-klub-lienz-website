@@ -253,7 +253,7 @@ export default function BentoGrid() {
                             </button>
                         </div>
 
-                        <div className="grid md:grid-cols-3 gap-6 relative z-10">
+                        <div className="flex overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 gap-6 relative z-10 pb-4 md:pb-0 -mx-8 px-8 md:mx-0 md:px-0">
                             {mockNews.map((news, i) => (
                                 <motion.div
                                     key={news.id}
@@ -262,7 +262,7 @@ export default function BentoGrid() {
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.3 + i * 0.1 }}
                                     whileHover={{ y: -4 }}
-                                    className="bg-binblau-bg/80 p-5 rounded-2xl border border-white/10 hover:border-gold/20 transition-all duration-300 cursor-pointer group/news"
+                                    className="bg-binblau-bg/80 p-5 rounded-2xl border border-white/10 hover:border-gold/20 transition-all duration-300 cursor-pointer group/news min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center shrink-0"
                                 >
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="text-xs font-semibold text-gold bg-gold/10 px-2.5 py-1 rounded-md">
