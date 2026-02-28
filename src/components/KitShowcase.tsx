@@ -25,7 +25,7 @@ export default function KitShowcase() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="max-w-5xl mx-auto"
+                    className="max-w-7xl mx-auto"
                 >
                     {/* Glass card container */}
                     <div className="relative bg-binblau-card/40 backdrop-blur-sm rounded-3xl border border-white/10 overflow-hidden group hover:border-gold/20 transition-colors duration-500">
@@ -35,7 +35,7 @@ export default function KitShowcase() {
 
                         <div className="grid md:grid-cols-2 gap-0 items-center">
                             {/* Video Side */}
-                            <div className="relative aspect-square md:aspect-auto md:h-[420px] bg-binblau-bg/60 overflow-hidden">
+                            <div className="relative aspect-square md:aspect-auto h-full min-h-[420px] bg-binblau-bg/60 overflow-hidden">
                                 <video
                                     ref={videoRef}
                                     muted
@@ -78,13 +78,33 @@ export default function KitShowcase() {
                                         </span>
                                     </h3>
 
-                                    <p className="text-white/60 text-sm leading-relaxed mb-6">
+                                    <p className="text-white/60 text-sm leading-relaxed mb-8">
                                         Blau, Weiß und ein Hauch Gold — das
                                         Trikot von Athletic Klub Lienz steht für
                                         Leidenschaft, Zusammenhalt und den
                                         unverwechselbaren Style unserer
                                         Mannschaft auf dem Kleinfeld.
                                     </p>
+
+                                    {/* Image Gallery */}
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/5 group/img">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
+                                            <img
+                                                src="/images/veit-trikot.jpg"
+                                                alt="Veit im Trikot"
+                                                className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"
+                                            />
+                                        </div>
+                                        <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/5 group/img">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
+                                            <img
+                                                src="/images/luca-trikot.jpg"
+                                                alt="Luca im Trikot"
+                                                className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"
+                                            />
+                                        </div>
+                                    </div>
                                 </motion.div>
                             </div>
                         </div>

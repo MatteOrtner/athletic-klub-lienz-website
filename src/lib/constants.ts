@@ -51,11 +51,12 @@ export const aboutFeatures: AboutFeature[] = [
 // ============================================
 
 export const navItems = [
-    { label: "Home", href: "#hero" },
-    { label: "Über uns", href: "#about" },
-    { label: "Kader", href: "#squad" },
-    { label: "Match Center", href: "#bento" },
-    { label: "Standort", href: "#location" },
+    { label: "Home", href: "/#hero" },
+    { label: "Historie", href: "/history" },
+    { label: "Über uns", href: "/#about" },
+    { label: "Kader", href: "/#squad" },
+    { label: "Match Center", href: "/#bento" },
+    { label: "Standort", href: "/#location" },
 ];
 
 // ============================================
