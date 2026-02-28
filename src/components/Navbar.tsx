@@ -24,57 +24,60 @@ export default function Navbar() {
     }, [isOpen]);
 
     return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-nav shadow-lg shadow-black/20" : "bg-transparent"
-                }`}
-        >
-            <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-                {/* Logo */}
-                <a href="#hero" className="flex items-center gap-3 group">
-                    <motion.div
-                        whileHover={{ scale: 1.1, rotate: -3 }}
-                        className="w-12 h-12 relative shrink-0"
-                    >
-                        <Image
-                            src="/logo/abb-logo.png"
-                            alt="Athletic Klub Lienz Logo"
-                            width={48}
-                            height={48}
-                            className="object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
-                            priority
-                        />
-                    </motion.div>
-                    <span className="font-display font-bold text-xl tracking-tight">
-                        Athletic{" "}
-                        <span className="text-gold group-hover:gold-glow-text transition-all">
-                            Klub Lienz
-                        </span>
-                    </span>
-                </a>
-
-                {/* Desktop Navigation */}
-                <div className="hidden lg:flex items-center gap-8">
-                    {navItems.map((item) => (
-                        <a
-                            key={item.label}
-                            href={item.href}
-                            className="text-sm font-medium text-white/70 hover:text-white transition-colors relative group"
+        <>
+            <nav
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-nav shadow-lg shadow-black/20" : "bg-transparent"
+                    }`}
+            >
+                <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+                    {/* Logo */}
+                    <a href="#hero" className="flex items-center gap-3 group">
+                        <motion.div
+                            whileHover={{ scale: 1.1, rotate: -3 }}
+                            className="w-12 h-12 relative shrink-0"
                         >
-                            {item.label}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold rounded-full group-hover:w-full transition-all duration-300" />
-                        </a>
-                    ))}
+                            <Image
+                                src="/logo/abb-logo.png"
+                                alt="Athletic Klub Lienz Logo"
+                                width={48}
+                                height={48}
+                                className="object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
+                                priority
+                            />
+                        </motion.div>
+                        <span className="font-display font-bold text-xl tracking-tight">
+                            Athletic{" "}
+                            <span className="text-gold group-hover:gold-glow-text transition-all">
+                                Klub Lienz
+                            </span>
+                        </span>
+                    </a>
+
+                    {/* Desktop Navigation */}
+                    <div className="hidden lg:flex items-center gap-8">
+                        {navItems.map((item) => (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                className="text-sm font-medium text-white/70 hover:text-white transition-colors relative group"
+                            >
+                                {item.label}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold rounded-full group-hover:w-full transition-all duration-300" />
+                            </a>
+                        ))}
+                    </div>
+
+                    {/* Mobile Hamburger */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="lg:hidden w-10 h-10 flex items-center justify-center text-white z-50"
+                        aria-label="Menü öffnen"
+                    >
+                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
                 </div>
 
-                {/* Mobile Hamburger */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="lg:hidden w-10 h-10 flex items-center justify-center text-white z-50"
-                    aria-label="Menü öffnen"
-                >
-                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
-            </div>
+            </nav>
 
             {/* Mobile Menu */}
             <AnimatePresence>
@@ -104,6 +107,6 @@ export default function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 }

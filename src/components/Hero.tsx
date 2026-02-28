@@ -52,7 +52,7 @@ export default function Hero() {
             </div>
 
             {/* Main Content — Safely positioned at the bottom so it never covers the image on mobile */}
-            <div className="container mx-auto px-6 relative z-10 pb-12 md:pb-20 pt-[60vw] md:pt-40 w-full mt-auto">
+            <div className="container mx-auto px-6 relative z-10 pb-12 md:pb-20 pt-[75vw] sm:pt-[65vw] md:pt-40 w-full mt-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Main Headline */}
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-4 md:mb-8 break-words hyphens-auto">
+                    <h1 className="text-[28px] min-[400px]:text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] md:leading-[1.05] mb-4 md:mb-8 tracking-tight">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}

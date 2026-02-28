@@ -35,7 +35,7 @@ export default function KitShowcase() {
 
                         <div className="grid md:grid-cols-2 gap-0 items-center">
                             {/* Video Side */}
-                            <div className="relative aspect-square md:aspect-auto h-full min-h-[420px] bg-binblau-bg/60 overflow-hidden">
+                            <div className="relative aspect-[4/5] md:aspect-auto h-full min-h-[480px] md:min-h-[420px] bg-binblau-bg/60 overflow-hidden">
                                 <video
                                     ref={videoRef}
                                     muted
@@ -55,7 +55,7 @@ export default function KitShowcase() {
                             </div>
 
                             {/* Text Side */}
-                            <div className="relative z-10 p-8 md:p-12 flex flex-col justify-center">
+                            <div className="relative z-10 p-4 sm:p-8 md:p-12 flex flex-col justify-center">
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
@@ -87,8 +87,8 @@ export default function KitShowcase() {
                                     </p>
 
                                     {/* Image Gallery */}
-                                    <div className="grid grid-cols-2 gap-4">
-                                        <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/5 group/img">
+                                    <div className="grid grid-cols-2 gap-2 md:gap-4 mt-4">
+                                        <div className="relative aspect-[4/5] md:aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 group/img">
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
                                             <img
                                                 src="/images/veit-trikot.jpg"
@@ -96,7 +96,7 @@ export default function KitShowcase() {
                                                 className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"
                                             />
                                         </div>
-                                        <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/5 group/img">
+                                        <div className="relative aspect-[4/5] md:aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 group/img">
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
                                             <img
                                                 src="/images/luca-trikot.jpg"

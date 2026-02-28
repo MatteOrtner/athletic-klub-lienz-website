@@ -97,7 +97,7 @@ export default function HistoryPage() {
 
                     <div className="max-w-7xl mx-auto relative">
                         {/* Vertical Timeline Line */}
-                        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-gold/0 via-gold/50 to-gold/0 md:-ml-[1px] shadow-[0_0_15px_rgba(212,175,55,0.5)]" />
+                        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-gold/0 via-gold/50 to-gold/0 md:-ml-[1px] shadow-[0_0_15px_rgba(212,175,55,0.5)]" />
 
                         <div className="space-y-24">
                             {timelineEvents.map((event, index) => (
@@ -129,14 +129,14 @@ function TimelineItem({ event, index }: { event: any, index: number }) {
             className={`relative flex flex-col items-center gap-8 md:gap-0 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
         >
             {/* Year Marker */}
-            <div className={`transition-all duration-500 absolute left-8 md:left-1/2 w-16 h-16 -ml-8 bg-binblau-card border rounded-full flex items-center justify-center z-10 top-0 md:top-1/2 md:-transform md:-translate-y-1/2 overflow-hidden ${isInView ? 'scale-110 border-gold/80 shadow-[0_0_30px_rgba(212,175,55,0.7)]' : 'scale-100 border-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]'}`}>
+            <div className={`transition-all duration-500 absolute left-4 md:left-1/2 w-12 h-12 md:w-16 md:h-16 -ml-6 md:-ml-8 bg-binblau-card border rounded-full flex items-center justify-center z-10 top-0 md:top-1/2 md:-transform md:-translate-y-1/2 overflow-hidden ${isInView ? 'scale-110 border-gold/80 shadow-[0_0_30px_rgba(212,175,55,0.7)]' : 'scale-100 border-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]'}`}>
                 <div className={`absolute inset-0 transition-colors duration-500 z-0 ${isInView ? 'bg-gold/20' : 'bg-gold/5'}`} />
-                <span className={`font-display font-bold text-lg relative z-10 transition-colors duration-500 ${isInView ? 'text-white' : 'text-gold'}`}>{event.year}</span>
+                <span className={`font-display font-bold text-sm md:text-lg relative z-10 transition-colors duration-500 ${isInView ? 'text-white' : 'text-gold'}`}>{event.year}</span>
             </div>
 
             {/* Image Box */}
-            <div className={`w-full pl-24 pr-6 md:px-0 md:w-1/2 flex items-center ${isEven ? 'md:justify-end md:pr-16' : 'md:justify-start md:pl-16'} z-0`}>
-                <div className={`relative aspect-video rounded-2xl overflow-hidden border transition-all duration-500 shadow-xl w-full cursor-pointer bg-binblau-card/50 ${isInView ? 'border-gold shadow-[0_0_40px_rgba(212,175,55,0.5)]' : 'border-white/10'}`}>
+            <div className={`w-full pl-14 pr-0 md:px-0 md:w-1/2 flex items-center ${isEven ? 'md:justify-end md:pr-16' : 'md:justify-start md:pl-16'} z-0`}>
+                <div className={`relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden border transition-all duration-500 shadow-xl w-full cursor-pointer bg-binblau-card/50 ${isInView ? 'border-gold shadow-[0_0_40px_rgba(212,175,55,0.5)]' : 'border-white/10'}`}>
                     <div className={`absolute inset-0 transition-colors duration-500 z-10 ${isInView ? 'bg-transparent' : 'bg-binblau-bg/20'}`} />
                     <Image
                         src={event.image}
@@ -148,7 +148,7 @@ function TimelineItem({ event, index }: { event: any, index: number }) {
             </div>
 
             {/* Text Box */}
-            <div className={`w-full pl-24 pr-6 md:px-0 md:w-1/2 flex flex-col justify-center ${isEven ? 'md:pl-16 text-left' : 'md:pr-16 text-left md:text-right'} -mt-4 md:mt-0`}>
+            <div className={`w-full pl-14 pr-0 md:px-0 md:w-1/2 flex flex-col justify-center ${isEven ? 'md:pl-16 text-left' : 'md:pr-16 text-left md:text-right'} -mt-4 md:mt-0`}>
                 <h3 className={`text-2xl font-display font-bold transition-colors duration-500 mb-2 ${isInView ? 'text-gold' : 'text-white'}`}>{event.title}</h3>
                 <p className={`text-sm md:text-base leading-relaxed transition-colors duration-500 ${isInView ? 'text-white/90' : 'text-white/50'}`}>{event.description}</p>
             </div>

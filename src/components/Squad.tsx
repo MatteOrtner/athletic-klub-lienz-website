@@ -90,13 +90,13 @@ function PlayerCard({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
-            className="bg-binblau-card/60 backdrop-blur-sm rounded-3xl p-5 border border-white/10 relative group overflow-hidden hover:border-gold/30 transition-all duration-500 cursor-pointer"
+            className="bg-binblau-card/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-2.5 sm:p-5 border border-white/10 relative group overflow-hidden hover:border-gold/30 transition-all duration-500 cursor-pointer"
         >
             {/* Hover glow */}
             <div className="absolute inset-0 bg-gradient-to-b from-gold/0 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Video / Number area */}
-            <div className="relative z-10 w-full aspect-[3/4] rounded-2xl bg-binblau-bg/80 border border-white/10 mb-4 overflow-hidden group-hover:border-gold/20 transition-colors">
+            <div className="relative z-10 w-full aspect-[3/4] rounded-xl sm:rounded-2xl bg-binblau-bg/80 border border-white/10 mb-3 sm:mb-4 overflow-hidden group-hover:border-gold/20 transition-colors">
 
                 {/* Walkout video */}
                 {player.walkoutVideo && (
@@ -119,8 +119,8 @@ function PlayerCard({
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-binblau/30 via-transparent to-binblau-bg/80" />
                     <div className="relative z-10 text-center">
-                        <div className="w-20 h-20 mx-auto rounded-full bg-binblau-card/80 border-2 border-gold/30 flex items-center justify-center mb-3 group-hover:border-gold/60 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all duration-500">
-                            <span className="text-3xl font-display font-bold text-gold">
+                        <div className="w-14 h-14 sm:w-20 sm:h-20 mx-auto rounded-full bg-binblau-card/80 border-2 border-gold/30 flex items-center justify-center mb-2 sm:mb-3 group-hover:border-gold/60 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all duration-500">
+                            <span className="text-xl sm:text-3xl font-display font-bold text-gold">
                                 {player.number}
                             </span>
                         </div>
@@ -136,15 +136,15 @@ function PlayerCard({
                 </div>
 
                 {/* Number badge */}
-                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/40 flex items-center justify-center text-xs font-display font-bold text-gold z-20">
+                <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/40 flex items-center justify-center text-[10px] sm:text-xs font-display font-bold text-gold z-20">
                     {player.number}
                 </div>
             </div>
 
             {/* Player info */}
-            <div className="relative z-10 mb-3">
-                <h3 className="text-lg font-bold text-white mb-0.5">{player.name}</h3>
-                <span className="text-sm text-gold font-medium">{player.position}</span>
+            <div className="relative z-10 mb-2 sm:mb-3">
+                <h3 className="text-sm sm:text-lg font-bold text-white mb-0.5 whitespace-nowrap overflow-hidden text-ellipsis">{player.name}</h3>
+                <span className="text-xs sm:text-sm text-gold font-medium">{player.position}</span>
             </div>
 
             {/* Stats */}
@@ -200,7 +200,7 @@ function PlayerRow({
     return (
         <div
             ref={rowRef}
-            className="grid grid-cols-2 md:grid-cols-5 gap-4"
+            className="grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-4 md:gap-4"
         >
             {players.map((player, i) => (
                 <PlayerCard
@@ -243,7 +243,7 @@ export default function Squad() {
                 className="absolute bottom-20 -right-20 w-96 h-96 border border-white/5 rounded-full"
             />
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-2 sm:px-6 relative z-10">
                 {/* Section header */}
                 <div className="text-center mb-16">
                     <motion.h2
@@ -273,7 +273,7 @@ export default function Squad() {
                 </div>
 
                 {/* Mobile grid: 2 players per row, each row triggers walkout independently */}
-                <div className="md:hidden max-w-[1400px] mx-auto space-y-6">
+                <div className="md:hidden max-w-[1400px] mx-auto space-y-2 sm:space-y-6">
                     {mobileRows.map((rowPlayers, rowIdx) => (
                         <PlayerRow
                             key={rowIdx}
