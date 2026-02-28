@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import {
     Calendar,
     Instagram,
@@ -9,10 +9,14 @@ import {
     Trophy,
     MapPin,
     Clock,
+    X,
 } from "lucide-react";
 import { mockMatches, mockNews, INSTAGRAM_EMBED_URL } from "@/lib/constants";
+import { useState } from "react";
 
 export default function BentoGrid() {
+    const [selectedNews, setSelectedNews] = useState<typeof mockNews[0] | null>(null);
+
     // Get the next upcoming match
     const nextMatch = mockMatches.find((m) => m.status === "upcoming");
     // Get the latest completed match
@@ -257,6 +261,7 @@ export default function BentoGrid() {
                             {mockNews.map((news, i) => (
                                 <motion.div
                                     key={news.id}
+                                    onClick={() => setSelectedNews(news)}
                                     initial={{ opacity: 0, y: 15 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -287,6 +292,66 @@ export default function BentoGrid() {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Expandable News Modal */}
+            <AnimatePresence>
+                {selectedNews && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedNews(null)}
+                            className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            className="relative w-full max-w-xl bg-binblau-card border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setSelectedNews(null)}
+                                className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors z-10"
+                            >
+                                <X className="w-5 h-5 text-white/70" />
+                            </button>
+
+                            {/* Scrollable Content Inside Modal */}
+                            <div className="overflow-y-auto min-h-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pr-2">
+                                <div className="flex items-center gap-3 mb-6 pr-10">
+                                    <span className="text-xs font-semibold text-gold bg-gold/10 px-3 py-1.5 rounded-lg">
+                                        {selectedNews.tag}
+                                    </span>
+                                    <span className="text-sm text-white/50">
+                                        {new Date(selectedNews.date).toLocaleDateString("de-AT", {
+                                            day: "numeric",
+                                            month: "long",
+                                            year: "numeric"
+                                        })}
+                                    </span>
+                                </div>
+
+                                <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 pr-6 leading-tight">
+                                    {selectedNews.title}
+                                </h3>
+
+                                <div className="w-12 h-1 bg-gold rounded-full mb-6 gold-glow" />
+
+                                <div className="prose prose-invert prose-p:text-white/70">
+                                    <p className="leading-relaxed text-sm md:text-base">
+                                        {selectedNews.excerpt}
+                                    </p>
+                                    <p className="leading-relaxed mt-4 opacity-70 italic text-sm">
+                                        (Vollständiger Artikel wird bald direkt vom Notion CMS geladen)
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }
