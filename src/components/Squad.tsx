@@ -19,19 +19,22 @@ function StatBar({
     const isInView = useInView(ref, { once: true, margin: "-50px" });
 
     return (
-        <div ref={ref}>
-            <div className="flex justify-between text-xs mb-1.5">
-                <span className="text-white/60">{name}</span>
-                <span className="text-white font-semibold tabular-nums">{value}</span>
+        <div ref={ref} className="group/stat">
+            <div className="flex justify-between items-end mb-1.5 md:mb-2">
+                <span className="text-[10px] md:text-sm text-white/50 uppercase tracking-[0.15em] font-semibold group-hover/stat:text-gold transition-colors">{name}</span>
+                <span className="text-white font-display font-black text-sm md:text-lg tabular-nums leading-none tracking-wider drop-shadow-md">{value}</span>
             </div>
-            <div className="stat-bar-track">
+            <div className="h-1.5 md:h-2 w-full bg-[#111A24] rounded-full overflow-hidden border border-white/5 shadow-inner relative">
                 <div
-                    className="stat-bar-fill"
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-gold/50 via-gold to-yellow-100 rounded-full shadow-[0_0_12px_rgba(212,175,55,0.6)]"
                     style={{
                         width: isInView ? `${value}%` : "0%",
-                        transitionDelay: `${delay}s`,
+                        transition: `width 1.2s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`,
                     }}
-                />
+                >
+                    {/* Glowing bright dot at the tip of the progress bar */}
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 md:w-2.5 md:h-2.5 bg-white rounded-full shadow-[0_0_10px_white] opacity-80 mix-blend-screen"></div>
+                </div>
             </div>
         </div>
     );
@@ -59,20 +62,14 @@ function PlayerCard({
 
         if (isVideoVisible) {
             if (!isHovering) {
-                // Row scroll-in trigger: always restart from the beginning
-                // so all 5 cards in the row are perfectly in sync
                 video.currentTime = 0;
             }
             video.play().catch(() => { });
         } else {
-            // Only fully reset when the ROW exits the viewport (playing=false)
-            // and the user isn't actively hovering
             video.pause();
             if (!playing) {
-                // Row scrolled out — rewind to 0 so it's fresh next time
                 video.currentTime = 0;
             }
-            // If just hover ended but row is still in view: keep the frozen last frame
         }
     }, [isVideoVisible, isHovering, playing]);
 
@@ -85,19 +82,23 @@ function PlayerCard({
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.06, duration: 0.5 }}
-            whileHover={{ y: -10 }}
+            transition={{ delay: index * 0.05, duration: 0.6 }}
+            whileHover={{ y: -6, scale: 1.02 }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
-            className="bg-binblau-card/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-2.5 sm:p-5 border border-white/10 relative group overflow-hidden hover:border-gold/30 transition-all duration-500 cursor-pointer"
+            className="group relative rounded-2xl md:rounded-[2rem] overflow-hidden bg-[#0A1118]/90 border border-white/10 hover:border-gold/40 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-[0_0_50px_rgba(212,175,55,0.15)] flex flex-col"
         >
-            {/* Hover glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gold/0 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Holographic Inner Glare (shiny sweep on hover) */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-30 transform -translate-x-full group-hover:translate-x-full transition-transform ease-in-out duration-1000" />
 
-            {/* Video / Number area */}
-            <div className="relative z-10 w-full aspect-[3/4] rounded-xl sm:rounded-2xl bg-binblau-bg/80 border border-white/10 mb-3 sm:mb-4 overflow-hidden group-hover:border-gold/20 transition-colors">
+            {/* Huge Watermark Number */}
+            <div className="absolute top-4 -right-2 text-[100px] md:text-[180px] font-display font-black text-white/[0.02] group-hover:text-gold/[0.05] transition-colors duration-700 leading-none z-0 pointer-events-none tracking-tighter">
+                {player.number}
+            </div>
 
+            {/* Top Image / Video Area */}
+            <div className="relative w-full aspect-[4/5] md:aspect-[3/4] overflow-hidden z-10 bg-gradient-to-b from-[#111A24] via-[#0A1118] to-[#0A1118]">
                 {/* Walkout video */}
                 {player.walkoutVideo && (
                     <video
@@ -105,59 +106,68 @@ function PlayerCard({
                         muted
                         playsInline
                         preload="auto"
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isVideoVisible ? "opacity-100" : "opacity-0"
-                            }`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-105 ${isVideoVisible ? "opacity-100" : "opacity-0"}`}
                     >
                         <source src={player.walkoutVideo} type="video/mp4" />
                     </video>
                 )}
 
-                {/* Static fallback (jersey number) */}
-                <div
-                    className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isVideoVisible ? "opacity-0" : "opacity-100"
-                        }`}
-                >
-                    <div className="absolute inset-0 bg-gradient-to-b from-binblau/30 via-transparent to-binblau-bg/80" />
-                    <div className="relative z-10 text-center">
-                        <div className="w-14 h-14 sm:w-20 sm:h-20 mx-auto rounded-full bg-binblau-card/80 border-2 border-gold/30 flex items-center justify-center mb-2 sm:mb-3 group-hover:border-gold/60 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all duration-500">
-                            <span className="text-xl sm:text-3xl font-display font-bold text-gold">
-                                {player.number}
-                            </span>
-                        </div>
-                        {player.walkoutVideo && (
-                            <div className="flex items-center justify-center gap-1.5 text-white/40 group-hover:text-gold/80 transition-colors">
-                                <Play className="w-3 h-3" />
-                                <span className="text-[10px] font-medium uppercase tracking-wider">
-                                    Walkout Video
-                                </span>
-                            </div>
-                        )}
+                {/* Static Player Fallback Visual */}
+                <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${isVideoVisible ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-binblau/20 via-transparent to-transparent" />
+                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gold/10 flex items-center justify-center bg-black/40 backdrop-blur-sm shadow-[inset_0_0_30px_rgba(212,175,55,0.05)] group-hover:border-gold/40 group-hover:shadow-[0_0_50px_rgba(212,175,55,0.2)] transition-all duration-700 mb-8 group-hover:-translate-y-2">
+                        <span className="text-5xl md:text-6xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-100 to-gold drop-shadow-lg">
+                            {player.number}
+                        </span>
                     </div>
                 </div>
 
-                {/* Number badge */}
-                <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/40 flex items-center justify-center text-[10px] sm:text-xs font-display font-bold text-gold z-20">
-                    {player.number}
+                {/* Bottom Overlay Gradient (Smooth transition into text) */}
+                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#0A1118] via-[#0A1118]/80 to-transparent z-20 pointer-events-none" />
+
+                {/* Number Badge (Top Left) */}
+                <div className="absolute top-3 left-3 md:top-5 md:left-5 z-30 flex flex-col gap-2">
+                    <div className="w-8 h-8 md:w-12 md:h-12 bg-[#0A1118]/60 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center shadow-lg group-hover:border-gold/50 group-hover:bg-gold/10 transition-all duration-500">
+                        <span className="text-sm md:text-lg font-display font-medium text-white group-hover:text-gold">{player.number}</span>
+                    </div>
+                </div>
+
+                {/* Video Indicator Hint */}
+                {player.walkoutVideo && (
+                    <div className={`absolute top-4 right-4 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md border border-white/10 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full transition-all duration-500 ${isVideoVisible ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"} group-hover:border-gold/30`}>
+                        <Play className="w-3 h-3 text-white/70" />
+                        <span className="text-[9px] md:text-[10px] uppercase tracking-widest font-semibold text-white/70">Video</span>
+                    </div>
+                )}
+            </div>
+
+            {/* Info and Stats Content */}
+            <div className="relative z-20 flex flex-col px-5 md:px-8 pb-6 md:pb-8 pt-0 -mt-8 md:-mt-12 flex-1">
+                {/* Header Info */}
+                <div className="mb-5 md:mb-8 flex flex-col items-center text-center">
+                    <span className="text-[10px] md:text-xs text-gold font-bold tracking-[0.25em] uppercase mb-1.5 md:mb-2 drop-shadow-md">{player.position}</span>
+                    <h3 className="text-2xl md:text-3xl font-display font-black text-white tracking-wide group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gold-light transition-all duration-300 drop-shadow-lg leading-none">{player.name}</h3>
+                </div>
+
+                {/* Thin Elegant Divider */}
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 group-hover:via-gold/30 to-transparent mb-5 md:mb-8 transition-colors duration-500" />
+
+                {/* Stats */}
+                <div className="space-y-4 md:space-y-5 w-full">
+                    {Object.entries(player.stats).map(([statName, value], i) => (
+                        <StatBar
+                            key={statName}
+                            name={statName}
+                            value={value}
+                            delay={0.1 + index * 0.05 + i * 0.1}
+                        />
+                    ))}
                 </div>
             </div>
 
-            {/* Player info */}
-            <div className="relative z-10 mb-2 sm:mb-3">
-                <h3 className="text-sm sm:text-lg font-bold text-white mb-0.5 whitespace-nowrap overflow-hidden text-ellipsis">{player.name}</h3>
-                <span className="text-xs sm:text-sm text-gold font-medium">{player.position}</span>
-            </div>
-
-            {/* Stats */}
-            <div className="relative z-10 space-y-2.5">
-                {Object.entries(player.stats).map(([statName, value], i) => (
-                    <StatBar
-                        key={statName}
-                        name={statName}
-                        value={value}
-                        delay={0.3 + index * 0.06 + i * 0.1}
-                    />
-                ))}
-            </div>
+            {/* Animated Bottom Highlight Border */}
+            <div className="absolute bottom-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[2px]"></div>
+            <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-yellow-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </motion.div>
     );
 }

@@ -26,40 +26,40 @@ export default function Navbar() {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-nav shadow-lg shadow-black/20" : "bg-transparent"
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-nav shadow-lg shadow-black/20" : "bg-gradient-to-b from-binblau-bg/90 via-binblau-bg/50 to-transparent"
                     }`}
             >
-                <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+                <div className="w-full px-6 md:px-12 xl:px-20 h-20 lg:h-28 flex items-center justify-between">
                     {/* Logo */}
-                    <a href="#hero" className="flex items-center gap-3 group">
+                    <a href="#hero" className="flex items-center gap-3 lg:gap-4 group">
                         <motion.div
                             whileHover={{ scale: 1.1, rotate: -3 }}
-                            className="w-12 h-12 relative shrink-0"
+                            className="w-12 h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 relative shrink-0"
                         >
                             <Image
                                 src="/logo/abb-logo.png"
                                 alt="Athletic Klub Lienz Logo"
-                                width={48}
-                                height={48}
+                                width={80}
+                                height={80}
                                 className="object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
                                 priority
                             />
                         </motion.div>
-                        <span className="font-display font-bold text-xl tracking-tight">
+                        <span className="font-display font-bold text-xl lg:text-2xl xl:text-3xl tracking-tight">
                             Athletic{" "}
-                            <span className="text-gold group-hover:gold-glow-text transition-all">
+                            <span className="text-gradient-gold group-hover:gold-glow-text transition-all">
                                 Klub Lienz
                             </span>
                         </span>
                     </a>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center gap-8">
+                    <div className="hidden lg:flex items-center gap-10">
                         {navItems.map((item) => (
                             <a
                                 key={item.label}
                                 href={item.href}
-                                className="text-sm font-medium text-white/70 hover:text-white transition-colors relative group"
+                                className="text-sm lg:text-base xl:text-lg font-medium text-white/90 hover:text-white transition-colors relative group drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
                             >
                                 {item.label}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold rounded-full group-hover:w-full transition-all duration-300" />

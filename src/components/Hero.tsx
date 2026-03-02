@@ -17,19 +17,19 @@ export default function Hero() {
                     src="/images/teamfoto.jpeg"
                     alt="Athletic Klub Lienz Mannschaftsfoto"
                     fill
-                    className="object-contain object-top md:object-cover md:object-[center_25%]"
+                    className="object-contain object-top md:object-cover md:object-[center_35%]"
                     priority
                     sizes="100vw"
                     quality={100}
                 />
                 {/* Global dark tint specifically for better text legibility */}
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-black/20 md:bg-black/10" />
 
                 {/* 
-                    Mobile: Gradient fades into the background color right over the bottom of the image.
-                    Desktop: Standard cinematic gradients over the full image.
+                    Solid fade from the bottom upward ensures the text is always legible and separated from the bright/busy parts of the photo.
+                    Keeping the fade low enough so the bottom row of players remains visible.
                 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg/80 via-binblau-bg/20 to-transparent md:bg-gradient-to-b md:from-binblau-bg/40 md:via-transparent md:to-binblau-bg/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg via-binblau-bg/60 to-transparent md:from-binblau-bg/90 md:via-transparent" />
             </div>
 
             {/* Ambient Particles */}
@@ -57,27 +57,17 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="max-w-3xl"
+                    className="w-full max-w-none"
                 >
-                    {/* Floating Season Badge */}
-                    <motion.div
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                        className="inline-flex items-center gap-2.5 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-gold/30 bg-binblau-bg/80 backdrop-blur-md mb-6 md:mb-8 animate-pulse-gold"
-                    >
-                        <Trophy className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
-                        <span className="text-xs md:text-sm font-semibold tracking-widest uppercase text-gold-light">
-                            Saison {clubInfo.season}
-                        </span>
-                    </motion.div>
+
 
                     {/* Main Headline */}
-                    <h1 className="text-[28px] min-[400px]:text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] md:leading-[1.05] mb-4 md:mb-8 tracking-tight">
+                    <h1 className="text-[28px] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[80px] font-display font-bold leading-[1.1] md:leading-[1.05] mb-4 md:mb-8 tracking-tight flex flex-wrap items-baseline">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
-                            className="block drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]"
+                            className="inline-block drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] mr-2 md:mr-3 whitespace-nowrap"
                         >
                             Mehr als ein Verein.
                         </motion.span>
@@ -85,7 +75,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="block text-gradient-gold drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]"
+                            className="inline-block text-gradient-gold drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] whitespace-nowrap"
                         >
                             Eine Lebenseinstellung.
                         </motion.span>
@@ -113,7 +103,7 @@ export default function Hero() {
                             href="#bento"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="shiny-sweep px-6 md:px-8 py-3.5 md:py-4 bg-gold text-binblau-bg font-bold rounded-xl flex items-center justify-center gap-2 gold-glow-hover text-base md:text-lg w-full sm:w-auto"
+                            className="shiny-sweep px-6 md:px-8 py-3.5 md:py-4 bg-gradient-gold text-binblau-bg font-bold rounded-xl flex items-center justify-center gap-2 gold-glow-hover text-base md:text-lg w-full sm:w-auto"
                         >
                             Zum Match-Center
                             <ChevronRight className="w-5 h-5" />
@@ -132,6 +122,25 @@ export default function Hero() {
 
             {/* Bottom gradient fade into next section */}
             <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 bg-gradient-to-t from-binblau-bg/80 to-transparent z-10 pointer-events-none" />
+
+            {/* Floating Season Badge - Moved to a TV-style absolute graphic position */}
+            <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+                className="absolute bottom-8 right-6 md:bottom-12 md:right-12 z-30"
+            >
+                <motion.div
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                    className="inline-flex items-center gap-2.5 px-4 md:px-6 py-2 md:py-3 rounded-full border border-gold/30 bg-binblau-bg/80 backdrop-blur-md animate-pulse-gold shadow-[0_0_20px_rgba(212,175,55,0.1)]"
+                >
+                    <Trophy className="w-4 h-4 md:w-5 md:h-5 text-gold" />
+                    <span className="text-xs md:text-sm font-semibold tracking-widest uppercase text-gold-light">
+                        Saison {clubInfo.season}
+                    </span>
+                </motion.div>
+            </motion.div>
         </section>
     );
 }

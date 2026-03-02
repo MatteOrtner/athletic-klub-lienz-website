@@ -227,7 +227,7 @@ export default function ContactForm() {
                                         disabled={formState === "submitting"}
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
-                                        className="w-full py-4 bg-gold text-binblau-bg font-bold rounded-xl flex items-center justify-center gap-2 gold-glow-hover transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                                        className="w-full py-4 bg-gradient-gold text-binblau-bg font-bold rounded-xl flex items-center justify-center gap-2 gold-glow-hover transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
                                     >
                                         {formState === "submitting" ? (
                                             <div className="w-5 h-5 border-2 border-binblau-bg/30 border-t-binblau-bg rounded-full animate-spin" />

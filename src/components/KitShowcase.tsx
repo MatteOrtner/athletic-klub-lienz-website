@@ -45,7 +45,7 @@ export default function KitShowcase() {
                                     className="w-full h-full object-cover"
                                 >
                                     <source
-                                        src="/players/trikot-rotation.mp4"
+                                        src="/players/ABB-Trikot-Rotation-1.3x.mp4"
                                         type="video/mp4"
                                     />
                                 </video>

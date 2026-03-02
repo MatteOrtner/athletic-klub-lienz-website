@@ -93,7 +93,7 @@ export default function LocationMap() {
                                 href={directionsUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 w-full py-3.5 bg-gold text-binblau-bg font-bold rounded-xl gold-glow-hover transition-all duration-300 hover:brightness-110"
+                                className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-gold text-binblau-bg font-bold rounded-xl gold-glow-hover transition-all duration-300 hover:brightness-110"
                             >
                                 <Navigation className="w-4 h-4" />
                                 Route planen

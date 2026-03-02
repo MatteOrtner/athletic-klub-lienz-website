@@ -1,9 +1,10 @@
 "use client";
 
 import { motion, useInView } from "motion/react";
-import { Shield, Users, Zap } from "lucide-react";
+import { Shield, Users, Zap, ArrowRight } from "lucide-react";
 import { aboutFeatures } from "@/lib/constants";
 import { useRef, useState } from "react";
+import Link from "next/link";
 
 // Map icon names from constants to Lucide components
 const iconMap: Record<string, React.ReactNode> = {
@@ -61,8 +62,8 @@ function SpotlightCard({ feature, index }: { feature: any; index: number }) {
             transition={{ delay: index * 0.2, duration: 0.6 }}
             whileHover={{ y: -8 }}
             className={`bg-binblau-card/60 backdrop-blur-sm p-8 rounded-2xl border transition-all duration-500 group relative overflow-hidden ${isInView
-                    ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] md:border-white/10 md:shadow-none"
-                    : "border-white/10 shadow-none z-0"
+                ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] md:border-white/10 md:shadow-none"
+                : "border-white/10 shadow-none z-0"
                 }`}
         >
             {/* Desktop: Mouse-tracking Core Background Spotlight */}
@@ -113,8 +114,8 @@ function SpotlightCard({ feature, index }: { feature: any; index: number }) {
                     ease: "easeInOut",
                 }}
                 className={`relative z-10 w-14 h-14 rounded-xl flex items-center justify-center mb-6 border group-hover:border-gold/30 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500 ${isInView
-                        ? "border-gold/50 bg-binblau-bg shadow-[0_0_20px_rgba(212,175,55,0.4)] md:border-white/10 md:shadow-none bg-binblau-bg"
-                        : "border-white/10 bg-binblau-bg"
+                    ? "border-gold/50 bg-binblau-bg shadow-[0_0_20px_rgba(212,175,55,0.4)] md:border-white/10 md:shadow-none bg-binblau-bg"
+                    : "border-white/10 bg-binblau-bg"
                     }`}
             >
                 {iconMap[feature.icon]}
@@ -160,6 +161,23 @@ export default function About() {
                         <SpotlightCard key={feature.title} feature={feature} index={index} />
                     ))}
                 </div>
+
+                {/* Historie Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
+                    className="mt-16 flex justify-center"
+                >
+                    <Link
+                        href="/history"
+                        className="shiny-sweep px-12 py-5 md:px-14 md:py-6 bg-gradient-gold text-binblau-bg font-bold rounded-2xl flex items-center justify-center gap-3 gold-glow-hover text-xl md:text-2xl transition-all duration-300 hover:scale-105 active:scale-95"
+                    >
+                        Zur Historie
+                        <ArrowRight className="w-6 h-6 md:w-8 md:h-8" />
+                    </Link>
+                </motion.div>
             </div>
         </section>
     );
