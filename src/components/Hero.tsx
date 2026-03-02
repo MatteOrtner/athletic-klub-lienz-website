@@ -59,7 +59,17 @@ export default function Hero() {
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="w-full max-w-none"
                 >
-
+                    {/* Mobile-only Season Badge (In-flow so it never overlaps text or buttons) */}
+                    <motion.div
+                        animate={{ y: [0, -5, 0] }}
+                        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                        className="md:hidden inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-gold/30 bg-binblau-bg/80 backdrop-blur-md mb-6 shadow-[0_0_15px_rgba(212,175,55,0.15)]"
+                    >
+                        <Trophy className="w-3.5 h-3.5 text-gold" />
+                        <span className="text-xs font-semibold tracking-widest uppercase text-gold-light">
+                            Saison {clubInfo.season}
+                        </span>
+                    </motion.div>
 
                     {/* Main Headline */}
                     <h1 className="text-[28px] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[80px] font-display font-bold leading-[1.1] md:leading-[1.05] mb-4 md:mb-8 tracking-tight flex flex-wrap items-baseline">
@@ -128,7 +138,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.5, duration: 0.8 }}
-                className="absolute bottom-8 right-6 md:bottom-12 md:right-12 z-30"
+                className="hidden md:block absolute bottom-8 right-6 md:bottom-12 md:right-12 z-30"
             >
                 <motion.div
                     animate={{ y: [0, -8, 0] }}
