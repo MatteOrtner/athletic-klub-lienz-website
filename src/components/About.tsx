@@ -60,9 +60,8 @@ function SpotlightCard({ feature, index }: { feature: any; index: number }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
-            whileHover={{ y: -8 }}
-            className={`bg-binblau-card/60 backdrop-blur-sm p-8 rounded-2xl border transition-all duration-500 group relative overflow-hidden ${isInView
-                ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] md:border-white/10 md:shadow-none"
+            className={`bg-binblau-card/60 backdrop-blur-sm p-8 md:p-10 rounded-2xl border transition-all duration-500 group relative overflow-hidden min-h-[300px] flex flex-col justify-center ${isInView
+                ? "border-gold/30 shadow-[0_0_25px_rgba(212,175,55,0.15)] hover:border-gold/60 hover:shadow-[0_0_45px_rgba(212,175,55,0.35)]"
                 : "border-white/10 shadow-none z-0"
                 }`}
         >
@@ -134,29 +133,44 @@ function SpotlightCard({ feature, index }: { feature: any; index: number }) {
 
 export default function About() {
     return (
-        <section id="about" className="section-padding relative z-10">
-            <div className="container mx-auto px-6">
+        <section id="about" className="section-padding relative z-10 overflow-hidden">
+            {/* Ambient Background Glows & Particles */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <div className="absolute top-[10%] left-[5%] w-[300px] h-[300px] bg-gold/5 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[10%] right-[5%] w-[400px] h-[400px] bg-binblau-card/30 rounded-full blur-[100px]" />
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-display font-bold mb-5"
+                        className="text-4xl md:text-6xl font-display font-bold mb-4 tracking-tight drop-shadow-md"
                     >
-                        Wer wir <span className="text-gold">sind</span>
+                        Wer wir <span className="text-gradient-gold">sind</span>
                     </motion.h2>
                     <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: 96 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3, duration: 0.6 }}
-                        className="h-1 bg-gold mx-auto rounded-full gold-glow"
+                        className="h-1 bg-gradient-gold mx-auto rounded-full gold-glow mb-6"
                     />
+                    <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                        className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light leading-relaxed"
+                    >
+                        Unser Herz schlägt für Osttirol. Wir verbinden sportlichen Ehrgeiz mit einer Gemeinschaft, die auf dem Platz und weit darüber hinaus zusammensteht.
+                    </motion.p>
                 </div>
 
                 {/* Feature Cards */}
-                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
                     {aboutFeatures.map((feature, index) => (
                         <SpotlightCard key={feature.title} feature={feature} index={index} />
                     ))}
