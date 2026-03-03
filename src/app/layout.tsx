@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from 'next/font/google';
 import "./globals.css";
+
+// Configure local fonts
+const inter = Inter({
+    subsets: ['latin'],
+    variable: '--font-inter',
+    display: 'swap',
+});
+
+const spaceGrotesk = Space_Grotesk({
+    subsets: ['latin'],
+    weight: ['500', '600', '700'],
+    variable: '--font-space-grotesk',
+    display: 'swap',
+});
 
 // SEO Metadata — German, optimized for Athletic Klub Lienz
 export const metadata: Metadata = {
@@ -31,7 +46,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="de" className="scroll-smooth">
+        <html lang="de" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
             <body className="min-h-screen bg-binblau-bg text-white antialiased">
                 <a href="#main-content" className="skip-to-content">
                     Zum Inhalt springen

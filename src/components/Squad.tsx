@@ -61,17 +61,12 @@ function PlayerCard({
         if (!video) return;
 
         if (isVideoVisible) {
-            if (!isHovering) {
-                video.currentTime = 0;
-            }
             video.play().catch(() => { });
         } else {
             video.pause();
-            if (!playing) {
-                video.currentTime = 0;
-            }
+            video.currentTime = 0;
         }
-    }, [isVideoVisible, isHovering, playing]);
+    }, [isVideoVisible]);
 
     const handleMouseEnter = useCallback(() => setIsHovering(true), []);
     const handleMouseLeave = useCallback(() => setIsHovering(false), []);
@@ -105,7 +100,7 @@ function PlayerCard({
                         ref={videoRef}
                         muted
                         playsInline
-                        preload="auto"
+                        preload="none"
                         className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-105 ${isVideoVisible ? "opacity-100" : "opacity-0"}`}
                     >
                         <source src={player.walkoutVideo} type="video/mp4" />
