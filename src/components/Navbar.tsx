@@ -37,7 +37,7 @@ export default function Navbar() {
                             className="w-12 h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 relative shrink-0"
                         >
                             <Image
-                                src="/logo/abb-logo.png"
+                                src="/logo/akl-logo.png"
                                 alt="Athletic Klub Lienz Logo"
                                 width={80}
                                 height={80}
