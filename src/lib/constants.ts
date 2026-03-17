@@ -28,21 +28,21 @@ export const clubInfo: ClubInfo = {
 export const aboutFeatures: AboutFeature[] = [
     {
         icon: "Shield",
-        title: "Identität",
+        title: "Das Team",
         description:
-            "Athletic Klub Lienz ist nicht nur ein Name auf einem Trikot. Es ist das Herzblut, das jeden Sonntag auf dem Platz fließt. Gegründet aus der reinen Liebe zum Spiel, stehen wir für Zusammenhalt, Kampfgeist und unvergessliche Momente.",
+            "Wir sind eine bunt gemischte Truppe aus Lienz und Umgebung. Uns verbindet vor allem eins: Wir verbringen gerne Zeit zusammen auf und neben dem Platz.",
     },
     {
         icon: "Zap",
-        title: "Kleinfeld-Fußball",
+        title: "Der Fußball",
         description:
-            "Unsere Heimat ist das Kleinfeld. Hier, wo das Spiel schneller, intensiver und ehrlicher ist, fühlen wir uns am wohlsten. Jeder Pass, jeder Zweikampf und jedes Tor schweißt uns als Team enger zusammen.",
+            "Gespielt wird auf dem Kleinfeld. Keine hochkomplexe Taktik, kein Profi-Anspruch – einfach ehrlicher Amateur-Fußball mit Freunden.",
     },
     {
         icon: "Users",
-        title: "Community",
+        title: "Neben dem Platz",
         description:
-            "Abseits des Platzes sind wir eine Familie. Die Community rund um Athletic Klub Lienz ist unser größter Rückhalt. Egal ob Spieler, Fan oder Unterstützer – bei uns ist jeder willkommen.",
+            "Nach dem Schlusspfiff geht's entspannt weiter. Ob nach dem Match, bei gemeinsamen Grillabenden oder Vereinsausflügen – die Gemeinschaft zählt.",
     },
 ];
 
@@ -52,11 +52,11 @@ export const aboutFeatures: AboutFeature[] = [
 
 export const navItems = [
     { label: "Home", href: "/#hero" },
-    { label: "Historie", href: "/history" },
     { label: "Über uns", href: "/#about" },
-    { label: "Kader", href: "/#squad" },
     { label: "Match Center", href: "/#bento" },
     { label: "Standort", href: "/#location" },
+    { label: "Kader", href: "/squad" },
+    { label: "Historie", href: "/history" },
 ];
 
 // ============================================

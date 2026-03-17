@@ -119,10 +119,10 @@ export default function Hero() {
                             <ChevronRight className="w-5 h-5" />
                         </motion.a>
                         <motion.a
-                            href="#squad"
+                            href="/squad"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-6 md:px-8 py-3.5 md:py-4 bg-binblau-bg/60 backdrop-blur-md border border-white/20 text-white rounded-xl hover:bg-binblau-bg/80 transition-all duration-300 font-semibold text-base md:text-lg w-full sm:w-auto text-center"
+                            className="px-6 md:px-8 py-3.5 md:py-4 bg-white/5 backdrop-blur-md border-2 border-white/40 text-white rounded-xl hover:bg-white hover:text-binblau-bg hover:border-white transition-all duration-300 font-bold text-base md:text-lg w-full sm:w-auto text-center flex items-center justify-center"
                         >
                             Kader ansehen
                         </motion.a>

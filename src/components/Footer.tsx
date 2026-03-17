@@ -47,7 +47,7 @@ export default function Footer() {
                                 Über uns
                             </a>
                             <a
-                                href="#squad"
+                                href="/squad"
                                 className="block text-sm text-white/50 hover:text-gold transition-colors"
                             >
                                 Kader

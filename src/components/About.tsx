@@ -1,197 +1,124 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
-import { Shield, Users, Zap, ArrowRight } from "lucide-react";
-import { aboutFeatures } from "@/lib/constants";
-import { useRef, useState } from "react";
+import { motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
-
-// Map icon names from constants to Lucide components
-const iconMap: Record<string, React.ReactNode> = {
-    Shield: <Shield className="w-6 h-6 text-gold" />,
-    Zap: <Zap className="w-6 h-6 text-gold" />,
-    Users: <Users className="w-6 h-6 text-gold" />,
-};
-
-function SpotlightCard({ feature, index }: { feature: any; index: number }) {
-    const divRef = useRef<HTMLDivElement>(null);
-    const isInView = useInView(divRef, { margin: "-35% 0px -35% 0px" });
-    const [isFocused, setIsFocused] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [opacity, setOpacity] = useState(0);
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!divRef.current || isFocused) return;
-
-        const div = divRef.current;
-        const rect = div.getBoundingClientRect();
-
-        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    };
-
-    const handleFocus = () => {
-        setIsFocused(true);
-        setOpacity(1);
-    };
-
-    const handleBlur = () => {
-        setIsFocused(false);
-        setOpacity(0);
-    };
-
-    const handleMouseEnter = () => {
-        setOpacity(1);
-    };
-
-    const handleMouseLeave = () => {
-        setOpacity(0);
-    };
-
-    return (
-        <motion.div
-            key={feature.title}
-            ref={divRef}
-            onMouseMove={handleMouseMove}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2, duration: 0.6 }}
-            className={`bg-binblau-card/60 backdrop-blur-sm p-8 md:p-10 rounded-2xl border transition-all duration-500 group relative overflow-hidden min-h-[300px] flex flex-col justify-center ${isInView
-                ? "border-gold/30 shadow-[0_0_25px_rgba(212,175,55,0.15)] hover:border-gold/60 hover:shadow-[0_0_45px_rgba(212,175,55,0.35)]"
-                : "border-white/10 shadow-none z-0"
-                }`}
-        >
-            {/* Desktop: Mouse-tracking Core Background Spotlight */}
-            <div
-                className="pointer-events-none hidden md:block absolute -inset-px opacity-0 transition duration-300 z-0"
-                style={{
-                    opacity,
-                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(212,175,55,.15), transparent 40%)`,
-                }}
-            />
-            {/* Desktop: Mouse-tracking Border Spotlight Ring */}
-            <div
-                className="pointer-events-none hidden md:block absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100 z-0"
-                style={{
-                    background: `radial-gradient(350px circle at ${position.x}px ${position.y}px, rgba(212,175,55,.8), transparent 100%) border-box`,
-                    border: "1px solid transparent",
-                    WebkitMask: "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
-                    WebkitMaskComposite: "xor",
-                    maskComposite: "exclude"
-                }}
-            />
-
-            {/* Mobile: Scroll-triggered Central Background Spotlight */}
-            <div
-                className={`pointer-events-none md:hidden absolute -inset-px transition duration-500 z-0 ${isInView ? "opacity-100" : "opacity-0"}`}
-                style={{
-                    background: `radial-gradient(400px circle at 50% 50%, rgba(212,175,55,.15), transparent 40%)`,
-                }}
-            />
-            {/* Mobile: Scroll-triggered Border Spotlight Ring */}
-            <div
-                className={`pointer-events-none md:hidden absolute inset-0 rounded-2xl transition duration-500 z-0 ${isInView ? "opacity-100" : "opacity-0"}`}
-                style={{
-                    background: `radial-gradient(250px circle at 50% 50%, rgba(212,175,55,.8), transparent 100%) border-box`,
-                    border: "1px solid transparent",
-                    WebkitMask: "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
-                    WebkitMaskComposite: "xor",
-                    maskComposite: "exclude"
-                }}
-            />
-
-            {/* Floating Icon */}
-            <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{
-                    repeat: Infinity,
-                    duration: 3 + index,
-                    ease: "easeInOut",
-                }}
-                className={`relative z-10 w-14 h-14 rounded-xl flex items-center justify-center mb-6 border group-hover:border-gold/30 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-500 ${isInView
-                    ? "border-gold/50 bg-binblau-bg shadow-[0_0_20px_rgba(212,175,55,0.4)] md:border-white/10 md:shadow-none bg-binblau-bg"
-                    : "border-white/10 bg-binblau-bg"
-                    }`}
-            >
-                {iconMap[feature.icon]}
-            </motion.div>
-
-            <h3 className={`relative z-10 text-xl font-bold mb-4 group-hover:text-gold-light transition-colors ${isInView ? "text-gold-light md:text-white" : "text-white"
-                }`}>
-                {feature.title}
-            </h3>
-            <p className="relative z-10 text-white/70 leading-relaxed text-sm">
-                {feature.description}
-            </p>
-        </motion.div>
-    );
-}
+import { ArrowRight, Beer, Target, Users } from "lucide-react";
 
 export default function About() {
     return (
-        <section id="about" className="section-padding relative z-10 overflow-hidden">
-            {/* Ambient Background Glows & Particles */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <div className="absolute top-[10%] left-[5%] w-[300px] h-[300px] bg-gold/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[10%] right-[5%] w-[400px] h-[400px] bg-binblau-card/30 rounded-full blur-[100px]" />
-            </div>
-
+        <section id="about" className="section-padding relative z-10 overflow-hidden bg-binblau-bg">
             <div className="container mx-auto px-6 relative z-10">
-                {/* Section Header */}
-                <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-display font-bold mb-4 tracking-tight drop-shadow-md"
-                    >
-                        Wer wir <span className="text-gradient-gold">sind</span>
-                    </motion.h2>
-                    <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: 96 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3, duration: 0.6 }}
-                        className="h-1 bg-gradient-gold mx-auto rounded-full gold-glow mb-6"
-                    />
-                    <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
-                        className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-light leading-relaxed"
-                    >
-                        Unser Herz schlägt für Osttirol. Wir verbinden sportlichen Ehrgeiz mit einer Gemeinschaft, die auf dem Platz und weit darüber hinaus zusammensteht.
-                    </motion.p>
-                </div>
+                <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
+                    {/* Left Column - Text Content */}
+                    <div className="order-2 lg:order-1">
+                        <motion.h2 
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight drop-shadow-md"
+                        >
+                            Mehr als nur <br />
+                            <span className="text-gradient-gold">Freizeitkicker.</span>
+                        </motion.h2>
+                        
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="space-y-6 text-white/80 text-lg leading-relaxed font-light drop-shadow-sm"
+                        >
+                            <p>
+                                Wir sind ein bunt zusammengewürfelter Haufen aus Lienz und Umgebung. Was uns verbindet? Die Liebe zum runden Leder und der Spaß am gemeinsamen Kicken.
+                            </p>
+                            <p>
+                                Bei uns gibt es keine hochkomplexe Taktiktafel und kein Profitraining. Stattdessen gibt es ehrlichen Kleinfeld-Fußball, vollen Einsatz in jedem Zweikampf und die Gewissheit, dass jeder für jeden läuft.
+                            </p>
+                            <p>
+                                Der AKL ist mehr als die Zeit auf dem Platz. Die berühmte „dritte Halbzeit“ gehört bei uns genauso dazu wie das Spiel selbst – sei es beim Diskutieren der vergebenen Chancen oder beim Anstoßen nach dem Match.
+                            </p>
+                        </motion.div>
 
-                {/* Feature Cards */}
-                <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-                    {aboutFeatures.map((feature, index) => (
-                        <SpotlightCard key={feature.title} feature={feature} index={index} />
-                    ))}
-                </div>
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                            className="mt-10 flex flex-wrap gap-4"
+                        >
+                            <div className="flex items-center gap-2.5 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.2)] backdrop-blur-sm">
+                                <Users className="w-5 h-5 text-gold" />
+                                <span className="text-sm font-semibold tracking-wide">Bunte Truppe</span>
+                            </div>
+                            <div className="flex items-center gap-2.5 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.2)] backdrop-blur-sm">
+                                <Target className="w-5 h-5 text-gold" />
+                                <span className="text-sm font-semibold tracking-wide">100% Einsatz</span>
+                            </div>
+                            <div className="flex items-center gap-2.5 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.2)] backdrop-blur-sm">
+                                <Beer className="w-5 h-5 text-gold" />
+                                <span className="text-sm font-semibold tracking-wide">3. Halbzeit</span>
+                            </div>
+                        </motion.div>
 
-                {/* Historie Button */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6, duration: 0.6 }}
-                    className="mt-16 flex justify-center"
-                >
-                    <Link
-                        href="/history"
-                        className="shiny-sweep px-12 py-5 md:px-14 md:py-6 bg-gradient-gold text-binblau-bg font-bold rounded-2xl flex items-center justify-center gap-3 gold-glow-hover text-xl md:text-2xl transition-all duration-300 hover:scale-105 active:scale-95"
-                    >
-                        Zur Historie
-                        <ArrowRight className="w-6 h-6 md:w-8 md:h-8" />
-                    </Link>
-                </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.6 }}
+                            className="mt-12"
+                        >
+                            <Link 
+                                href="/history"
+                                className="inline-flex items-center gap-3 text-gold hover:text-gold-light font-bold text-lg group transition-colors"
+                            >
+                                <span className="border-b-2 border-transparent group-hover:border-gold-light transition-colors pb-1">Unsere Geschichte ansehen</span>
+                                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                            </Link>
+                        </motion.div>
+                    </div>
+
+                    {/* Right Column - Image Collage */}
+                    <div className="order-1 lg:order-2 relative mt-10 md:mt-16 lg:mt-0">
+                        {/* Main Image */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
+                            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="relative z-10 w-full aspect-square md:aspect-[4/3] max-w-lg mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl border border-gold/20 group"
+                        >
+                            <Image
+                                src="/images/teamfoto-2025.jpeg"
+                                alt="Athletic Klub Lienz Team"
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                            />
+                            {/* Inner dark gradient for depth */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg via-transparent to-transparent opacity-60" />
+                        </motion.div>
+
+                        {/* Floating secondary image */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40, x: 20 }}
+                            whileInView={{ opacity: 1, y: 0, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4, duration: 0.8 }}
+                            className="absolute -bottom-12 -left-8 md:-left-12 w-48 h-48 md:w-64 md:h-64 rounded-2xl md:rounded-[2rem] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.8)] border-[6px] border-binblau-bg z-20 group"
+                        >
+                            <Image
+                                src="/images/vidrol-2025.jpeg"
+                                alt="AKL in Action"
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                            />
+                        </motion.div>
+
+                        {/* Decorative background glows */}
+                        <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/20 rounded-full blur-[60px] z-0 pointer-events-none" />
+                        <div className="absolute -bottom-20 right-10 w-60 h-60 bg-binblau/30 rounded-full blur-[80px] z-0 pointer-events-none" />
+                    </div>
+                </div>
             </div>
         </section>
     );

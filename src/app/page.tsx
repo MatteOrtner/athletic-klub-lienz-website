@@ -20,7 +20,6 @@ export default function Home() {
                 <About />
                 <KitShowcase />
                 <BentoGrid />
-                <Squad />
                 <LocationMap />
             </main>
             <Footer />
