@@ -20,7 +20,7 @@ export default function Home() {
                 <About />
                 <KitShowcase />
                 <BentoGrid />
-                <LocationMap />
+                {/* <LocationMap /> */}
             </main>
             <Footer />
         </>

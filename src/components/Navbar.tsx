@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { navItems } from "@/lib/constants";
@@ -31,13 +32,13 @@ export default function Navbar() {
             >
                 <div className="w-full px-6 md:px-12 xl:px-20 h-20 lg:h-28 flex items-center justify-between">
                     {/* Logo */}
-                    <a href="#hero" className="flex items-center gap-3 lg:gap-4 group">
+                    <Link href="/" className="flex items-center gap-3 lg:gap-4 group">
                         <motion.div
                             whileHover={{ scale: 1.1, rotate: -3 }}
                             className="w-12 h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 relative shrink-0"
                         >
                             <Image
-                                src="/logo/akl-logo.png"
+                                src="/logo/akl-logo-v2.png"
                                 alt="Athletic Klub Lienz Logo"
                                 width={80}
                                 height={80}
@@ -51,7 +52,7 @@ export default function Navbar() {
                                 Klub Lienz
                             </span>
                         </span>
-                    </a>
+                    </Link>
 
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center gap-10">

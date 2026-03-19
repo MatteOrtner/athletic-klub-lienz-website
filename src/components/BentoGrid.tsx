@@ -12,11 +12,23 @@ import {
     X,
 } from "lucide-react";
 import { mockMatches, mockNews, INSTAGRAM_EMBED_URL } from "@/lib/constants";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 export default function BentoGrid() {
     const [selectedNews, setSelectedNews] = useState<typeof mockNews[0] | null>(null);
+
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (selectedNews) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [selectedNews]);
 
     // Get the next upcoming match
     const nextMatch = mockMatches.find((m) => m.status === "upcoming");
@@ -103,7 +115,7 @@ export default function BentoGrid() {
                                     </div>
 
                                     <h4 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
-                                        Kleinfeldturnier in <br /> Obertilliach
+                                        Pfingstturnier in <br /> Obertilliach
                                     </h4>
 
                                     <div className="flex flex-wrap items-center gap-6 text-base text-white/80">

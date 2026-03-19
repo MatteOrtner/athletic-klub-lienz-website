@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Instagram, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Instagram, Mail } from "lucide-react";
 import { clubInfo, INSTAGRAM_EMBED_URL } from "@/lib/constants";
 
 export default function Footer() {
@@ -9,20 +10,20 @@ export default function Footer() {
                 <div className="grid md:grid-cols-3 gap-10 mb-10">
                     {/* Brand */}
                     <div>
-                        <div className="flex items-center gap-3 mb-4">
+                        <Link href="/" className="flex items-center gap-3 mb-4 group inline-flex">
                             <div className="w-10 h-10 relative shrink-0">
                                 <Image
-                                    src="/logo/akl-logo.png"
+                                    src="/logo/akl-logo-v2.png"
                                     alt="Athletic Klub Lienz Logo"
                                     width={40}
                                     height={40}
-                                    className="object-contain"
+                                    className="object-contain group-hover:scale-110 transition-transform"
                                 />
                             </div>
-                            <span className="font-display font-bold text-lg tracking-tight">
+                            <span className="font-display font-bold text-lg tracking-tight group-hover:text-gold transition-colors">
                                 Athletic <span className="text-gold">Klub Lienz</span>
                             </span>
-                        </div>
+                        </Link>
                         <p className="text-white/40 text-sm leading-relaxed max-w-xs">
                             {clubInfo.tagline} {clubInfo.subtitle}
                         </p>
@@ -67,10 +68,7 @@ export default function Footer() {
                             Kontakt
                         </h4>
                         <div className="space-y-3">
-                            <div className="flex items-center gap-2 text-sm text-white/50">
-                                <MapPin className="w-4 h-4 text-gold/60 shrink-0" />
-                                <span>{clubInfo.location.address}</span>
-                            </div>
+
                             <a
                                 href={INSTAGRAM_EMBED_URL}
                                 target="_blank"

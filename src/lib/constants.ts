@@ -54,7 +54,7 @@ export const navItems = [
     { label: "Home", href: "/#hero" },
     { label: "Über uns", href: "/#about" },
     { label: "Match Center", href: "/#bento" },
-    { label: "Standort", href: "/#location" },
+    // { label: "Standort", href: "/#location" },
     { label: "Kader", href: "/squad" },
     { label: "Historie", href: "/history" },
 ];
@@ -73,7 +73,7 @@ export const mockPlayers: Player[] = [
         number: 4,
         introduction:
             "Der Fels in der Brandung. Kompromisslos im Zweikampf und mit grenzenloser Leidenschaft räumt er hinten alles ab.",
-        stats: { Schnelligkeit: 88, Ausdauer: 92, Teamgeist: 97 },
+        stats: { Schnelligkeit: 85, Ausdauer: 89, Teamgeist: 97 },
         walkoutVideo: "/players/matte.mp4",
     },
     {
@@ -83,7 +83,7 @@ export const mockPlayers: Player[] = [
         number: 19,
         introduction:
             "Souverän und abgeklärt in der Defensive. Mit seiner Übersicht leitet er unsere Angriffe schon von hinten ein.",
-        stats: { Schnelligkeit: 82, Ausdauer: 94, Teamgeist: 96 },
+        stats: { Schnelligkeit: 95, Ausdauer: 96, Teamgeist: 99 },
         walkoutVideo: "/players/luca.mp4",
     },
     {
@@ -93,7 +93,7 @@ export const mockPlayers: Player[] = [
         number: 2,
         introduction:
             "Taktisch extrem klug und unermüdlich. Er schließt jede Lücke in unserer Defensive souverän.",
-        stats: { Schnelligkeit: 80, Ausdauer: 95, Teamgeist: 94 },
+        stats: { Schnelligkeit: 83, Ausdauer: 88, Teamgeist: 87 },
         walkoutVideo: "/players/clemens.mp4",
     },
     {
@@ -103,7 +103,7 @@ export const mockPlayers: Player[] = [
         number: 16,
         introduction:
             "Hinten räumt er kompromisslos auf und nach vorne setzt er immer wieder gefährliche Nadelstiche.",
-        stats: { Schnelligkeit: 93, Ausdauer: 86, Teamgeist: 90 },
+        stats: { Schnelligkeit: 93, Ausdauer: 90, Teamgeist: 93 },
         walkoutVideo: "/players/dani.mp4",
     },
     {
@@ -113,7 +113,7 @@ export const mockPlayers: Player[] = [
         number: 3,
         introduction:
             "Der Kämpfer. Gibt in jedem Spiel alles und geht voran, wenn es hart auf hart kommt.",
-        stats: { Schnelligkeit: 81, Ausdauer: 93, Teamgeist: 96 },
+        stats: { Schnelligkeit: 82, Ausdauer: 84, Teamgeist: 88 },
         walkoutVideo: "/players/rene.mp4",
     },
     // ── ROW 2: Mittelfeld → Stürmer → Torwart ────────────
@@ -124,17 +124,17 @@ export const mockPlayers: Player[] = [
         number: 9,
         introduction:
             "Technisch versiert und mit einem Auge für den perfekten Pass. Still, aber tödlich effektiv.",
-        stats: { Schnelligkeit: 79, Ausdauer: 91, Teamgeist: 95 },
+        stats: { Schnelligkeit: 97, Ausdauer: 98, Teamgeist: 97 },
         walkoutVideo: "/players/eli.mp4",
     },
     {
         id: "player-veit",
         name: "Veit",
-        position: "Stürmer",
+        position: "Mittelfeld",
         number: 10,
         introduction:
             "Der Knipser. Kaltschnäuzig vor dem Tor und immer bereit, den Ball ins Netz zu hämmern.",
-        stats: { Schnelligkeit: 90, Ausdauer: 85, Teamgeist: 93 },
+        stats: { Schnelligkeit: 96, Ausdauer: 91, Teamgeist: 95 },
         walkoutVideo: "/players/veit.mp4",
     },
     {
@@ -144,7 +144,7 @@ export const mockPlayers: Player[] = [
         number: 11,
         introduction:
             "Pfeilschnell und brandgefährlich. Wenn er den Ball hat, läuten bei den gegnerischen Abwehrspielern die Alarmglocken.",
-        stats: { Schnelligkeit: 84, Ausdauer: 90, Teamgeist: 91 },
+        stats: { Schnelligkeit: 87, Ausdauer: 82, Teamgeist: 94 },
         walkoutVideo: "/players/raphi.mp4",
     },
     {
@@ -154,7 +154,7 @@ export const mockPlayers: Player[] = [
         number: 6,
         introduction:
             "Ein echter Instinktstürmer. Er steht immer goldrichtig im Strafraum und sorgt für pure Torgefahr.",
-        stats: { Schnelligkeit: 77, Ausdauer: 89, Teamgeist: 92 },
+        stats: { Schnelligkeit: 89, Ausdauer: 88, Teamgeist: 93 },
         walkoutVideo: "/players/paul.mp4",
     },
     {
@@ -164,7 +164,7 @@ export const mockPlayers: Player[] = [
         number: 1,
         introduction:
             "Unser sicherer Rückhalt zwischen den Pfosten. Mit seinen Reflexen hat er uns schon oft den Sieg gerettet.",
-        stats: { Schnelligkeit: 75, Ausdauer: 88, Teamgeist: 99 },
+        stats: { Schnelligkeit: 79, Ausdauer: 81, Teamgeist: 86 },
         walkoutVideo: "/players/fabi.mp4",
     },
 ];

@@ -72,12 +72,12 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Main Headline */}
-                    <h1 className="text-[28px] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[80px] font-display font-bold leading-[1.1] md:leading-[1.05] mb-4 md:mb-8 tracking-tight flex flex-wrap items-baseline">
+                    <h1 className="text-[28px] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[80px] font-display font-extrabold leading-[1.1] md:leading-[1.05] mb-4 md:mb-8 tracking-tight flex flex-wrap items-baseline text-white">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
-                            className="inline-block drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] mr-2 md:mr-3 whitespace-nowrap"
+                            className="inline-block drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] mr-2 md:mr-3 whitespace-nowrap"
                         >
                             Mehr als ein Verein.
                         </motion.span>
@@ -85,7 +85,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="inline-block text-gradient-gold drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] whitespace-nowrap"
+                            className="inline-block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] whitespace-nowrap"
                         >
                             Eine Lebenseinstellung.
                         </motion.span>
