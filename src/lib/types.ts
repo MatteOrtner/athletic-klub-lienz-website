@@ -31,8 +31,9 @@ export interface NewsArticle {
     id: string;
     title: string;
     date: string; // ISO 8601
-    tag: "Verein" | "Spielbericht" | "Community";
+    tag: "Verein" | "Spielbericht" | "Community" | "Spiele";
     excerpt: string;
+    content?: string;
     imageUrl?: string;
 }
 

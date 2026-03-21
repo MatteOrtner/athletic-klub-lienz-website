@@ -11,7 +11,7 @@ import {
     Clock,
     X,
 } from "lucide-react";
-import { mockMatches, mockNews, INSTAGRAM_EMBED_URL } from "@/lib/constants";
+import { mockNews, INSTAGRAM_EMBED_URL } from "@/lib/constants";
 import { useState, useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
@@ -30,10 +30,6 @@ export default function BentoGrid() {
         };
     }, [selectedNews]);
 
-    // Get the next upcoming match
-    const nextMatch = mockMatches.find((m) => m.status === "upcoming");
-    // Get the latest completed match
-    const lastMatch = mockMatches.find((m) => m.status === "completed");
 
     // Scroll trigger refs for mobile interaction
     const instaRef = useRef(null);
@@ -313,9 +309,6 @@ export default function BentoGrid() {
                                     Aktuelle Updates vom Platz.
                                 </p>
                             </div>
-                            <button className="px-4 py-2 rounded-full bg-binblau-bg text-sm font-medium border border-white/10 hover:border-gold/40 hover:text-gold transition-colors shrink-0">
-                                Alle News
-                            </button>
                         </div>
 
                         <div className="flex overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 gap-4 md:gap-6 relative z-10 pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scroll-pl-6 after:content-[''] after:w-1 after:shrink-0 md:after:hidden">
@@ -401,11 +394,8 @@ export default function BentoGrid() {
                                 <div className="w-12 h-1 bg-gold rounded-full mb-6 gold-glow" />
 
                                 <div className="prose prose-invert prose-p:text-white/70">
-                                    <p className="leading-relaxed text-sm md:text-base">
-                                        {selectedNews.excerpt}
-                                    </p>
-                                    <p className="leading-relaxed mt-4 opacity-70 italic text-sm">
-                                        (Vollständiger Artikel wird bald direkt vom Notion CMS geladen)
+                                    <p className="leading-relaxed text-sm md:text-base whitespace-pre-line">
+                                        {selectedNews.content || selectedNews.excerpt}
                                     </p>
                                 </div>
                             </div>

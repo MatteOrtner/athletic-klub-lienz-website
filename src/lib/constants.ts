@@ -169,63 +169,35 @@ export const mockPlayers: Player[] = [
     },
 ];
 
-export const mockMatches: Match[] = [
-    {
-        id: "match-1",
-        opponent: "FC Dynamo",
-        date: "2026-03-15T15:00:00",
-        location: "Heim",
-        scoreHome: null,
-        scoreAway: null,
-        status: "upcoming",
-        season: "2026",
-    },
-    {
-        id: "match-2",
-        opponent: "SV Rapid",
-        date: "2026-03-08T14:00:00",
-        location: "Auswärts",
-        scoreHome: 3,
-        scoreAway: 1,
-        status: "completed",
-        season: "2026",
-    },
-    {
-        id: "match-3",
-        opponent: "SC Adler",
-        date: "2026-03-01T15:00:00",
-        location: "Heim",
-        scoreHome: 2,
-        scoreAway: 2,
-        status: "completed",
-        season: "2026",
-    },
-];
+
 
 export const mockNews: NewsArticle[] = [
     {
         id: "news-1",
-        title: "Neuer Trikotsponsor für die Saison",
-        date: "2026-02-27",
+        title: "Eine neue Ära: Aus ATHLETIC BINBLAU wird ATHLETIC KLUB LIENZ",
+        date: "2026-03-09",
         tag: "Verein",
         excerpt:
-            "Athletic Klub Lienz startet mit neuem Partner in die kommende Saison. Ein starkes Zeichen für die Zukunft unseres Vereins.",
+            "Der nächste große Schritt für unseren Verein: Mit einem neuen Namen und klaren Zielen starten wir in die Zukunft.",
+        content: "Wir sind unglaublich stolz darauf, den nächsten großen Schritt in der Vereinsgeschichte bekannt zu geben: Aus ATHLETIC BINBLAU wird ab sofort der ATHLETIC KLUB LIENZ!\n\nDieser Name spiegelt unsere tiefe Verbundenheit zu Lienz in Osttirol wider und zeigt ganz klar, wer wir sind: Eine Gemeinschaft, die zusammenhält, egal ob auf oder neben dem Platz.\n\nDanke an alle, die uns auf dieser Reise begleitet haben. Die Zukunft gehört dem AKL!"
     },
     {
         id: "news-2",
-        title: "Derby-Sieg in der Nachspielzeit",
-        date: "2026-02-26",
-        tag: "Spielbericht",
+        title: "Der Ball rollt wieder: Trainingsauftakt",
+        date: "2026-03-15",
+        tag: "Verein",
         excerpt:
-            "Ein dramatisches Spiel mit einem unvergesslichen Finale. Unser Team zeigt wahren Kampfgeist.",
+            "Die Winterpause ist vorbei. Die ersten Einheiten auf dem Platz stecken dem ein oder anderen noch in den Knochen.",
+        content: "Es geht wieder los! Nach einer langen fußballfreien Zeit stehen wir endlich wieder regelmäßig auf dem Platz. Die ersten Ballberührungen waren vielleicht noch etwas holprig und der Muskelkater danach absolut brutal – aber genau das hat gefehlt.\n\nDer aktuelle Fokus liegt voll darauf, die nötige Grundfitness wiederzufinden und den Spaß am Spiel aufrechtzuerhalten. Wir treffen uns jetzt wieder wöchentlich, um für die kommenden Wochen gewappnet zu sein. Jeder, der mal beim Training zuschauen möchte, ist am Platz immer willkommen!"
     },
     {
         id: "news-3",
-        title: "Sommerfest: Termin steht fest",
-        date: "2026-02-24",
-        tag: "Community",
+        title: "Nächster Halt: Pfingstturnier in Obertilliach",
+        date: "2026-03-20",
+        tag: "Spiele",
         excerpt:
-            "Die AKL-Familie feiert wieder! Alle Infos zum großen Sommerfest am Sportplatz.",
+            "Am 24. Mai 2026 steht unser erstes großes Highlight der Saison an: Das Pfingstturnier in Obertilliach.",
+        content: "Das erste richtig dicke Kreuz im Kalender für dieses Jahr ist gesetzt: Am 24. Mai 2026 geht es für den AKL zum legendären Pfingstturnier nach Obertilliach!\n\nDieses Turnier ist für uns immer ein echtes Saison-Highlight. Wir freuen uns auf starke regionale Gegner, eine geniale Kulisse im Lesachtal und natürlich auf eine überragende Stimmung neben dem Platz. Die Motivation im Team ist riesig und wir wollen dort definitiv eine gute Figur abgeben.\n\nWir hoffen, dass uns der ein oder andere Fan nach Obertilliach begleitet und am Spielfeldrand unterstützt. Drückt uns die Daumen!"
     },
 ];
 

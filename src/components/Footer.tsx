@@ -77,6 +77,7 @@ export default function Footer() {
                             >
                                 <Instagram className="w-4 h-4 text-gold/60 shrink-0" />
                                 <span>@_athletic_binblau</span>
+
                             </a>
                             <a
                                 href="https://open.spotify.com/intl-de/artist/6iFYyJs3sVSTN39RFwBjvv?si=CRniUZYUT22eTkDRcGOWHw"
@@ -107,12 +108,7 @@ export default function Footer() {
                         vorbehalten.
                     </div>
                     <div className="flex gap-6 text-xs text-white/30">
-                        <a href="#" className="hover:text-gold transition-colors">
-                            Impressum
-                        </a>
-                        <a href="#" className="hover:text-gold transition-colors">
-                            Datenschutz
-                        </a>
+                        <span>Impressum & Datenschutz — Demnächst</span>
                     </div>
                 </div>
             </div>

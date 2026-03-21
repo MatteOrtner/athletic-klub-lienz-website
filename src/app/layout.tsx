@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from 'next/font/google';
 import "./globals.css";
 
-// Configure local fonts
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-inter',
@@ -16,27 +15,77 @@ const spaceGrotesk = Space_Grotesk({
     display: 'swap',
 });
 
-// SEO Metadata — German, optimized for Athletic Klub Lienz
+const BASE_URL = "https://www.athleticklublienz.com";
+
 export const metadata: Metadata = {
-    title: "Athletic Klub Lienz | Mehr als ein Verein",
+    metadataBase: new URL(BASE_URL),
+    title: {
+        default: "Athletic Klub Lienz | Mehr als ein Verein",
+        template: "%s | Athletic Klub Lienz",
+    },
     description:
         "Athletic Klub Lienz — Wo Leidenschaft auf dem Kleinfeld zur Legende wird. Werde Teil des Teams und erlebe Kleinfeld-Fußball auf höchstem Niveau in Lienz, Osttirol.",
     keywords: [
         "Athletic Klub Lienz",
         "AKL",
         "Kleinfeld Fußball",
+        "Fußball Lienz",
+        "Fußballverein Osttirol",
+        "Kleinfeld Turnier Tirol",
+        "Freizeitfußball Lienz",
         "Lienz",
         "Osttirol",
         "Fußballverein",
-        "Community",
+        "Hobby Fußball Tirol",
     ],
+    authors: [{ name: "Athletic Klub Lienz", url: BASE_URL }],
+    creator: "Athletic Klub Lienz",
+    publisher: "Athletic Klub Lienz",
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
+    alternates: {
+        canonical: BASE_URL,
+        languages: {
+            "de-AT": BASE_URL,
+        },
+    },
     openGraph: {
         title: "Athletic Klub Lienz | Mehr als ein Verein",
         description:
-            "Wo Leidenschaft auf dem Kleinfeld zur Legende wird. Werde Teil des Teams!",
+            "Wo Leidenschaft auf dem Kleinfeld zur Legende wird. Werde Teil des Teams und erlebe Kleinfeld-Fußball in Lienz, Osttirol.",
         type: "website",
         locale: "de_AT",
-        url: "https://www.athleticklublienz.com",
+        url: BASE_URL,
+        siteName: "Athletic Klub Lienz",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Athletic Klub Lienz — Mehr als ein Verein",
+                type: "image/png",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Athletic Klub Lienz | Mehr als ein Verein",
+        description:
+            "Wo Leidenschaft auf dem Kleinfeld zur Legende wird. Werde Teil des Teams!",
+        images: ["/og-image.png"],
+    },
+    icons: {
+        icon: "/logo/akl-logo-v2.png",
+        apple: "/logo/akl-logo-v2.png",
     },
 };
 
@@ -47,6 +96,35 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="de" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "SportsOrganization",
+                            name: "Athletic Klub Lienz",
+                            alternateName: "AKL",
+                            url: BASE_URL,
+                            logo: `${BASE_URL}/logo/akl-logo-v2.png`,
+                            image: `${BASE_URL}/og-image.png`,
+                            description:
+                                "Athletic Klub Lienz ist ein Kleinfeld-Fußballverein aus Lienz, Osttirol. Gegründet aus einer Freizeitmannschaft, stehen Leidenschaft, Gemeinschaft und sportlicher Ehrgeiz im Mittelpunkt.",
+                            address: {
+                                "@type": "PostalAddress",
+                                addressLocality: "Lienz",
+                                addressRegion: "Tirol",
+                                addressCountry: "AT",
+                            },
+                            sport: "Soccer",
+                            foundingDate: "2017",
+                            sameAs: [
+                                "https://www.instagram.com/_athletic_binblau",
+                            ],
+                        }),
+                    }}
+                />
+            </head>
             <body className="min-h-screen bg-binblau-bg text-white antialiased">
                 <a href="#main-content" className="skip-to-content">
                     Zum Inhalt springen
