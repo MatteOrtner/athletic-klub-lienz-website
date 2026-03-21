@@ -1,7 +1,7 @@
 // Static content constants for Athletic Klub Lienz
 // Source of truth for all in-repo content (German, energetic, bold)
 
-import type { ClubInfo, AboutFeature, Player, Match, NewsArticle } from "./types";
+import type { ClubInfo, AboutFeature, Player, NewsArticle } from "./types";
 
 // ============================================
 // CLUB INFO
@@ -202,13 +202,7 @@ export const mockNews: NewsArticle[] = [
 ];
 
 // ============================================
-// EXTERNAL SERVICE PLACEHOLDERS
+// EXTERNAL LINKS
 // ============================================
-
-export const ZAPIER_WEBHOOK_URL =
-    process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL || "YOUR_ZAPIER_WEBHOOK_URL";
-
-export const GOOGLE_MAPS_API_KEY =
-    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "YOUR_MAPS_API_KEY";
 
 export const INSTAGRAM_EMBED_URL = "https://www.instagram.com/_athletic_binblau/";

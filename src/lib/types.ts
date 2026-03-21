@@ -16,16 +16,6 @@ export interface Player {
     walkoutVideo?: string; // Path to walkout video in /public/players/
 }
 
-export interface Match {
-    id: string;
-    opponent: string;
-    date: string; // ISO 8601
-    location: "Heim" | "Auswärts";
-    scoreHome: number | null;
-    scoreAway: number | null;
-    status: "upcoming" | "completed";
-    season: string;
-}
 
 export interface NewsArticle {
     id: string;
@@ -57,11 +47,3 @@ export interface AboutFeature {
     description: string;
 }
 
-export interface ContactFormData {
-    name: string;
-    email: string;
-    phone?: string;
-    position: string;
-    message: string;
-    timestamp: string;
-}
