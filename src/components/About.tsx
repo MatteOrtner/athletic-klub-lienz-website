@@ -19,8 +19,8 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight drop-shadow-md"
                     >
-                        Mehr als nur <br />
-                        <span className="text-gradient-gold">Freizeitkicker.</span>
+                        Echter Fußball. <br />
+                        <span className="text-gradient-gold">Echte Kameradschaft.</span>
                     </motion.h2>
 
                     {/* Main image card with first paragraph overlaid */}
@@ -40,7 +40,7 @@ export default function About() {
 
                         <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                             <p className="text-white text-base md:text-lg leading-relaxed font-light drop-shadow-lg">
-                                <span className="font-semibold text-gold">Kein Profitraining,</span> keine komplizierte Taktiktafel. Wir sind einfach eine Truppe aus Lienz, die fürs Kicken und die Zeit danach brennt.
+                                <span className="font-semibold text-gold">Keine Profi-Allüren,</span> kein Schnickschnack. Wir sind einfach eine eingeschworene Truppe aus Lienz, die für den ehrlichen Fußball brennt.
                             </p>
                         </div>
                     </motion.div>
@@ -62,7 +62,7 @@ export default function About() {
                             />
                         </div>
                         <p className="text-white/80 text-sm md:text-base leading-relaxed font-light self-center">
-                            Auf dem Platz wird um jeden Meter gekämpft, aber mindestens genauso wichtig ist die <strong className="text-white font-semibold">3. Halbzeit</strong>. Ob Sieg oder Niederlage – beim AKL sitzen wir danach alle mit einem <span className="text-gold">Bier zusammen</span>.
+                            Auf dem Platz wird um jeden Meter gekämpft, aber das eigentliche Spielgeschehen ist nur die halbe Miete. Die <strong className="text-white font-semibold">dritte Halbzeit</strong> und der Zusammenhalt abseits des Rasens machen den AKL erst richtig aus.
                         </p>
                     </motion.div>
 
@@ -95,8 +95,8 @@ export default function About() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight drop-shadow-md"
                         >
-                            Mehr als nur <br />
-                            <span className="text-gradient-gold">Freizeitkicker.</span>
+                            Echter Fußball. <br />
+                            <span className="text-gradient-gold">Echte Kameradschaft.</span>
                         </motion.h2>
                         
                         <motion.div 
@@ -107,10 +107,10 @@ export default function About() {
                             className="space-y-6 text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-sm max-w-lg"
                         >
                             <p>
-                                Kein Profitraining, keine komplizierte Taktiktafel. Wir sind einfach eine Truppe aus Lienz, die fürs Kicken und die Zeit danach brennt.
+                                Keine Profi-Allüren, kein Schnickschnack. Wir sind einfach eine eingeschworene Truppe aus Lienz, die für den ehrlichen Fußball brennt.
                             </p>
                             <p>
-                                Auf dem Platz wird um jeden Meter gekämpft, aber mindestens genauso wichtig ist die 3. Halbzeit. Ob nach einem Sieg oder einer Niederlage – beim AKL sitzen wir im Anschluss alle mit einem Bier zusammen.
+                                Auf dem Rasen wird um jeden Meter gekämpft, aber das eigentliche Spielgeschehen ist nur die halbe Miete. Die dritte Halbzeit und der Zusammenhalt danach machen den AKL erst richtig aus – völlig egal, was auf der Anzeigetafel steht.
                             </p>
                         </motion.div>
 

@@ -99,7 +99,7 @@ export default function Hero() {
                         className="text-base md:text-xl text-white/90 mb-8 md:mb-10 max-w-xl font-light leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
                     >
                         {clubInfo.subtitle}{" "}
-                        Wir spielen nicht nur Fußball – wir leben ihn.
+                        Echter Kleinfeld-Fußball aus Lienz, Osttirol — mit dem Herz am rechten Fleck.
                     </motion.p>
 
                     {/* Buttons */}

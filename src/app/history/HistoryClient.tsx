@@ -10,7 +10,7 @@ const timelineEvents = [
     {
         year: "2017",
         title: "Leisach",
-        description: "Das erste gemeinsame Turnier. Hier begannen wir als junge Mannschaft, gemeinsam auf dem Platz zu stehen.",
+        description: "Das erste gemeinsame Turnier – noch als lose Truppe von Freunden, lange bevor es das AKL-Trikot gab. Genau hier legte unsere Mannschaft den Grundstein für alles, was danach kam.",
         image: "/images/team-2017.jpg",
     },
     {
