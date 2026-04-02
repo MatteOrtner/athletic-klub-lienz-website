@@ -42,8 +42,8 @@ export default function Navbar() {
                                 alt="Athletic Klub Lienz Logo"
                                 width={80}
                                 height={80}
+                                sizes="(max-width: 1023px) 48px, (max-width: 1279px) 64px, 80px"
                                 className="object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
-                                priority
                             />
                         </motion.div>
                         <span className="font-display font-bold text-xl lg:text-2xl xl:text-3xl tracking-tight">

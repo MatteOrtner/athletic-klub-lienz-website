@@ -140,6 +140,8 @@ function TimelineItem({ event, index }: { event: { year: string; title: string; 
                         src={event.image}
                         alt={`Mannschaftsfoto ${event.year} – ${event.title}`}
                         fill
+                        sizes="(min-width: 768px) 46vw, 100vw"
+                        quality={72}
                         className={`object-cover transition-transform duration-1000 ${event.image.includes('placeholder') ? 'opacity-20 grayscale mix-blend-overlay' : (isInView ? 'scale-105' : 'scale-100')}`}
                     />
                 </div>

@@ -1,12 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 import { Shirt } from "lucide-react";
 
 export default function KitShowcase() {
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const shouldLoadVideo = useInView(sectionRef, { once: true, amount: 0.2 });
+
     return (
-        <section className="py-16 relative z-10 overflow-hidden">
+        <section ref={sectionRef} className="py-16 relative z-10 overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -29,13 +33,16 @@ export default function KitShowcase() {
                                     loop
                                     playsInline
                                     autoPlay
-                                    preload="metadata"
+                                    preload={shouldLoadVideo ? "metadata" : "none"}
+                                    poster="/images/luca-trikot.jpg"
                                     className="w-full h-full object-cover"
                                 >
-                                    <source
-                                        src="/players/ABB-Trikot-Rotation-1.3x.mp4"
-                                        type="video/mp4"
-                                    />
+                                    {shouldLoadVideo && (
+                                        <source
+                                            src="/players/ABB-Trikot-Rotation-1.3x.mp4"
+                                            type="video/mp4"
+                                        />
+                                    )}
                                 </video>
                                 {/* Subtle vignette overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-binblau-card/60 pointer-events-none hidden md:block" />
@@ -83,6 +90,7 @@ export default function KitShowcase() {
                                                 alt="Veit im Trikot"
                                                 fill
                                                 sizes="(max-width: 768px) 50vw, 280px"
+                                                quality={72}
                                                 className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"
                                             />
                                         </div>
@@ -93,6 +101,7 @@ export default function KitShowcase() {
                                                 alt="Luca im Trikot"
                                                 fill
                                                 sizes="(max-width: 768px) 50vw, 280px"
+                                                quality={72}
                                                 className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"
                                             />
                                         </div>

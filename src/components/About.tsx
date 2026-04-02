@@ -34,6 +34,8 @@ export default function About() {
                             src="/images/about-large-v3.jpg"
                             alt="Athletic Klub Lienz Team"
                             fill
+                            sizes="(max-width: 1023px) 100vw, 0px"
+                            quality={74}
                             className="object-cover object-top"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg/95 via-binblau-bg/30 to-transparent" />
@@ -58,6 +60,8 @@ export default function About() {
                                 src="/images/about-small.jpg"
                                 alt="AKL in Action"
                                 fill
+                                sizes="(max-width: 1023px) 112px, 0px"
+                                quality={72}
                                 className="object-cover"
                             />
                         </div>
@@ -147,6 +151,8 @@ export default function About() {
                                 src="/images/about-large-v3.jpg"
                                 alt="Athletic Klub Lienz Team"
                                 fill
+                                sizes="(min-width: 1024px) 50vw, 100vw"
+                                quality={74}
                                 className="object-cover group-hover:scale-105 transition-transform duration-1000"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg via-transparent to-transparent opacity-60" />
@@ -164,6 +170,8 @@ export default function About() {
                                 src="/images/about-small.jpg"
                                 alt="AKL in Action"
                                 fill
+                                sizes="(min-width: 1024px) 256px, 40vw"
+                                quality={72}
                                 className="object-cover group-hover:scale-110 transition-transform duration-1000"
                             />
                         </motion.div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 import {
     Calendar,
     Instagram,
@@ -107,7 +108,14 @@ export default function BentoGrid() {
                         <div className="relative z-10 flex-1 flex flex-col justify-end mt-4">
                             <div className="bg-binblau-bg/80 rounded-3xl p-8 md:p-10 border border-white/10 hover:border-gold/40 transition-all duration-500 overflow-hidden relative group/tourney min-h-[300px] flex flex-col justify-end">
                                 {/* Subtle animated background for the tournament card */}
-                                <div className="absolute inset-0 bg-[url('/images/sportplatz-obertilliach.jpg')] bg-cover bg-center opacity-50 group-hover/tourney:opacity-80 group-hover/tourney:scale-105 transition-all duration-700" />
+                                <Image
+                                    src="/images/sportplatz-obertilliach.jpg"
+                                    alt="Sportplatz Obertilliach"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
+                                    quality={72}
+                                    className="absolute inset-0 object-cover object-center opacity-50 group-hover/tourney:opacity-80 group-hover/tourney:scale-105 transition-all duration-700"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg via-binblau-bg/70 to-black/10" />
 
                                 <div className="relative z-10">
@@ -182,7 +190,14 @@ export default function BentoGrid() {
                             <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover/insta:opacity-100 group-[.is-active]/insta:opacity-100 transition-opacity duration-500 scale-y-0 group-hover/insta:scale-y-100 group-[.is-active]/insta:scale-y-100 origin-bottom" />
 
                             {/* Background Image (Team photo) */}
-                            <div className="absolute inset-0 bg-[url('/images/teamfoto.jpeg')] bg-[length:100%_auto] md:bg-cover bg-[position:center_10%] md:bg-center bg-no-repeat opacity-40 group-hover/insta:opacity-60 group-[.is-active]/insta:opacity-60 group-hover/insta:scale-110 group-[.is-active]/insta:scale-110 transition-all duration-1000 ease-out" />
+                            <Image
+                                src="/images/teamfoto.jpeg"
+                                alt="Athletic Klub Lienz Teamfoto"
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 400px"
+                                quality={68}
+                                className="absolute inset-0 object-cover object-[center_10%] md:object-center opacity-40 group-hover/insta:opacity-60 group-[.is-active]/insta:opacity-60 group-hover/insta:scale-110 group-[.is-active]/insta:scale-110 transition-all duration-1000 ease-out"
+                            />
 
                             {/* Gradient Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1118] via-[#0A1118]/70 to-transparent group-hover/insta:from-[#0A1118]/90 group-[.is-active]/insta:from-[#0A1118]/90 transition-all duration-700" />

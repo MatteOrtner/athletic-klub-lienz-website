@@ -20,7 +20,6 @@ export default function Hero() {
                     className="object-contain object-top md:object-cover md:object-[center_35%]"
                     priority
                     sizes="100vw"
-                    quality={100}
                 />
                 {/* Global dark tint specifically for better text legibility */}
                 <div className="absolute inset-0 bg-black/0 md:bg-black/10" />
