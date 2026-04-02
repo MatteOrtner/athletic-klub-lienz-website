@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Mail } from "lucide-react";
-import { clubInfo, INSTAGRAM_EMBED_URL } from "@/lib/constants";
+import { clubInfo, INSTAGRAM_EMBED_URL, SPOTIFY_ARTIST_URL } from "@/lib/constants";
 
 export default function Footer() {
     return (
@@ -80,7 +80,7 @@ export default function Footer() {
 
                             </a>
                             <a
-                                href="https://open.spotify.com/intl-de/artist/6iFYyJs3sVSTN39RFwBjvv?si=CRniUZYUT22eTkDRcGOWHw"
+                                href={SPOTIFY_ARTIST_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-sm text-white/50 hover:text-gold transition-colors"

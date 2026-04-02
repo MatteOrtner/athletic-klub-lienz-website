@@ -1,7 +1,9 @@
 // Static content constants for Athletic Klub Lienz
 // Source of truth for all in-repo content (German, energetic, bold)
 
-import type { ClubInfo, AboutFeature, Player, NewsArticle } from "./types";
+import type { ClubInfo, Player, NewsArticle } from "./types";
+
+export const SITE_URL = "https://www.athleticklublienz.com";
 
 // ============================================
 // CLUB INFO
@@ -20,31 +22,6 @@ export const clubInfo: ClubInfo = {
         lng: 12.7641646,
     },
 };
-
-// ============================================
-// ABOUT SECTION - FEATURES
-// ============================================
-
-export const aboutFeatures: AboutFeature[] = [
-    {
-        icon: "Shield",
-        title: "Das Team",
-        description:
-            "Wir sind eine bunt gemischte Truppe aus Lienz und Umgebung. Uns verbindet vor allem eins: Wir verbringen gerne Zeit zusammen auf und neben dem Platz.",
-    },
-    {
-        icon: "Zap",
-        title: "Der Fußball",
-        description:
-            "Gespielt wird auf dem Kleinfeld. Keine hochkomplexe Taktik, kein Profi-Anspruch – einfach ehrlicher Amateur-Fußball mit Freunden.",
-    },
-    {
-        icon: "Users",
-        title: "Neben dem Platz",
-        description:
-            "Nach dem Schlusspfiff geht's entspannt weiter. Ob nach dem Match, bei gemeinsamen Grillabenden oder Vereinsausflügen – die Gemeinschaft zählt.",
-    },
-];
 
 // ============================================
 // NAVIGATION
@@ -206,3 +183,5 @@ export const mockNews: NewsArticle[] = [
 // ============================================
 
 export const INSTAGRAM_EMBED_URL = "https://www.instagram.com/_athletic_binblau/";
+export const SPOTIFY_ARTIST_URL =
+    "https://open.spotify.com/intl-de/artist/6iFYyJs3sVSTN39RFwBjvv?si=CRniUZYUT22eTkDRcGOWHw";

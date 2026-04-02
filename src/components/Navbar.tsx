@@ -73,6 +73,8 @@ export default function Navbar() {
                         onClick={() => setIsOpen(!isOpen)}
                         className="lg:hidden w-10 h-10 flex items-center justify-center text-white z-50"
                         aria-label="Menü öffnen"
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-navigation"
                     >
                         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
@@ -88,6 +90,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3 }}
+                        id="mobile-navigation"
                         className="lg:hidden fixed inset-0 top-20 bg-binblau-bg/98 backdrop-blur-xl z-40"
                     >
                         <div className="flex flex-col items-center justify-center h-full gap-8 -mt-20">

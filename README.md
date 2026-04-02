@@ -2,7 +2,7 @@
 
 Premium Athletic Community Hub for **Athletic Klub Lienz (AKL)**.
 
-Built with Next.js 15, TailwindCSS v4, Framer Motion, and TypeScript.
+Built with Next.js 16, TailwindCSS v4, Framer Motion, and TypeScript.
 
 ## Getting Started
 
@@ -15,13 +15,20 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript (strict mode)
 - **Styling:** TailwindCSS v4
 - **Animations:** Framer Motion (`motion/react`)
 - **Icons:** Lucide React
 - **Fonts:** Inter (body), Space Grotesk (display/headings)
 - **Deployment:** Vercel
+
+## Quality & Security Checks
+
+```bash
+npm run check   # lint + typecheck + production build
+npm run audit   # dependency vulnerability scan
+```
 
 ## Deploy on Vercel
 

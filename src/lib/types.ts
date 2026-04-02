@@ -41,9 +41,3 @@ export interface ClubInfo {
     };
 }
 
-export interface AboutFeature {
-    icon: string;
-    title: string;
-    description: string;
-}
-

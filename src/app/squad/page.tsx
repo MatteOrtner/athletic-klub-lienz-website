@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import SquadClient from "./SquadClient";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
     title: "Kader",
     description:
         "Lerne den Kader des Athletic Klub Lienz kennen. Unsere Spieler, Positionen und Stats — von der Abwehr bis zum Sturm, jeder ein Teil der Familie.",
     alternates: {
-        canonical: "https://www.athleticklublienz.com/squad",
+        canonical: `${SITE_URL}/squad`,
     },
     openGraph: {
         title: "Kader | Athletic Klub Lienz",
         description:
             "Lerne den Kader des Athletic Klub Lienz kennen. Unsere Spieler, Positionen und Stats.",
-        url: "https://www.athleticklublienz.com/squad",
+        url: `${SITE_URL}/squad`,
         images: [
             {
                 url: "/og-image.png",

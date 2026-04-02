@@ -8,10 +8,9 @@ import {
     ArrowUpRight,
     Trophy,
     MapPin,
-    Clock,
     X,
 } from "lucide-react";
-import { mockNews, INSTAGRAM_EMBED_URL } from "@/lib/constants";
+import { mockNews, INSTAGRAM_EMBED_URL, SPOTIFY_ARTIST_URL } from "@/lib/constants";
 import { useState, useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
@@ -20,13 +19,23 @@ export default function BentoGrid() {
 
     // Lock body scroll when modal is open
     useEffect(() => {
-        if (selectedNews) {
-            document.body.style.overflow = "hidden";
-        } else {
+        if (!selectedNews) {
             document.body.style.overflow = "";
+            return;
         }
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setSelectedNews(null);
+            }
+        };
+
+        document.body.style.overflow = "hidden";
+        window.addEventListener("keydown", handleKeyDown);
+
         return () => {
             document.body.style.overflow = "";
+            window.removeEventListener("keydown", handleKeyDown);
         };
     }, [selectedNews]);
 
@@ -85,12 +94,13 @@ export default function BentoGrid() {
                                     Unser nächster Auftritt.
                                 </p>
                             </div>
-                            <motion.button
+                            <motion.div
                                 whileHover={{ scale: 1.1, rotate: 45 }}
+                                aria-hidden="true"
                                 className="w-10 h-10 rounded-full bg-binblau-bg flex items-center justify-center border border-white/10 group-hover:border-gold/50 group-hover:text-gold transition-all shrink-0"
                             >
                                 <ArrowUpRight className="w-5 h-5" />
-                            </motion.button>
+                            </motion.div>
                         </div>
 
                         {/* Tournament Card (Billboard Style) */}
@@ -222,7 +232,7 @@ export default function BentoGrid() {
                                 <p className="text-white/60 text-sm">Athletic Klub Lienz</p>
                             </div>
                             <a
-                                href="https://open.spotify.com/intl-de/artist/6iFYyJs3sVSTN39RFwBjvv?si=CRniUZYUT22eTkDRcGOWHw"
+                                href={SPOTIFY_ARTIST_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#1DB954]/20 to-emerald-500/20 border border-[#1DB954]/30 text-xs font-semibold text-[#1DB954] hover:from-[#1DB954]/30 hover:to-emerald-500/30 transition-all shrink-0"
@@ -234,7 +244,7 @@ export default function BentoGrid() {
                         {/* Spotify Embed or Card Link */}
                         <a
                             ref={spotifyRef}
-                            href="https://open.spotify.com/intl-de/artist/6iFYyJs3sVSTN39RFwBjvv?si=CRniUZYUT22eTkDRcGOWHw"
+                            href={SPOTIFY_ARTIST_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`flex-1 relative z-10 rounded-2xl overflow-hidden bg-[#0A1118]/60 min-h-[250px] md:min-h-[280px] group/spotify block shadow-[0_0_30px_rgba(29,185,84,0.1)] hover:shadow-[0_0_40px_rgba(29,185,84,0.25)] transition-all duration-500 ${isSpotifyInView ? "is-active shadow-[0_0_40px_rgba(29,185,84,0.25)]" : ""}`}
@@ -362,11 +372,15 @@ export default function BentoGrid() {
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            role="dialog"
+                            aria-modal="true"
+                            aria-labelledby="news-modal-title"
                             className="relative w-full max-w-xl bg-binblau-card border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
                                 onClick={() => setSelectedNews(null)}
+                                aria-label="News schließen"
                                 className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors z-10"
                             >
                                 <X className="w-5 h-5 text-white/70" />
@@ -387,7 +401,7 @@ export default function BentoGrid() {
                                     </span>
                                 </div>
 
-                                <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 pr-6 leading-tight">
+                                <h3 id="news-modal-title" className="text-2xl md:text-3xl font-display font-bold mb-4 pr-6 leading-tight">
                                     {selectedNews.title}
                                 </h3>
 

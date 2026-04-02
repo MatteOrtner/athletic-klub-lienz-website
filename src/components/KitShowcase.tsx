@@ -1,22 +1,10 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Shirt } from "lucide-react";
 
 export default function KitShowcase() {
-    const videoRef = useRef<HTMLVideoElement>(null);
-
-    // Auto-play the video on mount (muted, looped)
-    useEffect(() => {
-        const video = videoRef.current;
-        if (video) {
-            video.play().catch(() => {
-                // Autoplay blocked — fail silently
-            });
-        }
-    }, []);
-
     return (
         <section className="py-16 relative z-10 overflow-hidden">
             <div className="container mx-auto px-6">
@@ -37,11 +25,11 @@ export default function KitShowcase() {
                             {/* Video Side */}
                             <div className="relative aspect-[4/5] md:aspect-auto h-full min-h-[480px] md:min-h-[420px] bg-binblau-bg/60 overflow-hidden">
                                 <video
-                                    ref={videoRef}
                                     muted
                                     loop
                                     playsInline
-                                    preload="auto"
+                                    autoPlay
+                                    preload="metadata"
                                     className="w-full h-full object-cover"
                                 >
                                     <source
@@ -90,17 +78,21 @@ export default function KitShowcase() {
                                     <div className="grid grid-cols-2 gap-2 md:gap-4 mt-4">
                                         <div className="relative aspect-[4/5] md:aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 group/img">
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
-                                            <img
+                                            <Image
                                                 src="/images/veit-trikot.jpg"
                                                 alt="Veit im Trikot"
+                                                fill
+                                                sizes="(max-width: 768px) 50vw, 280px"
                                                 className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"
                                             />
                                         </div>
                                         <div className="relative aspect-[4/5] md:aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden border border-white/5 group/img">
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
-                                            <img
+                                            <Image
                                                 src="/images/luca-trikot.jpg"
                                                 alt="Luca im Trikot"
+                                                fill
+                                                sizes="(max-width: 768px) 50vw, 280px"
                                                 className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700"
                                             />
                                         </div>

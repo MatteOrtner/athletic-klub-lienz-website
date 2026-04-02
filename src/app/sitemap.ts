@@ -1,23 +1,22 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const BASE_URL = "https://www.athleticklublienz.com";
-
     return [
         {
-            url: BASE_URL,
+            url: SITE_URL,
             lastModified: new Date(),
             changeFrequency: "weekly",
             priority: 1,
         },
         {
-            url: `${BASE_URL}/squad`,
+            url: `${SITE_URL}/squad`,
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.8,
         },
         {
-            url: `${BASE_URL}/history`,
+            url: `${SITE_URL}/history`,
             lastModified: new Date(),
             changeFrequency: "yearly",
             priority: 0.7,

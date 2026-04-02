@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from 'next/font/google';
+import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,10 +16,8 @@ const spaceGrotesk = Space_Grotesk({
     display: 'swap',
 });
 
-const BASE_URL = "https://www.athleticklublienz.com";
-
 export const metadata: Metadata = {
-    metadataBase: new URL(BASE_URL),
+    metadataBase: new URL(SITE_URL),
     title: {
         default: "Athletic Klub Lienz | Mehr als ein Verein",
         template: "%s | Athletic Klub Lienz",
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
         "Fußballverein",
         "Hobby Fußball Tirol",
     ],
-    authors: [{ name: "Athletic Klub Lienz", url: BASE_URL }],
+    authors: [{ name: "Athletic Klub Lienz", url: SITE_URL }],
     creator: "Athletic Klub Lienz",
     publisher: "Athletic Klub Lienz",
     robots: {
@@ -53,9 +52,9 @@ export const metadata: Metadata = {
         },
     },
     alternates: {
-        canonical: BASE_URL,
+        canonical: SITE_URL,
         languages: {
-            "de-AT": BASE_URL,
+            "de-AT": SITE_URL,
         },
     },
     openGraph: {
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
             "Wo Leidenschaft auf dem Kleinfeld zur Legende wird. Werde Teil des Teams und erlebe Kleinfeld-Fußball in Lienz, Osttirol.",
         type: "website",
         locale: "de_AT",
-        url: BASE_URL,
+        url: SITE_URL,
         siteName: "Athletic Klub Lienz",
         images: [
             {
@@ -105,9 +104,9 @@ export default function RootLayout({
                             "@type": "SportsOrganization",
                             name: "Athletic Klub Lienz",
                             alternateName: "AKL",
-                            url: BASE_URL,
-                            logo: `${BASE_URL}/logo/akl-logo-v2.png`,
-                            image: `${BASE_URL}/og-image.png`,
+                            url: SITE_URL,
+                            logo: `${SITE_URL}/logo/akl-logo-v2.png`,
+                            image: `${SITE_URL}/og-image.png`,
                             description:
                                 "Athletic Klub Lienz ist ein Kleinfeld-Fußballverein aus Lienz, Osttirol. Gegründet aus einer Freizeitmannschaft, stehen Leidenschaft, Gemeinschaft und sportlicher Ehrgeiz im Mittelpunkt.",
                             address: {
