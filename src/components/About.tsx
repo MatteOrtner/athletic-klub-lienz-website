@@ -19,8 +19,8 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight drop-shadow-md"
                     >
-                        Fußball mit Herz. <br />
-                        <span className="text-gradient-gold">Und mit Freunden.</span>
+                        Mehr als 90 Minuten. <br />
+                        <span className="text-gradient-gold">Lienz. Team. Stolz.</span>
                     </motion.h2>
 
                     {/* Main image card with first paragraph overlaid */}
@@ -42,7 +42,7 @@ export default function About() {
 
                         <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                             <p className="text-white text-base md:text-lg leading-relaxed font-light drop-shadow-lg">
-                                <span className="font-semibold text-gold">Kein Theater,</span> einfach kicken mit Freunden.
+                                <span className="font-semibold text-gold">Aus Lienz,</span> für unser Team.
                             </p>
                         </div>
                     </motion.div>
@@ -66,7 +66,7 @@ export default function About() {
                             />
                         </div>
                         <p className="text-white/80 text-sm md:text-base leading-relaxed font-light self-center">
-                            Vollgas am Platz, gute Zeit danach.
+                            Was uns ausmacht, spürt man sofort.
                         </p>
                     </motion.div>
 
@@ -99,8 +99,8 @@ export default function About() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight drop-shadow-md"
                         >
-                            Fußball mit Herz. <br />
-                            <span className="text-gradient-gold">Und mit Freunden.</span>
+                            Mehr als 90 Minuten. <br />
+                            <span className="text-gradient-gold">Lienz. Team. Stolz.</span>
                         </motion.h2>
                         
                         <motion.div 
@@ -111,7 +111,7 @@ export default function About() {
                             className="space-y-6 text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-sm max-w-lg"
                         >
                             <p>
-                                Kein Theater, einfach kicken mit Freunden. Am Platz geben wir Vollgas, danach sitzen wir noch zusammen.
+                                Wie bei den großen Vereinen zählt nicht nur das Ergebnis. Es geht um Identität, Zusammenhalt und das Gefühl, dass jeder für den anderen spielt.
                             </p>
                         </motion.div>
 
