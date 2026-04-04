@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/constants";
@@ -8,7 +7,7 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
     title: "Sponsoren",
     description:
-        "Unsere Sponsoren unterstützen Athletic Klub Lienz auf und neben dem Platz. Danke für euren Beitrag zur Vereinsentwicklung.",
+        "Unsere Sponsoren unterstützen Athletic Klub Lienz auf und neben dem Platz. Danke an Osttirol, Anthropic und Vigor Vodka.",
     alternates: {
         canonical: `${SITE_URL}/sponsors`,
     },
@@ -36,45 +35,93 @@ export const metadata: Metadata = {
 };
 
 export default function SponsorsPage() {
+    type Sponsor = {
+        name: string;
+        claim: string;
+        website: string;
+        logo?: string;
+        alt?: string;
+        wordmark?: string;
+    };
+
+    const sponsors: Sponsor[] = [
+        {
+            name: "Osttirol",
+            claim: "Dein Bergtirol",
+            website: "https://www.osttirol.com/",
+            logo: "/sponsors/osttirol-logo.png",
+            alt: "Osttirol - Dein Bergtirol",
+        },
+        {
+            name: "Anthropic",
+            claim: "Technology Partner",
+            website: "https://www.anthropic.com/",
+            wordmark: "ANTHROPIC",
+        },
+        {
+            name: "Vigor Vodka",
+            claim: "Powered by Badel 1862",
+            website: "https://www.badel1862.hr/en/brend/vigor-vodka/",
+            wordmark: "VIGOR VODKA",
+        },
+    ];
+
     return (
-        <main className="min-h-screen bg-binblau-bg text-white">
+        <main className="min-h-screen bg-binblau-bg text-white relative">
             <Navbar />
 
-            <section className="pt-32 pb-24">
-                <div className="container mx-auto px-6">
-                    <div className="max-w-3xl mx-auto text-center mb-12">
-                        <h1 className="font-display font-bold text-4xl md:text-5xl mb-4">
+            <section className="pt-32 pb-24 relative overflow-hidden">
+                <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[540px] h-[540px] bg-gold/8 rounded-full blur-[140px] pointer-events-none" />
+                <div className="absolute -bottom-32 left-8 w-[360px] h-[360px] bg-binblau/25 rounded-full blur-[120px] pointer-events-none" />
+                <div className="absolute top-44 right-8 w-[320px] h-[320px] bg-binblau-card/20 rounded-full blur-[120px] pointer-events-none" />
+
+                <div className="container mx-auto px-6 relative z-10">
+                    <div className="max-w-3xl mx-auto text-center mb-14">
+                        <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl mb-4">
                             Unsere <span className="text-gold">Sponsoren</span>
                         </h1>
-                        <p className="text-white/70 text-lg">
-                            Danke an unsere Partner, die den AKL unterstützen.
+                        <p className="text-white/70 text-lg md:text-xl">
+                            Danke an unsere Partner, die den AKL Woche fuer Woche unterstuetzen.
                         </p>
                     </div>
 
-                    <div className="max-w-xl mx-auto">
-                        <article className="rounded-2xl border border-white/10 bg-white/95 text-binblau-deep p-6 shadow-lg">
-                            <div className="relative h-28 w-full mb-4">
-                                <Image
-                                    src="/sponsors/osttirol-logo.png"
-                                    alt="Osttirol - Dein Bergtirol"
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, 512px"
-                                    className="object-contain"
-                                />
-                            </div>
-                            <h2 className="font-display font-bold text-2xl mb-2">Osttirol</h2>
-                            <p className="text-sm md:text-base text-binblau-deep/80 mb-4">
-                                Dein Bergtirol.
-                            </p>
-                            <Link
-                                href="https://www.osttirol.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center font-semibold text-binblau-dark hover:text-binblau transition-colors"
+                    <div className="max-w-6xl mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        {sponsors.map((sponsor) => (
+                            <article
+                                key={sponsor.name}
+                                className="rounded-2xl border border-white/12 bg-gradient-to-br from-binblau-card/55 via-binblau-card/35 to-binblau-bg/80 backdrop-blur-md p-6 shadow-[0_16px_40px_rgba(0,0,0,0.25)] flex flex-col"
                             >
-                                Zur Sponsor-Website
-                            </Link>
-                        </article>
+                                <div className="h-24 rounded-xl border border-white/10 bg-white/5 mb-5 flex items-center justify-center px-4">
+                                    {sponsor.logo ? (
+                                        <div className="w-full h-full rounded-md bg-white flex items-center justify-center px-3">
+                                            <Image
+                                                src={sponsor.logo}
+                                                alt={sponsor.alt ?? "Sponsor-Logo"}
+                                                width={240}
+                                                height={84}
+                                                className="w-full h-auto max-h-16 object-contain"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <span className="font-display font-bold text-xl tracking-[0.14em] text-gold text-center">
+                                            {sponsor.wordmark}
+                                        </span>
+                                    )}
+                                </div>
+
+                                <h2 className="font-display font-bold text-2xl mb-2">{sponsor.name}</h2>
+                                <p className="text-sm md:text-base text-white/70 mb-5">{sponsor.claim}</p>
+
+                                <a
+                                    href={sponsor.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-auto inline-flex items-center justify-center rounded-lg border border-gold/30 bg-gold/10 text-gold font-semibold px-4 py-2.5 hover:bg-gold/20 transition-colors"
+                                >
+                                    Website besuchen
+                                </a>
+                            </article>
+                        ))}
                     </div>
                 </div>
             </section>
