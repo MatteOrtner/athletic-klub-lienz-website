@@ -19,8 +19,8 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight drop-shadow-md"
                     >
-                        Echter Fußball. <br />
-                        <span className="text-gradient-gold">Echte Kameradschaft.</span>
+                        Fußball pur. <br />
+                        <span className="text-gradient-gold">Team zuerst.</span>
                     </motion.h2>
 
                     {/* Main image card with first paragraph overlaid */}
@@ -42,7 +42,7 @@ export default function About() {
 
                         <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                             <p className="text-white text-base md:text-lg leading-relaxed font-light drop-shadow-lg">
-                                <span className="font-semibold text-gold">Keine Profi-Allüren,</span> kein Schnickschnack. Wir sind einfach eine eingeschworene Truppe aus Lienz, die für den ehrlichen Fußball brennt.
+                                <span className="font-semibold text-gold">Keine Show,</span> nur Einsatz, Herz und Zusammenhalt.
                             </p>
                         </div>
                     </motion.div>
@@ -66,7 +66,7 @@ export default function About() {
                             />
                         </div>
                         <p className="text-white/80 text-sm md:text-base leading-relaxed font-light self-center">
-                            Auf dem Platz wird um jeden Meter gekämpft, aber das eigentliche Spielgeschehen ist nur die halbe Miete. Die <strong className="text-white font-semibold">dritte Halbzeit</strong> und der Zusammenhalt abseits des Rasens machen den AKL erst richtig aus.
+                            90 Minuten fighten, danach gemeinsam feiern.
                         </p>
                     </motion.div>
 
@@ -99,8 +99,8 @@ export default function About() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight drop-shadow-md"
                         >
-                            Echter Fußball. <br />
-                            <span className="text-gradient-gold">Echte Kameradschaft.</span>
+                            Fußball pur. <br />
+                            <span className="text-gradient-gold">Team zuerst.</span>
                         </motion.h2>
                         
                         <motion.div 
@@ -111,10 +111,7 @@ export default function About() {
                             className="space-y-6 text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-sm max-w-lg"
                         >
                             <p>
-                                Keine Profi-Allüren, kein Schnickschnack. Wir sind einfach eine eingeschworene Truppe aus Lienz, die für den ehrlichen Fußball brennt.
-                            </p>
-                            <p>
-                                Auf dem Rasen wird um jeden Meter gekämpft, aber das eigentliche Spielgeschehen ist nur die halbe Miete. Die dritte Halbzeit und der Zusammenhalt danach machen den AKL erst richtig aus – völlig egal, was auf der Anzeigetafel steht.
+                                Keine Show, nur Einsatz. Auf dem Platz geben wir alles, danach zählt die Gemeinschaft.
                             </p>
                         </motion.div>
 
