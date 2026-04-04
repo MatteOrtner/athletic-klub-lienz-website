@@ -29,7 +29,7 @@ export default function Hero() {
                     Keeping the fade low enough so the bottom row of players remains visible.
                 */}
                 <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg via-binblau-bg/20 to-transparent md:from-binblau-bg/90 md:via-transparent" />
-                <div className="absolute inset-y-0 left-0 w-full md:w-[48%] lg:w-[42%] bg-gradient-to-r from-binblau-bg/95 via-binblau-bg/70 to-transparent z-[2] pointer-events-none" />
+                <div className="absolute inset-y-0 left-0 w-full md:w-[48%] lg:w-[42%] bg-gradient-to-r from-binblau-bg/82 via-binblau-bg/52 to-transparent z-[2] pointer-events-none" />
             </div>
 
             {/* Ambient Particles */}
@@ -77,7 +77,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
-                            className="block drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]"
+                            className="block drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] relative md:-top-1 lg:-top-1.5"
                         >
                             Mehr als ein Verein.
                         </motion.span>
