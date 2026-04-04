@@ -77,7 +77,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
-                            className="block drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] relative md:-top-1 lg:-top-1.5"
+                            className="block drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] relative md:-top-3 lg:-top-4"
                         >
                             Mehr als ein Verein.
                         </motion.span>
@@ -85,7 +85,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+                            className="block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] relative md:top-2 lg:top-3"
                         >
                             Eine Lebenseinstellung.
                         </motion.span>
