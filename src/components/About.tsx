@@ -19,8 +19,8 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight drop-shadow-md"
                     >
-                        Fußball pur. <br />
-                        <span className="text-gradient-gold">Team zuerst.</span>
+                        Fußball mit Herz. <br />
+                        <span className="text-gradient-gold">Und mit Freunden.</span>
                     </motion.h2>
 
                     {/* Main image card with first paragraph overlaid */}
@@ -42,7 +42,7 @@ export default function About() {
 
                         <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                             <p className="text-white text-base md:text-lg leading-relaxed font-light drop-shadow-lg">
-                                <span className="font-semibold text-gold">Keine Show,</span> nur Einsatz, Herz und Zusammenhalt.
+                                <span className="font-semibold text-gold">Kein Theater,</span> einfach kicken mit Freunden.
                             </p>
                         </div>
                     </motion.div>
@@ -66,7 +66,7 @@ export default function About() {
                             />
                         </div>
                         <p className="text-white/80 text-sm md:text-base leading-relaxed font-light self-center">
-                            90 Minuten fighten, danach gemeinsam feiern.
+                            Vollgas am Platz, gute Zeit danach.
                         </p>
                     </motion.div>
 
@@ -99,8 +99,8 @@ export default function About() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight drop-shadow-md"
                         >
-                            Fußball pur. <br />
-                            <span className="text-gradient-gold">Team zuerst.</span>
+                            Fußball mit Herz. <br />
+                            <span className="text-gradient-gold">Und mit Freunden.</span>
                         </motion.h2>
                         
                         <motion.div 
@@ -111,7 +111,7 @@ export default function About() {
                             className="space-y-6 text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-sm max-w-lg"
                         >
                             <p>
-                                Keine Show, nur Einsatz. Auf dem Platz geben wir alles, danach zählt die Gemeinschaft.
+                                Kein Theater, einfach kicken mit Freunden. Am Platz geben wir Vollgas, danach sitzen wir noch zusammen.
                             </p>
                         </motion.div>
 
