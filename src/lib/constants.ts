@@ -34,6 +34,7 @@ export const navItems = [
     // { label: "Standort", href: "/#location" },
     { label: "Kader", href: "/squad" },
     { label: "Historie", href: "/history" },
+    { label: "Sponsoren", href: "/sponsors" },
 ];
 
 // ============================================

@@ -55,6 +55,18 @@ export default function Footer() {
                                 Kader
                             </a>
                             <a
+                                href="/history"
+                                className="block text-sm text-white/50 hover:text-gold transition-colors"
+                            >
+                                Historie
+                            </a>
+                            <a
+                                href="/sponsors"
+                                className="block text-sm text-white/50 hover:text-gold transition-colors"
+                            >
+                                Sponsoren
+                            </a>
+                            <a
                                 href="#bento"
                                 className="block text-sm text-white/50 hover:text-gold transition-colors"
                             >
