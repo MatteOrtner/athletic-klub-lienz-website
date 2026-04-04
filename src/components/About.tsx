@@ -20,7 +20,7 @@ export default function About() {
                         className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight drop-shadow-md"
                     >
                         Mehr als 90 Minuten. <br />
-                        <span className="text-gradient-gold">Lienz. Team. Stolz.</span>
+                        <span className="text-gradient-gold">Zusammen auf dem Platz.</span>
                     </motion.h2>
 
                     {/* Main image card with first paragraph overlaid */}
@@ -100,7 +100,7 @@ export default function About() {
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight drop-shadow-md"
                         >
                             Mehr als 90 Minuten. <br />
-                            <span className="text-gradient-gold">Lienz. Team. Stolz.</span>
+                            <span className="text-gradient-gold">Zusammen auf dem Platz.</span>
                         </motion.h2>
                         
                         <motion.div 
