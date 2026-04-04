@@ -10,61 +10,51 @@ const timelineEvents = [
     {
         year: "2017",
         title: "Leisach",
-        description: "Das erste gemeinsame Turnier – noch als lose Truppe von Freunden, lange bevor es das AKL-Trikot gab. Genau hier legte unsere Mannschaft den Grundstein für alles, was danach kam.",
         image: "/images/team-2017.jpg",
     },
     {
         year: "2018",
         title: "Leisach",
-        description: "Das Team im folgenden Jahr. Neue Gesichter und immer mehr Zusammenhalt auf dem Kleinfeld.",
         image: "/images/team-2018.jpg",
     },
     {
         year: "2022",
         title: "Anras",
-        description: "Ein wahrhaft historischer Moment: In Anras traten wir zum ersten Mal unter dem legendären Namen \"Athletic BinBlau\" an.",
         image: "/images/anras-2022.jpeg",
     },
     {
         year: "2022",
         title: "Vidrol",
-        description: "Der nächste Meilenstein: Bei diesem Turnier liefen wir zum allerersten Mal in unseren eigenen, offiziellen ABB-Trikots auf.",
         image: "/images/vidrol-2022.jpeg",
     },
     {
         year: "2024",
         title: "Obertilliach",
-        description: "Wie in jedem Jahr eröffnete Obertilliach für uns die Turniersaison auf dem Kleinfeld.",
         image: "/images/obertilliach-2024.jpeg",
     },
     {
         year: "2024",
         title: "Vidrol",
-        description: "Zwei Jahre später, zurück in Vidrol. Mit gestärktem Kader und einem klaren Siegeswillen.",
         image: "/images/vidrol-2024.jpeg",
     },
     {
         year: "2025",
         title: "Obertilliach",
-        description: "Auch 2025 ging es traditionell zuerst nach Obertilliach, um mit voller Energie ins Turnierjahr zu starten.",
         image: "/images/obertilliach-2025.jpeg",
     },
     {
         year: "2025",
         title: "Anras",
-        description: "Wir beweisen uns beim Kleinfeldturnier in Anras erneut auf dem Platz.",
         image: "/images/anras-2025.jpeg",
     },
     {
         year: "2025",
         title: "Vidrol",
-        description: "Ein weiteres starkes Antreten beim Vidrol Turnier untermauert die Ambitionen des Teams.",
         image: "/images/vidrol-2025.jpeg",
     },
     {
         year: "2025",
         title: "Leisach",
-        description: "Nach 7 langen Jahren ging es endlich wieder zurück nach Leisach! Der aktuelle Kader formte hier den letzten Schritt vor dem großen Meilenstein: Aus der reinen Freizeitmannschaft Athletic BinBlau wird 2026 ein offizieller, eigenständiger Verein – der Athletic Klub Lienz.",
         image: "/images/teamfoto-2025.jpeg",
     }
 ];
@@ -112,7 +102,7 @@ export default function HistoryClient() {
     );
 }
 
-function TimelineItem({ event, index }: { event: { year: string; title: string; description: string; image: string }, index: number }) {
+function TimelineItem({ event, index }: { event: { year: string; title: string; image: string }, index: number }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { margin: "-30% 0px -30% 0px" });
     const isEven = index % 2 === 0;
@@ -149,8 +139,7 @@ function TimelineItem({ event, index }: { event: { year: string; title: string; 
 
             {/* Text Box */}
             <div className={`w-full pl-14 pr-0 md:px-0 md:w-1/2 flex flex-col justify-center ${isEven ? 'md:pl-16 text-left' : 'md:pr-16 text-left md:text-right'} -mt-4 md:mt-0`}>
-                <h3 className={`text-2xl font-display font-bold transition-colors duration-500 mb-2 ${isInView ? 'text-gold' : 'text-white'}`}>{event.title}</h3>
-                <p className={`text-sm md:text-base leading-relaxed transition-colors duration-500 ${isInView ? 'text-white/90' : 'text-white/50'}`}>{event.description}</p>
+                <h3 className={`text-2xl font-display font-bold transition-colors duration-500 ${isInView ? 'text-gold' : 'text-white'}`}>{event.title}</h3>
             </div>
         </motion.div>
     );
