@@ -57,7 +57,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="w-full max-w-[34rem] lg:max-w-[40rem]"
+                    className="w-full max-w-[24rem] md:max-w-[26rem] lg:max-w-[30rem]"
                 >
                     {/* Mobile-only Season Badge (In-flow so it never overlaps text or buttons) */}
                     <motion.div
@@ -72,7 +72,7 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Main Headline */}
-                    <h1 className="text-[30px] min-[400px]:text-[34px] sm:text-[40px] md:text-[52px] lg:text-[62px] xl:text-[70px] font-display font-extrabold leading-[1.05] mb-4 md:mb-8 tracking-tight text-white max-w-[13ch]">
+                    <h1 className="text-[30px] min-[400px]:text-[34px] sm:text-[40px] md:text-[44px] lg:text-[52px] xl:text-[58px] font-display font-extrabold leading-[1.05] mb-4 md:mb-8 tracking-tight text-white max-w-[11ch]">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+                            className="block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] text-[0.9em]"
                         >
                             Eine Lebenseinstellung.
                         </motion.span>
@@ -96,7 +96,7 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.9, duration: 0.8 }}
-                        className="text-base md:text-xl text-white/90 mb-8 md:mb-10 max-w-xl font-light leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+                        className="text-base md:text-lg lg:text-xl text-white/90 mb-8 md:mb-10 max-w-[24rem] font-light leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
                     >
                         {clubInfo.subtitle}{" "}
                         Echter Kleinfeld-Fußball aus Lienz, Osttirol — mit dem Herz am rechten Fleck.
