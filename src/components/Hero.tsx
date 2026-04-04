@@ -17,7 +17,7 @@ export default function Hero() {
                     src="/images/teamfoto.jpeg"
                     alt="Athletic Klub Lienz Mannschaftsfoto"
                     fill
-                    className="object-contain object-top md:object-cover md:object-[center_28%] lg:object-[center_26%]"
+                    className="object-contain object-top md:object-cover md:object-[64%_28%] lg:object-[66%_26%] xl:object-[68%_25%]"
                     priority
                     sizes="100vw"
                 />
@@ -29,7 +29,7 @@ export default function Hero() {
                     Keeping the fade low enough so the bottom row of players remains visible.
                 */}
                 <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg via-binblau-bg/20 to-transparent md:from-binblau-bg/90 md:via-transparent" />
-                <div className="absolute inset-y-0 left-0 w-full md:w-[58%] lg:w-[52%] bg-gradient-to-r from-binblau-bg/95 via-binblau-bg/75 to-transparent z-[2] pointer-events-none" />
+                <div className="absolute inset-y-0 left-0 w-full md:w-[48%] lg:w-[42%] bg-gradient-to-r from-binblau-bg/95 via-binblau-bg/70 to-transparent z-[2] pointer-events-none" />
             </div>
 
             {/* Ambient Particles */}
@@ -52,12 +52,12 @@ export default function Hero() {
             </div>
 
             {/* Main Content — Safely positioned at the bottom so it never covers the image on mobile */}
-            <div className="container mx-auto px-6 relative z-10 pb-12 md:pb-16 lg:pb-20 pt-[75vw] sm:pt-[65vw] md:pt-32 lg:pt-36 w-full mt-auto">
+            <div className="container mx-auto px-6 relative z-10 pb-12 md:pb-16 lg:pb-20 pt-[75vw] sm:pt-[65vw] md:pt-44 lg:pt-48 w-full mt-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="w-full max-w-[24rem] md:max-w-[26rem] lg:max-w-[30rem]"
+                    className="w-full max-w-[24rem] md:max-w-[34rem] lg:max-w-[38rem]"
                 >
                     {/* Mobile-only Season Badge (In-flow so it never overlaps text or buttons) */}
                     <motion.div
@@ -72,7 +72,7 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Main Headline */}
-                    <h1 className="text-[30px] min-[400px]:text-[34px] sm:text-[40px] md:text-[44px] lg:text-[52px] xl:text-[58px] font-display font-extrabold leading-[1.05] mb-4 md:mb-8 tracking-tight text-white max-w-[11ch]">
+                    <h1 className="text-[30px] min-[400px]:text-[34px] sm:text-[40px] md:text-[42px] lg:text-[48px] xl:text-[54px] font-display font-extrabold leading-[1.05] mb-4 md:mb-8 tracking-tight text-white">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] text-[0.9em]"
+                            className="block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
                         >
                             Eine Lebenseinstellung.
                         </motion.span>
@@ -96,7 +96,7 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.9, duration: 0.8 }}
-                        className="text-base md:text-lg lg:text-xl text-white/90 mb-8 md:mb-10 max-w-[24rem] font-light leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+                        className="text-base md:text-lg lg:text-xl text-white/90 mb-8 md:mb-10 max-w-[32rem] font-light leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
                     >
                         {clubInfo.subtitle}{" "}
                         Echter Kleinfeld-Fußball aus Lienz, Osttirol — mit dem Herz am rechten Fleck.
