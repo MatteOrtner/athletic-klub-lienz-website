@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
     title: "Sponsoren",
     description:
-        "Unsere Sponsoren unterstützen Athletic Klub Lienz auf und neben dem Platz. Danke an Osttirol, Anthropic und Vigor Vodka.",
+        "Unsere Sponsoren unterstützen Athletic Klub Lienz auf und neben dem Platz. Danke an Osttirol, Claude Code und Vigor Vodka.",
     alternates: {
         canonical: `${SITE_URL}/sponsors`,
     },
@@ -39,9 +39,9 @@ export default function SponsorsPage() {
         name: string;
         claim: string;
         website: string;
-        logo?: string;
+        logo: string;
         alt?: string;
-        wordmark?: string;
+        logoOnLight?: boolean;
     };
 
     const sponsors: Sponsor[] = [
@@ -51,18 +51,22 @@ export default function SponsorsPage() {
             website: "https://www.osttirol.com/",
             logo: "/sponsors/osttirol-logo.png",
             alt: "Osttirol - Dein Bergtirol",
+            logoOnLight: true,
         },
         {
-            name: "Anthropic",
-            claim: "Technology Partner",
-            website: "https://www.anthropic.com/",
-            wordmark: "ANTHROPIC",
+            name: "Claude Code",
+            claim: "AI Coding Partner",
+            website: "https://code.claude.com/",
+            logo: "/sponsors/claude-code-logo.svg",
+            alt: "Claude Code Logo",
         },
         {
             name: "Vigor Vodka",
             claim: "Powered by Badel 1862",
             website: "https://www.badel1862.hr/en/brend/vigor-vodka/",
-            wordmark: "VIGOR VODKA",
+            logo: "/sponsors/vigor-vodka-logo.png",
+            alt: "Vigor Vodka Logo",
+            logoOnLight: true,
         },
     ];
 
@@ -92,21 +96,18 @@ export default function SponsorsPage() {
                                 className="rounded-2xl border border-white/12 bg-gradient-to-br from-binblau-card/55 via-binblau-card/35 to-binblau-bg/80 backdrop-blur-md p-6 shadow-[0_16px_40px_rgba(0,0,0,0.25)] flex flex-col"
                             >
                                 <div className="h-24 rounded-xl border border-white/10 bg-white/5 mb-5 flex items-center justify-center px-4">
-                                    {sponsor.logo ? (
-                                        <div className="w-full h-full rounded-md bg-white flex items-center justify-center px-3">
-                                            <Image
-                                                src={sponsor.logo}
-                                                alt={sponsor.alt ?? "Sponsor-Logo"}
-                                                width={240}
-                                                height={84}
-                                                className="w-full h-auto max-h-16 object-contain"
-                                            />
-                                        </div>
-                                    ) : (
-                                        <span className="font-display font-bold text-xl tracking-[0.14em] text-gold text-center">
-                                            {sponsor.wordmark}
-                                        </span>
-                                    )}
+                                    <div
+                                        className={`w-full h-full rounded-md flex items-center justify-center px-3 ${sponsor.logoOnLight ? "bg-white" : "bg-transparent"
+                                            }`}
+                                    >
+                                        <Image
+                                            src={sponsor.logo}
+                                            alt={sponsor.alt ?? "Sponsor-Logo"}
+                                            width={240}
+                                            height={84}
+                                            className="w-full h-auto max-h-16 object-contain"
+                                        />
+                                    </div>
                                 </div>
 
                                 <h2 className="font-display font-bold text-2xl mb-2">{sponsor.name}</h2>
