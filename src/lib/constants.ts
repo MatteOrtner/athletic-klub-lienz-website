@@ -144,24 +144,24 @@ export const mockNews: NewsArticle[] = [
         title: "Aus Binblau wird AKL",
         date: "2026-03-09",
         tag: "Verein",
-        excerpt: "Neuer Name. Gleiche Runde.",
-        content: "Aus Athletic Binblau wird Athletic Klub Lienz.\n\nNeuer Name, gleicher Kern: Freunde, Fußball, Lienz."
+        excerpt: "Neuer Name, gleiche Runde. Aus Binblau wird Athletic Klub Lienz.",
+        content: "Aus Athletic Binblau wird Athletic Klub Lienz.\n\nDer Name ist neu, die Runde bleibt dieselbe: Freunde, Fußball, Lienz. Genau so soll sich AKL auch anfühlen."
     },
     {
         id: "news-2",
         title: "Training läuft wieder",
         date: "2026-03-15",
         tag: "Verein",
-        excerpt: "Wieder am Platz. Muskelkater inklusive.",
-        content: "Die Winterpause ist vorbei.\n\nWir sind wieder regelmäßig am Platz. Noch nicht alles sauber, aber genau dafür trainiert man ja."
+        excerpt: "Wir sind wieder regelmäßig am Platz. Noch etwas rostig, aber es läuft.",
+        content: "Die Winterpause ist vorbei.\n\nWir stehen wieder regelmäßig am Platz. Noch ist nicht jeder Ball sauber und der Muskelkater ist auch wieder da. Aber genau deshalb trainiert man."
     },
     {
         id: "news-3",
         title: "Obertilliach steht an",
         date: "2026-03-20",
         tag: "Spiele",
-        excerpt: "24. Mai. Pfingstturnier.",
-        content: "Am 24. Mai geht es nach Obertilliach.\n\nPfingstturnier, gute Gegner, langer Tag. Wir freuen uns drauf."
+        excerpt: "Am 24. Mai geht es zum Pfingstturnier nach Obertilliach.",
+        content: "Am 24. Mai geht es nach Obertilliach.\n\nPfingstturnier, gute Gegner, langer Tag. Für uns ist das der erste echte Fixpunkt der Saison. Wir freuen uns drauf."
     },
 ];
 

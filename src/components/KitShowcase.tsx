@@ -67,8 +67,8 @@ export default function KitShowcase() {
                                     </h3>
 
                                     <p className="text-white/60 text-sm leading-relaxed mb-8">
-                                        Blau, weiß, gold. Mehr muss da nicht
-                                        drauf.
+                                        Blau, weiß, gold. Schlicht, sauber,
+                                        genau unser Ding.
                                     </p>
 
                                     {/* Image Gallery */}

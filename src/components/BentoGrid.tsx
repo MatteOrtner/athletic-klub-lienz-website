@@ -355,6 +355,9 @@ export default function BentoGrid() {
                                     <h4 className="font-semibold text-white group-hover/news:text-gold transition-colors mb-2">
                                         {news.title}
                                     </h4>
+                                    <p className="text-xs text-white/50 leading-relaxed line-clamp-2">
+                                        {news.excerpt}
+                                    </p>
                                 </motion.div>
                             ))}
                         </div>
