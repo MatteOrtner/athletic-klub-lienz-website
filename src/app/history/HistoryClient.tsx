@@ -80,7 +80,7 @@ export default function HistoryClient() {
                             Unsere <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light gold-glow-text">Historie</span>
                         </h1>
                         <p className="text-white/60 text-lg md:text-xl">
-                            Ein Blick zurück auf die Entwicklung, die Turniere und die Gesichter von Athletic Klub Lienz.
+                            Turniere seit 2017.
                         </p>
                     </motion.div>
 

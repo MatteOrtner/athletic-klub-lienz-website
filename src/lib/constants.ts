@@ -12,8 +12,8 @@ export const SITE_URL = "https://www.athleticklublienz.com";
 export const clubInfo: ClubInfo = {
     name: "Athletic Klub Lienz",
     shortName: "AKL",
-    tagline: "Mehr als ein Verein. Eine Lebenseinstellung.",
-    subtitle: "Wo Leidenschaft auf dem Kleinfeld zur Legende wird.",
+    tagline: "Freunde. Fußball. Lienz.",
+    subtitle: "Kleinfeldfußball aus Lienz.",
     season: "2026",
     location: {
         name: "Dolomitenstadion Lienz",
@@ -30,7 +30,7 @@ export const clubInfo: ClubInfo = {
 export const navItems = [
     { label: "Home", href: "/#hero" },
     { label: "Über uns", href: "/#about" },
-    { label: "Match Center", href: "/#bento" },
+    { label: "Aktuell", href: "/#bento" },
     // { label: "Standort", href: "/#location" },
     { label: "Kader", href: "/squad" },
     { label: "Historie", href: "/history" },
@@ -48,8 +48,7 @@ export const mockPlayers: Player[] = [
         name: "Matte",
         position: "Verteidiger",
         number: 4,
-        introduction:
-            "Der Fels in der Brandung. Kompromisslos im Zweikampf und mit grenzenloser Leidenschaft räumt er hinten alles ab.",
+        introduction: "Hinten da, wenn es weh tut.",
         stats: { Schnelligkeit: 85, Ausdauer: 89, Teamgeist: 97 },
         walkoutVideo: "/players/matte.mp4",
     },
@@ -58,8 +57,7 @@ export const mockPlayers: Player[] = [
         name: "Luca",
         position: "Verteidiger",
         number: 19,
-        introduction:
-            "Souverän und abgeklärt in der Defensive. Mit seiner Übersicht leitet er unsere Angriffe schon von hinten ein.",
+        introduction: "Ruhig am Ball, schnell im Kopf.",
         stats: { Schnelligkeit: 95, Ausdauer: 96, Teamgeist: 99 },
         walkoutVideo: "/players/luca.mp4",
     },
@@ -68,8 +66,7 @@ export const mockPlayers: Player[] = [
         name: "Clemens",
         position: "Verteidiger",
         number: 2,
-        introduction:
-            "Taktisch extrem klug und unermüdlich. Er schließt jede Lücke in unserer Defensive souverän.",
+        introduction: "Läuft viel. Redet wenig. Passt.",
         stats: { Schnelligkeit: 83, Ausdauer: 88, Teamgeist: 87 },
         walkoutVideo: "/players/clemens.mp4",
     },
@@ -78,8 +75,7 @@ export const mockPlayers: Player[] = [
         name: "Daniel",
         position: "Verteidiger",
         number: 16,
-        introduction:
-            "Hinten räumt er kompromisslos auf und nach vorne setzt er immer wieder gefährliche Nadelstiche.",
+        introduction: "Defensiv stabil, nach vorne gefährlich.",
         stats: { Schnelligkeit: 93, Ausdauer: 90, Teamgeist: 93 },
         walkoutVideo: "/players/dani.mp4",
     },
@@ -88,8 +84,7 @@ export const mockPlayers: Player[] = [
         name: "Rene",
         position: "Verteidiger",
         number: 3,
-        introduction:
-            "Der Kämpfer. Gibt in jedem Spiel alles und geht voran, wenn es hart auf hart kommt.",
+        introduction: "Geht rein, wenn andere rausgehen.",
         stats: { Schnelligkeit: 82, Ausdauer: 84, Teamgeist: 88 },
         walkoutVideo: "/players/rene.mp4",
     },
@@ -99,8 +94,7 @@ export const mockPlayers: Player[] = [
         name: "Elias",
         position: "Mittelfeld",
         number: 9,
-        introduction:
-            "Technisch versiert und mit einem Auge für den perfekten Pass. Still, aber tödlich effektiv.",
+        introduction: "Still, sauber, unangenehm gut.",
         stats: { Schnelligkeit: 97, Ausdauer: 98, Teamgeist: 97 },
         walkoutVideo: "/players/eli.mp4",
     },
@@ -109,8 +103,7 @@ export const mockPlayers: Player[] = [
         name: "Veit",
         position: "Mittelfeld",
         number: 10,
-        introduction:
-            "Der Knipser. Kaltschnäuzig vor dem Tor und immer bereit, den Ball ins Netz zu hämmern.",
+        introduction: "Sieht das Tor früh genug.",
         stats: { Schnelligkeit: 96, Ausdauer: 91, Teamgeist: 95 },
         walkoutVideo: "/players/veit.mp4",
     },
@@ -119,8 +112,7 @@ export const mockPlayers: Player[] = [
         name: "Raphi",
         position: "Stürmer",
         number: 11,
-        introduction:
-            "Pfeilschnell und brandgefährlich. Wenn er den Ball hat, läuten bei den gegnerischen Abwehrspielern die Alarmglocken.",
+        introduction: "Schnell genug für Probleme.",
         stats: { Schnelligkeit: 87, Ausdauer: 82, Teamgeist: 94 },
         walkoutVideo: "/players/raphi.mp4",
     },
@@ -129,8 +121,7 @@ export const mockPlayers: Player[] = [
         name: "Paul",
         position: "Stürmer",
         number: 6,
-        introduction:
-            "Ein echter Instinktstürmer. Er steht immer goldrichtig im Strafraum und sorgt für pure Torgefahr.",
+        introduction: "Steht oft genau richtig.",
         stats: { Schnelligkeit: 89, Ausdauer: 88, Teamgeist: 93 },
         walkoutVideo: "/players/paul.mp4",
     },
@@ -139,8 +130,7 @@ export const mockPlayers: Player[] = [
         name: "Fabi",
         position: "Torwart",
         number: 1,
-        introduction:
-            "Unser sicherer Rückhalt zwischen den Pfosten. Mit seinen Reflexen hat er uns schon oft den Sieg gerettet.",
+        introduction: "Letzte Linie. Meistens gute Idee.",
         stats: { Schnelligkeit: 79, Ausdauer: 81, Teamgeist: 86 },
         walkoutVideo: "/players/fabi.mp4",
     },
@@ -151,30 +141,27 @@ export const mockPlayers: Player[] = [
 export const mockNews: NewsArticle[] = [
     {
         id: "news-1",
-        title: "Eine neue Ära: Aus ATHLETIC BINBLAU wird ATHLETIC KLUB LIENZ",
+        title: "Aus Binblau wird AKL",
         date: "2026-03-09",
         tag: "Verein",
-        excerpt:
-            "Der nächste große Schritt für unseren Verein: Mit einem neuen Namen und klaren Zielen starten wir in die Zukunft.",
-        content: "Wir sind unglaublich stolz darauf, den nächsten großen Schritt in der Vereinsgeschichte bekannt zu geben: Aus ATHLETIC BINBLAU wird ab sofort der ATHLETIC KLUB LIENZ!\n\nDieser Name spiegelt unsere tiefe Verbundenheit zu Lienz in Osttirol wider und zeigt ganz klar, wer wir sind: Eine Gemeinschaft, die zusammenhält, egal ob auf oder neben dem Platz.\n\nDanke an alle, die uns auf dieser Reise begleitet haben. Die Zukunft gehört dem AKL!"
+        excerpt: "Neuer Name. Gleiche Runde.",
+        content: "Aus Athletic Binblau wird Athletic Klub Lienz.\n\nNeuer Name, gleicher Kern: Freunde, Fußball, Lienz."
     },
     {
         id: "news-2",
-        title: "Der Ball rollt wieder: Trainingsauftakt",
+        title: "Training läuft wieder",
         date: "2026-03-15",
         tag: "Verein",
-        excerpt:
-            "Die Winterpause ist vorbei. Die ersten Einheiten auf dem Platz stecken dem ein oder anderen noch in den Knochen.",
-        content: "Es geht wieder los! Nach einer langen fußballfreien Zeit stehen wir endlich wieder regelmäßig auf dem Platz. Die ersten Ballberührungen waren vielleicht noch etwas holprig und der Muskelkater danach absolut brutal – aber genau das hat gefehlt.\n\nDer aktuelle Fokus liegt voll darauf, die nötige Grundfitness wiederzufinden und den Spaß am Spiel aufrechtzuerhalten. Wir treffen uns jetzt wieder wöchentlich, um für die kommenden Wochen gewappnet zu sein. Jeder, der mal beim Training zuschauen möchte, ist am Platz immer willkommen!"
+        excerpt: "Wieder am Platz. Muskelkater inklusive.",
+        content: "Die Winterpause ist vorbei.\n\nWir sind wieder regelmäßig am Platz. Noch nicht alles sauber, aber genau dafür trainiert man ja."
     },
     {
         id: "news-3",
-        title: "Nächster Halt: Pfingstturnier in Obertilliach",
+        title: "Obertilliach steht an",
         date: "2026-03-20",
         tag: "Spiele",
-        excerpt:
-            "Am 24. Mai 2026 steht unser erstes großes Highlight der Saison an: Das Pfingstturnier in Obertilliach.",
-        content: "Das erste richtig dicke Kreuz im Kalender für dieses Jahr ist gesetzt: Am 24. Mai 2026 geht es für den AKL zum legendären Pfingstturnier nach Obertilliach!\n\nDieses Turnier ist für uns immer ein echtes Saison-Highlight. Wir freuen uns auf starke regionale Gegner, eine geniale Kulisse im Lesachtal und natürlich auf eine überragende Stimmung neben dem Platz. Die Motivation im Team ist riesig und wir wollen dort definitiv eine gute Figur abgeben.\n\nWir hoffen, dass uns der ein oder andere Fan nach Obertilliach begleitet und am Spielfeldrand unterstützt. Drückt uns die Daumen!"
+        excerpt: "24. Mai. Pfingstturnier.",
+        content: "Am 24. Mai geht es nach Obertilliach.\n\nPfingstturnier, gute Gegner, langer Tag. Wir freuen uns drauf."
     },
 ];
 

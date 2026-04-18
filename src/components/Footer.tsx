@@ -26,7 +26,7 @@ export default function Footer() {
                             </span>
                         </Link>
                         <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-                            {clubInfo.tagline} {clubInfo.subtitle}
+                            {clubInfo.tagline}
                         </p>
                     </div>
 
@@ -58,7 +58,7 @@ export default function Footer() {
                                 href="#bento"
                                 className="block text-sm text-white/50 hover:text-gold transition-colors"
                             >
-                                Match Center
+                                Aktuell
                             </a>
                         </div>
                     </div>
@@ -105,11 +105,10 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="text-xs text-white/30">
-                        © {new Date().getFullYear()} Athletic Klub Lienz. Alle Rechte
-                        vorbehalten.
+                        © {new Date().getFullYear()} Athletic Klub Lienz
                     </div>
                     <div className="flex gap-6 text-xs text-white/30">
-                        <span>Impressum & Datenschutz — Demnächst</span>
+                        <span>Impressum & Datenschutz demnächst</span>
                     </div>
                 </div>
             </div>

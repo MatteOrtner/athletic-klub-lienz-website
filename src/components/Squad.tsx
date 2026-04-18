@@ -266,7 +266,7 @@ export default function Squad() {
                         transition={{ delay: 0.2 }}
                         className="text-white/70 text-lg md:text-xl font-medium max-w-md mx-auto mb-5"
                     >
-                        {mockPlayers.length} Spieler. Eine Familie.
+                        {mockPlayers.length} Spieler. Ein Team.
                     </motion.p>
                     <motion.div
                         initial={{ width: 0 }}

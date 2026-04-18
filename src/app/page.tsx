@@ -7,8 +7,7 @@ const KitShowcase = dynamic(() => import('@/components/KitShowcase'));
 const BentoGrid = dynamic(() => import('@/components/BentoGrid'));
 const Footer = dynamic(() => import('@/components/Footer'));
 
-// Athletic Klub Lienz — Premium Athletic Community Hub
-// All sections assembled in a single landing page
+// Athletic Klub Lienz landing page
 export default function Home() {
     return (
         <>

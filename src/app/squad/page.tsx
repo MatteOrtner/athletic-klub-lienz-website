@@ -5,14 +5,14 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
     title: "Kader",
     description:
-        "Lerne den Kader des Athletic Klub Lienz kennen. Unsere Spieler, Positionen und Stats — von der Abwehr bis zum Sturm, jeder ein Teil der Familie.",
+        "Der Kader von Athletic Klub Lienz.",
     alternates: {
         canonical: `${SITE_URL}/squad`,
     },
     openGraph: {
         title: "Kader | Athletic Klub Lienz",
         description:
-            "Lerne den Kader des Athletic Klub Lienz kennen. Unsere Spieler, Positionen und Stats.",
+            "Der Kader von Athletic Klub Lienz.",
         url: `${SITE_URL}/squad`,
         images: [
             {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Kader | Athletic Klub Lienz",
         description:
-            "Lerne den Kader des Athletic Klub Lienz kennen.",
+            "Der Kader von Athletic Klub Lienz.",
         images: ["/og-image.png"],
     },
 };

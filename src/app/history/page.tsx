@@ -5,14 +5,14 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
     title: "Historie",
     description:
-        "Die Geschichte des Athletic Klub Lienz — von den ersten gemeinsamen Turnieren 2017 bis zur Vereinsgründung 2026. Eine Reise voller Leidenschaft, Zusammenhalt und unvergesslicher Momente.",
+        "Turniere, Fotos und Stationen von Athletic Klub Lienz seit 2017.",
     alternates: {
         canonical: `${SITE_URL}/history`,
     },
     openGraph: {
         title: "Historie | Athletic Klub Lienz",
         description:
-            "Die Geschichte des Athletic Klub Lienz — von 2017 bis heute. Turniere, Meilensteine und unvergessliche Momente.",
+            "Turniere, Fotos und Stationen von Athletic Klub Lienz seit 2017.",
         url: `${SITE_URL}/history`,
         images: [
             {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Historie | Athletic Klub Lienz",
         description:
-            "Die Geschichte des Athletic Klub Lienz — von 2017 bis heute.",
+            "Turniere seit 2017.",
         images: ["/og-image.png"],
     },
 };

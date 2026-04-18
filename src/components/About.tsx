@@ -19,8 +19,8 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight drop-shadow-md"
                     >
-                        Mehr als 90 Minuten. <br />
-                        <span className="text-gradient-gold">Zusammen auf dem Platz.</span>
+                        Warum AKL? <br />
+                        <span className="text-gradient-gold">Freunde. Fußball. Turniere.</span>
                     </motion.h2>
 
                     {/* Main image card with first paragraph overlaid */}
@@ -42,7 +42,7 @@ export default function About() {
 
                         <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                             <p className="text-white text-base md:text-lg leading-relaxed font-light drop-shadow-lg">
-                                <span className="font-semibold text-gold">Aus Lienz,</span> für unser Team.
+                                <span className="font-semibold text-gold">Aus Lienz.</span> Für uns.
                             </p>
                         </div>
                     </motion.div>
@@ -66,7 +66,7 @@ export default function About() {
                             />
                         </div>
                         <p className="text-white/80 text-sm md:text-base leading-relaxed font-light self-center">
-                            Was uns ausmacht, spürt man sofort.
+                            Mehr braucht es oft nicht.
                         </p>
                     </motion.div>
 
@@ -83,7 +83,7 @@ export default function About() {
                             href="/history"
                             className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-bold text-base group transition-colors"
                         >
-                            <span className="border-b-2 border-transparent group-hover:border-gold-light transition-colors pb-1">Unsere Geschichte ansehen</span>
+                            <span className="border-b-2 border-transparent group-hover:border-gold-light transition-colors pb-1">Historie</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                         </Link>
                     </motion.div>
@@ -99,8 +99,8 @@ export default function About() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight drop-shadow-md"
                         >
-                            Mehr als 90 Minuten. <br />
-                            <span className="text-gradient-gold">Zusammen auf dem Platz.</span>
+                            Warum AKL? <br />
+                            <span className="text-gradient-gold">Freunde. Fußball. Turniere.</span>
                         </motion.h2>
                         
                         <motion.div 
@@ -111,7 +111,7 @@ export default function About() {
                             className="space-y-6 text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-sm max-w-lg"
                         >
                             <p>
-                                Wie bei den großen Vereinen zählt nicht nur das Ergebnis. Es geht um Identität, Zusammenhalt und das Gefühl, dass jeder für den anderen spielt.
+                                Aus einer Runde am Platz wurde ein Verein. Nicht perfekt. Aber unserer.
                             </p>
                         </motion.div>
 
@@ -128,7 +128,7 @@ export default function About() {
                                 href="/history"
                                 className="inline-flex items-center gap-2 md:gap-3 text-gold hover:text-gold-light font-bold text-base md:text-lg group transition-colors"
                             >
-                                <span className="border-b-2 border-transparent group-hover:border-gold-light transition-colors pb-1">Unsere Geschichte ansehen</span>
+                                <span className="border-b-2 border-transparent group-hover:border-gold-light transition-colors pb-1">Historie</span>
                                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
                             </Link>
                         </motion.div>

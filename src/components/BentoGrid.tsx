@@ -60,7 +60,7 @@ export default function BentoGrid() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-display font-bold mb-5"
                     >
-                        Das <span className="text-gold">Zentrum</span>
+                        Gerade <span className="text-gold">aktuell</span>
                     </motion.h2>
                     <motion.div
                         initial={{ width: 0 }}
@@ -89,11 +89,8 @@ export default function BentoGrid() {
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
                                     <Calendar className="w-5 h-5 text-gold" />
-                                    <h3 className="text-xl font-bold">Match Center</h3>
+                                    <h3 className="text-xl font-bold">Nächstes Turnier</h3>
                                 </div>
-                                <p className="text-white/60 text-sm">
-                                    Unser nächster Auftritt.
-                                </p>
                             </div>
                             <motion.div
                                 whileHover={{ scale: 1.1, rotate: 45 }}
@@ -124,22 +121,22 @@ export default function BentoGrid() {
                                             <Trophy className="w-5 h-5 text-gold" />
                                         </div>
                                         <span className="text-base text-gold uppercase tracking-[0.25em] font-bold">
-                                            Nächstes Turnier
+                                            24. Mai 2026
                                         </span>
                                     </div>
 
                                     <h4 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
-                                        Pfingstturnier in <br /> Obertilliach
+                                        Obertilliach
                                     </h4>
 
                                     <div className="flex flex-wrap items-center gap-6 text-base text-white/80">
                                         <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/5">
                                             <Calendar className="w-4 h-4 text-gold" />
-                                            <span className="font-semibold text-white/90 tracking-wide">24. Mai 2026</span>
+                                            <span className="font-semibold text-white/90 tracking-wide">Pfingstturnier</span>
                                         </div>
                                         <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/5">
                                             <MapPin className="w-4 h-4 text-gold" />
-                                            <span className="tracking-wide">Obertilliach, AT</span>
+                                            <span className="tracking-wide">Obertilliach</span>
                                         </div>
                                     </div>
                                 </div>
@@ -213,14 +210,13 @@ export default function BentoGrid() {
                                             <Instagram className="w-6 h-6 md:w-8 md:h-8 text-white relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
                                         </div>
                                     </div>
-                                    <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 bg-pink-500 text-white text-[9px] md:text-[10px] font-bold px-1.5 md:px-2 py-0.5 rounded-full border-2 border-[#0A1118] shadow-lg">Neu</div>
                                 </div>
 
                                 <h4 className="text-xl md:text-2xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-pink-300 to-purple-300 mb-1 md:mb-2 group-hover/insta:scale-105 group-[.is-active]/insta:scale-105 transition-transform duration-500">
-                                    Folge unserer Reise
+                                    Mehr vom Platz
                                 </h4>
                                 <p className="text-xs md:text-sm text-white/80 max-w-[200px] md:max-w-[220px] leading-relaxed group-hover/insta:text-white group-[.is-active]/insta:text-white transition-colors duration-500">
-                                    Tägliche Updates, Behind-the-Scenes und Highlights.
+                                    Fotos, Reels, Spieltage.
                                 </p>
                             </div>
                         </a>
@@ -305,10 +301,10 @@ export default function BentoGrid() {
                                     </div>
                                 </div>
                                 <h4 className="text-lg md:text-xl font-display font-bold text-white mb-1 md:mb-2 group-hover/spotify:text-[#1DB954] group-[.is-active]/spotify:text-[#1DB954] transition-colors duration-500">
-                                    Offizielle Vereinshymnen
+                                    AKL auf Spotify
                                 </h4>
                                 <p className="text-xs md:text-sm text-white/70 max-w-[180px] md:max-w-[200px] leading-relaxed group-hover/spotify:text-white/90 group-[.is-active]/spotify:text-white/90 transition-colors duration-500">
-                                    Höre die 4 Songs von Athletic Klub Lienz auf Spotify.
+                                    4 Songs. Für davor und danach.
                                 </p>
                             </div>
                         </a>
@@ -330,9 +326,6 @@ export default function BentoGrid() {
                                     <Newspaper className="w-5 h-5 text-gold" />
                                     <h3 className="text-xl font-bold">News</h3>
                                 </div>
-                                <p className="text-white/60 text-sm">
-                                    Aktuelle Updates vom Platz.
-                                </p>
                             </div>
                         </div>
 
@@ -362,9 +355,6 @@ export default function BentoGrid() {
                                     <h4 className="font-semibold text-white group-hover/news:text-gold transition-colors mb-2">
                                         {news.title}
                                     </h4>
-                                    <p className="text-xs text-white/50 leading-relaxed line-clamp-2">
-                                        {news.excerpt}
-                                    </p>
                                 </motion.div>
                             ))}
                         </div>

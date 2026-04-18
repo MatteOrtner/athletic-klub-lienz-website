@@ -60,18 +60,15 @@ export default function KitShowcase() {
                                     </div>
 
                                     <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 leading-tight">
-                                        Unser{" "}
+                                        Trikot{" "}
                                         <span className="text-gradient-gold">
-                                            Trikot
+                                            2026
                                         </span>
                                     </h3>
 
                                     <p className="text-white/60 text-sm leading-relaxed mb-8">
-                                        Blau, Weiß und ein Hauch Gold — das
-                                        Trikot von Athletic Klub Lienz steht für
-                                        Leidenschaft, Zusammenhalt und den
-                                        unverwechselbaren Style unserer
-                                        Mannschaft auf dem Kleinfeld.
+                                        Blau, weiß, gold. Mehr muss da nicht
+                                        drauf.
                                     </p>
 
                                     {/* Image Gallery */}

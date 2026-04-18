@@ -79,7 +79,7 @@ export default function Hero() {
                             transition={{ delay: 0.3, duration: 0.8 }}
                             className="block drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] relative md:-top-3 lg:-top-4"
                         >
-                            Mehr als ein Verein.
+                            Athletic Klub
                         </motion.span>
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export default function Hero() {
                             transition={{ delay: 0.6, duration: 0.8 }}
                             className="block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] relative md:top-2 lg:top-3"
                         >
-                            Eine Lebenseinstellung.
+                            Lienz
                         </motion.span>
                     </h1>
 
@@ -98,8 +98,7 @@ export default function Hero() {
                         transition={{ delay: 0.9, duration: 0.8 }}
                         className="text-base md:text-lg lg:text-xl text-white/90 mb-8 md:mb-10 max-w-[32rem] font-light leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
                     >
-                        {clubInfo.subtitle}{" "}
-                        Echter Kleinfeld-Fußball aus Lienz, Osttirol — mit dem Herz am rechten Fleck.
+                        {clubInfo.subtitle} Seit 2017.
                     </motion.p>
 
                     {/* Buttons */}
@@ -115,7 +114,7 @@ export default function Hero() {
                             whileTap={{ scale: 0.95 }}
                             className="shiny-sweep px-6 md:px-8 py-3.5 md:py-4 bg-gradient-gold text-binblau-bg font-bold rounded-xl flex items-center justify-center gap-2 gold-glow-hover text-base md:text-lg w-full sm:w-auto"
                         >
-                            Zum Match-Center
+                            Aktuell
                             <ChevronRight className="w-5 h-5" />
                         </motion.a>
                         <motion.a
@@ -124,7 +123,7 @@ export default function Hero() {
                             whileTap={{ scale: 0.95 }}
                             className="px-6 md:px-8 py-3.5 md:py-4 bg-white/5 backdrop-blur-md border-2 border-white/40 text-white rounded-xl hover:bg-white hover:text-binblau-bg hover:border-white transition-all duration-300 font-bold text-base md:text-lg w-full sm:w-auto text-center flex items-center justify-center"
                         >
-                            Kader ansehen
+                            Kader
                         </motion.a>
                     </motion.div>
                 </motion.div>
