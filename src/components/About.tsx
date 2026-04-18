@@ -19,8 +19,8 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight drop-shadow-md"
                     >
-                        Aus einer Runde <br />
-                        <span className="text-gradient-gold">wurde AKL.</span>
+                        Von der Runde <br />
+                        <span className="text-gradient-gold">zum Verein.</span>
                     </motion.h2>
 
                     {/* Main image card with first paragraph overlaid */}
@@ -66,7 +66,7 @@ export default function About() {
                             />
                         </div>
                         <p className="text-white/80 text-sm md:text-base leading-relaxed font-light self-center">
-                            Freunde, Fußball, Turniere.
+                            Gleiche Leute, mehr Struktur.
                         </p>
                     </motion.div>
 
@@ -99,8 +99,8 @@ export default function About() {
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 tracking-tight drop-shadow-md"
                         >
-                            Aus einer Runde <br />
-                            <span className="text-gradient-gold">wurde AKL.</span>
+                            Von der Runde <br />
+                            <span className="text-gradient-gold">zum Verein.</span>
                         </motion.h2>
                         
                         <motion.div 
@@ -111,7 +111,7 @@ export default function About() {
                             className="space-y-6 text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-sm max-w-lg"
                         >
                             <p>
-                                Freunde, Fußball, Turniere. Genau daraus ist der Verein entstanden.
+                                Gleiche Leute, mehr Struktur, immer noch Kleinfeld.
                             </p>
                         </motion.div>
 
