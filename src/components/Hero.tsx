@@ -72,22 +72,17 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Main Headline */}
-                    <h1 className="text-[30px] min-[400px]:text-[34px] sm:text-[40px] md:text-[42px] lg:text-[48px] xl:text-[54px] font-display font-extrabold leading-[1.05] mb-4 md:mb-8 tracking-tight text-white">
+                    <h1 className="text-[26px] min-[380px]:text-[30px] sm:text-[38px] md:text-[44px] lg:text-[52px] xl:text-[58px] font-display font-extrabold leading-none mb-4 md:mb-8 tracking-normal text-white whitespace-nowrap">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
-                            className="block drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] relative md:-top-3 lg:-top-4"
+                            className="inline-block drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]"
                         >
-                            Athletic Klub
-                        </motion.span>
-                        <motion.span
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6, duration: 0.8 }}
-                            className="block text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] relative md:top-2 lg:top-3"
-                        >
-                            Lienz
+                            Athletic Klub{" "}
+                            <span className="text-gradient-gold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                                Lienz
+                            </span>
                         </motion.span>
                     </h1>
 
