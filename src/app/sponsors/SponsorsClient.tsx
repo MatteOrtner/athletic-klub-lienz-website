@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 const sponsors = [
     {
-        name: "Claude (Anthropic)",
+        name: "Anthropic",
         logo: "/sponsors/anthropic-logo.png",
         width: 256,
         height: 256,
