@@ -67,8 +67,9 @@ export default function KitShowcase() {
                                     </h3>
 
                                     <p className="text-white/60 text-sm leading-relaxed mb-8">
-                                        Blau, weiß, gold. Schlicht, sauber,
-                                        genau unser Ding.
+                                        Blau und Weiß als Basis, Gold als
+                                        Detail. Kein großes Theater, einfach
+                                        ein sauberes Trikot für die Saison.
                                     </p>
 
                                     {/* Image Gallery */}
