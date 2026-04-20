@@ -11,6 +11,7 @@ const timelineEvents = [
         year: "2017",
         title: "Leisach",
         image: "/images/team-2017.jpg",
+        frameClassName: "aspect-[3/4] md:aspect-[3/4] md:max-w-[420px]",
     },
     {
         year: "2018",
@@ -102,7 +103,7 @@ export default function HistoryClient() {
     );
 }
 
-function TimelineItem({ event, index }: { event: { year: string; title: string; image: string }, index: number }) {
+function TimelineItem({ event, index }: { event: { year: string; title: string; image: string; frameClassName?: string }, index: number }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { margin: "-30% 0px -30% 0px" });
     const isEven = index % 2 === 0;
@@ -124,7 +125,7 @@ function TimelineItem({ event, index }: { event: { year: string; title: string; 
 
             {/* Image Box */}
             <div className={`w-full pl-14 pr-0 md:px-0 md:w-1/2 flex items-center ${isEven ? 'md:justify-end md:pr-16' : 'md:justify-start md:pl-16'} z-0`}>
-                <div className={`relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden border transition-all duration-500 shadow-xl w-full cursor-pointer bg-binblau-card/50 ${isInView ? 'border-gold shadow-[0_0_40px_rgba(212,175,55,0.5)]' : 'border-white/10'}`}>
+                <div className={`relative ${event.frameClassName ?? "aspect-[4/3] md:aspect-video"} rounded-2xl overflow-hidden border transition-all duration-500 shadow-xl w-full cursor-pointer bg-binblau-card/50 ${isInView ? 'border-gold shadow-[0_0_40px_rgba(212,175,55,0.5)]' : 'border-white/10'}`}>
                     <div className={`absolute inset-0 transition-colors duration-500 z-10 ${isInView ? 'bg-transparent' : 'bg-binblau-bg/20'}`} />
                     <Image
                         src={event.image}
