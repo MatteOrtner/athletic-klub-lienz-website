@@ -55,12 +55,12 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center gap-10">
+                    <div className="hidden lg:flex items-center gap-6 xl:gap-10">
                         {navItems.map((item) => (
                             <a
                                 key={item.label}
                                 href={item.href}
-                                className="text-sm lg:text-base xl:text-lg font-medium text-white/90 hover:text-white transition-colors relative group drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                                className="text-sm xl:text-lg font-medium text-white/90 hover:text-white transition-colors relative group drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
                             >
                                 {item.label}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold rounded-full group-hover:w-full transition-all duration-300" />

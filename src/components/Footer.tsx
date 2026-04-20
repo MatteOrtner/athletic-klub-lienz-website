@@ -55,6 +55,12 @@ export default function Footer() {
                                 Kader
                             </a>
                             <a
+                                href="/sponsors"
+                                className="block text-sm text-white/50 hover:text-gold transition-colors"
+                            >
+                                Partner
+                            </a>
+                            <a
                                 href="#bento"
                                 className="block text-sm text-white/50 hover:text-gold transition-colors"
                             >
