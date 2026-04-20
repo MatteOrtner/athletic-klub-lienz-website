@@ -48,8 +48,12 @@ export default function SponsorsClient() {
                         </h1>
 
                         <p className="text-white/60 text-base md:text-xl leading-relaxed max-w-2xl">
-                            Sponsoren, die hinter unserem Verein stehen. Danke
-                            für eure Unterstützung.
+                            <span className="block">
+                                Sponsoren, die hinter unserem Verein stehen.
+                            </span>
+                            <span className="block whitespace-nowrap">
+                                Danke für eure Unterstützung.
+                            </span>
                         </p>
                     </motion.div>
 
