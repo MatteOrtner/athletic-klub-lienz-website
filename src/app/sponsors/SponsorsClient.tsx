@@ -10,17 +10,14 @@ const sponsors = [
     {
         name: "Dolomit Kraft",
         logo: "/sponsors/dolomit-kraft.svg",
-        line: "Sichtbar. Wertig. Direkt bei AKL.",
     },
     {
         name: "Lienzer Sporthaus",
         logo: "/sponsors/lienzer-sporthaus.svg",
-        line: "Ein starker Platz im Umfeld des Vereins.",
     },
     {
         name: "Isel Reisen",
         logo: "/sponsors/isel-reisen.svg",
-        line: "Auftritt mit Wiedererkennung.",
     },
 ];
 
@@ -79,8 +76,8 @@ export default function SponsorsClient() {
                                     Partner werden
                                 </p>
                                 <p className="text-white/70 text-sm md:text-base max-w-2xl">
-                                    Ein Platz, der sauber aussieht und nicht
-                                    nach Pflichtlogo.
+                                    Sichtbar, wertig und mitten im
+                                    AKL-Auftritt.
                                 </p>
                             </div>
 
@@ -113,7 +110,7 @@ function SponsorCard({
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: index * 0.1 }}
-            className="relative min-h-[290px] rounded-2xl overflow-hidden border border-white/10 bg-binblau-card/40 hover:border-gold/40 hover:shadow-[0_0_45px_rgba(195,157,46,0.18)] transition-all duration-500"
+            className="relative min-h-[250px] rounded-2xl overflow-hidden border border-white/10 bg-binblau-card/40 hover:border-gold/40 hover:shadow-[0_0_45px_rgba(195,157,46,0.18)] transition-all duration-500"
         >
             <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-gold/[0.08] pointer-events-none" />
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
@@ -137,9 +134,6 @@ function SponsorCard({
                 <h2 className="font-display font-bold text-2xl md:text-3xl mb-2">
                     {sponsor.name}
                 </h2>
-                <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-xs">
-                    {sponsor.line}
-                </p>
             </div>
         </motion.article>
     );
