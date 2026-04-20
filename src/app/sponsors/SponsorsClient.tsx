@@ -48,8 +48,8 @@ export default function SponsorsClient() {
                         </h1>
 
                         <p className="text-white/60 text-base md:text-xl leading-relaxed max-w-2xl">
-                            Gleichwertig präsentiert. Klar sichtbar. Ohne
-                            unnötiges Ranking.
+                            Sponsoren, die hinter unserem Verein stehen. Danke
+                            für eure Unterstützung.
                         </p>
                     </motion.div>
 
