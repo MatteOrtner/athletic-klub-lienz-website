@@ -1,9 +1,0 @@
-<svg width="640" height="320" viewBox="0 0 640 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="320" rx="28" fill="#061E30"/>
-  <path d="M72 222L172 82L244 222H72Z" fill="#EADD9A"/>
-  <path d="M142 222L238 104L328 222H142Z" fill="#C39D2E"/>
-  <path d="M206 222L296 128L398 222H206Z" fill="#0EA5E9"/>
-  <path d="M236 142L256 170L296 128L256 186L238 160L206 222L236 142Z" fill="#F8FAFC" fill-opacity="0.9"/>
-  <text x="430" y="141" text-anchor="middle" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" letter-spacing="4">DOLOMIT</text>
-  <text x="430" y="194" text-anchor="middle" fill="#EADD9A" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="7">KRAFT</text>
-</svg>

@@ -8,16 +8,25 @@ import Footer from "@/components/Footer";
 
 const sponsors = [
     {
-        name: "Dolomit Kraft",
-        logo: "/sponsors/dolomit-kraft.svg",
+        name: "Claude (Anthropic)",
+        logo: "/sponsors/anthropic-logo.png",
+        width: 256,
+        height: 256,
+        logoClassName: "max-h-24 md:max-h-28 rounded-lg",
     },
     {
-        name: "Lienzer Sporthaus",
-        logo: "/sponsors/lienzer-sporthaus.svg",
+        name: "Vigor Vodka",
+        logo: "/sponsors/vigor-vodka.png",
+        width: 125,
+        height: 516,
+        logoClassName: "max-h-36 md:max-h-40",
     },
     {
-        name: "Isel Reisen",
-        logo: "/sponsors/isel-reisen.svg",
+        name: "Osttirol.com",
+        logo: "/sponsors/osttirol-logo.png",
+        width: 979,
+        height: 478,
+        logoClassName: "max-h-20 md:max-h-24",
     },
 ];
 
@@ -124,14 +133,15 @@ function SponsorCard({
                     AKL Sponsor
                 </div>
 
-                <div className="h-28 md:h-32 flex items-center justify-center w-full mb-5">
+                <div className="h-36 md:h-40 flex items-center justify-center w-full mb-5">
                     <Image
                         src={sponsor.logo}
                         alt={`${sponsor.name} Logo`}
-                        width={640}
-                        height={320}
+                        width={sponsor.width}
+                        height={sponsor.height}
                         priority={index === 0}
-                        className="w-auto max-w-full max-h-24 md:max-h-28 drop-shadow-[0_18px_45px_rgba(0,0,0,0.4)]"
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        className={`w-auto max-w-full object-contain drop-shadow-[0_18px_45px_rgba(0,0,0,0.4)] ${sponsor.logoClassName}`}
                     />
                 </div>
 
