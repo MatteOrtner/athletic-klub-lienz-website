@@ -12,7 +12,7 @@ export default function Hero() {
             className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden bg-binblau-bg"
         >
             {/* Team Photo Background (Perfectly sized at top on mobile, full background on desktop) */}
-            <div className="absolute top-0 left-0 right-0 bottom-1/2 md:bottom-0 md:inset-0 z-0">
+            <div className="absolute top-0 left-0 right-0 h-[320px] min-[390px]:h-[335px] sm:h-[380px] md:h-auto md:bottom-0 md:inset-0 z-0">
                 <Image
                     src="/images/teamfoto.jpeg"
                     alt="Athletic Klub Lienz Mannschaftsfoto"
@@ -52,7 +52,7 @@ export default function Hero() {
             </div>
 
             {/* Main Content — Safely positioned at the bottom so it never covers the image on mobile */}
-            <div className="container mx-auto px-6 relative z-10 pb-12 md:pb-16 lg:pb-20 pt-[75vw] sm:pt-[65vw] md:pt-44 lg:pt-48 w-full mt-auto">
+            <div className="container mx-auto px-6 relative z-10 pb-10 md:pb-16 lg:pb-20 pt-[82vw] min-[390px]:pt-[330px] min-[430px]:pt-[350px] sm:pt-[390px] md:pt-44 lg:pt-48 w-full md:mt-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function Hero() {
                     <motion.div
                         animate={{ y: [0, -5, 0] }}
                         transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                        className="md:hidden inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-gold/30 bg-binblau-bg/80 backdrop-blur-md mb-6 shadow-[0_0_15px_rgba(212,175,55,0.15)]"
+                        className="md:hidden inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-gold/30 bg-binblau-bg/80 backdrop-blur-md mb-5 shadow-[0_0_15px_rgba(212,175,55,0.15)]"
                     >
                         <Trophy className="w-3.5 h-3.5 text-gold" />
                         <span className="text-xs font-semibold tracking-widest uppercase text-gold-light">
@@ -91,7 +91,7 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.9, duration: 0.8 }}
-                        className="text-base md:text-lg lg:text-xl text-white/90 mb-8 md:mb-10 max-w-[32rem] font-light leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+                        className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-10 max-w-[32rem] font-light leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
                     >
                         {clubInfo.subtitle} Seit 2017.
                     </motion.p>
@@ -101,7 +101,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.2, duration: 0.6 }}
-                        className="flex flex-col sm:flex-row items-start gap-4"
+                        className="flex flex-col sm:flex-row items-start gap-3 md:gap-4"
                     >
                         <motion.a
                             href="#bento"
