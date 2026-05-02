@@ -28,7 +28,7 @@ export default function About() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="relative mb-8"
+                        className="relative mb-20"
                     >
                         <div className="relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[4/3] border border-white/10 shadow-2xl">
                             <Image
@@ -48,7 +48,7 @@ export default function About() {
                             </div>
                         </div>
 
-                        <div className="absolute -bottom-9 right-3 w-[156px] h-[96px] min-[390px]:w-[176px] min-[390px]:h-[108px] rounded-2xl overflow-hidden border-[5px] border-binblau-bg shadow-[0_18px_35px_rgba(0,0,0,0.45)]">
+                        <div className="absolute -bottom-[86px] right-3 w-[156px] h-[96px] min-[390px]:w-[176px] min-[390px]:h-[108px] rounded-2xl overflow-hidden border-[5px] border-binblau-bg shadow-[0_18px_35px_rgba(0,0,0,0.45)]">
                             <Image
                                 src="/images/about-small.jpg"
                                 alt="AKL in Action"
@@ -60,7 +60,7 @@ export default function About() {
                         </div>
                     </motion.div>
 
-                    <p className="text-white/80 text-base md:text-lg leading-relaxed font-light mb-8 pr-4 pt-1">
+                    <p className="text-white/80 text-base md:text-lg leading-relaxed font-light mb-8 pr-4">
                         Gleiche Leute. Mehr Struktur. Immer noch Kleinfeld.
                     </p>
 
