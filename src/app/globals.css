@@ -39,6 +39,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
 }
 
 body {
@@ -311,14 +312,18 @@ body {
    ============================================ */
 
 .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
 }
 
 @media (min-width: 768px) {
     .section-padding {
         padding-top: 8rem;
         padding-bottom: 8rem;
+    }
+
+    html {
+        scroll-padding-top: 7rem;
     }
 }
 
@@ -329,7 +334,7 @@ body {
 /* Extra bottom padding on mobile to account for sticky CTA */
 @media (max-width: 1023px) {
     main {
-        padding-bottom: 5rem;
+        padding-bottom: 2rem;
     }
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useInView } from "motion/react";
 import Image from "next/image";
 import {
     Calendar,
@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { mockNews, INSTAGRAM_EMBED_URL, SPOTIFY_ARTIST_URL } from "@/lib/constants";
 import { useState, useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
 
 export default function BentoGrid() {
     const [selectedNews, setSelectedNews] = useState<typeof mockNews[0] | null>(null);
@@ -51,9 +50,9 @@ export default function BentoGrid() {
 
     return (
         <section id="bento" className="section-padding relative z-10">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-4 sm:px-6">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +70,7 @@ export default function BentoGrid() {
                     />
                 </div>
 
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
                     {/* ========================================
               MATCH CENTER — 2 Columns
               ======================================== */}
@@ -79,13 +78,13 @@ export default function BentoGrid() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="md:col-span-2 lg:col-span-2 bg-binblau-card/60 backdrop-blur-sm rounded-3xl p-8 border border-white/10 relative overflow-hidden group flex flex-col min-h-[340px]"
+                        className="md:col-span-2 lg:col-span-2 bg-binblau-card/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-8 border border-white/10 relative overflow-hidden group flex flex-col min-h-[340px]"
                     >
                         {/* Ambient glow */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-[80px] -mr-20 -mt-20 transition-opacity group-hover:bg-gold/10" />
 
                         {/* Header */}
-                        <div className="flex justify-between items-start mb-6 relative z-10">
+                        <div className="flex justify-between items-start mb-5 md:mb-6 relative z-10">
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
                                     <Calendar className="w-5 h-5 text-gold" />
@@ -103,7 +102,7 @@ export default function BentoGrid() {
 
                         {/* Tournament Card (Billboard Style) */}
                         <div className="relative z-10 flex-1 flex flex-col justify-end mt-4">
-                            <div className="bg-binblau-bg/80 rounded-3xl p-8 md:p-10 border border-white/10 hover:border-gold/40 transition-all duration-500 overflow-hidden relative group/tourney min-h-[300px] flex flex-col justify-end">
+                            <div className="bg-binblau-bg/80 rounded-2xl md:rounded-3xl p-5 md:p-10 border border-white/10 hover:border-gold/40 transition-all duration-500 overflow-hidden relative group/tourney min-h-[260px] md:min-h-[300px] flex flex-col justify-end">
                                 {/* Subtle animated background for the tournament card */}
                                 <Image
                                     src="/images/sportplatz-obertilliach.jpg"
@@ -116,25 +115,25 @@ export default function BentoGrid() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg via-binblau-bg/70 to-black/10" />
 
                                 <div className="relative z-10">
-                                    <div className="flex items-center gap-3 mb-5">
-                                        <div className="w-10 h-10 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                                            <Trophy className="w-5 h-5 text-gold" />
+                                    <div className="flex items-center gap-3 mb-4 md:mb-5">
+                                        <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                                            <Trophy className="w-4 h-4 md:w-5 md:h-5 text-gold" />
                                         </div>
-                                        <span className="text-base text-gold uppercase tracking-[0.25em] font-bold">
+                                        <span className="text-xs min-[380px]:text-sm md:text-base text-gold uppercase tracking-[0.18em] md:tracking-[0.25em] font-bold">
                                             24. Mai 2026
                                         </span>
                                     </div>
 
-                                    <h4 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
+                                    <h4 className="text-[1.75rem] min-[380px]:text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
                                         Pfingstturnier Obertilliach
                                     </h4>
 
-                                    <div className="flex flex-wrap items-center gap-6 text-base text-white/80">
-                                        <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/5">
+                                    <div className="flex flex-wrap items-center gap-3 md:gap-6 text-sm md:text-base text-white/80">
+                                        <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 md:px-4 py-2 rounded-full border border-white/5">
                                             <Calendar className="w-4 h-4 text-gold" />
                                             <span className="font-semibold text-white/90 tracking-wide">Pfingstturnier</span>
                                         </div>
-                                        <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/5">
+                                        <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 md:px-4 py-2 rounded-full border border-white/5">
                                             <MapPin className="w-4 h-4 text-gold" />
                                             <span className="tracking-wide">Obertilliach</span>
                                         </div>
@@ -152,7 +151,7 @@ export default function BentoGrid() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="md:col-span-1 lg:col-span-1 bg-binblau-card/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-white/10 relative overflow-hidden group flex flex-col min-h-[320px] md:min-h-[340px]"
+                        className="md:col-span-1 lg:col-span-1 bg-binblau-card/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-8 border border-white/10 relative overflow-hidden group flex flex-col min-h-[300px] md:min-h-[340px]"
                     >
                         <div className="flex justify-between items-start mb-4 relative z-10">
                             <div>
@@ -179,7 +178,7 @@ export default function BentoGrid() {
                             href={INSTAGRAM_EMBED_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`flex-1 relative z-10 rounded-2xl overflow-hidden bg-[#0A1118]/60 min-h-[250px] md:min-h-[280px] group/insta block shadow-[0_0_30px_rgba(236,72,153,0.1)] hover:shadow-[0_0_40px_rgba(236,72,153,0.3)] transition-all duration-500 ${isInstaInView ? "is-active shadow-[0_0_40px_rgba(236,72,153,0.3)]" : ""}`}
+                            className={`flex-1 relative z-10 rounded-2xl overflow-hidden bg-[#0A1118]/60 min-h-[220px] md:min-h-[280px] group/insta block shadow-[0_0_30px_rgba(236,72,153,0.1)] hover:shadow-[0_0_40px_rgba(236,72,153,0.3)] transition-all duration-500 ${isInstaInView ? "is-active shadow-[0_0_40px_rgba(236,72,153,0.3)]" : ""}`}
                         >
                             {/* Instagram animated border */}
                             <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent group-hover/insta:via-purple-500 group-[.is-active]/insta:via-purple-500 transition-colors duration-500" />
@@ -230,7 +229,7 @@ export default function BentoGrid() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.15 }}
-                        className="md:col-span-1 lg:col-span-1 bg-binblau-card/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-white/10 relative overflow-hidden group flex flex-col min-h-[320px] md:min-h-[340px]"
+                        className="md:col-span-1 lg:col-span-1 bg-binblau-card/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-8 border border-white/10 relative overflow-hidden group flex flex-col min-h-[300px] md:min-h-[340px]"
                     >
                         <div className="flex justify-between items-start mb-4 relative z-10">
                             <div>
@@ -258,7 +257,7 @@ export default function BentoGrid() {
                             href={SPOTIFY_ARTIST_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`flex-1 relative z-10 rounded-2xl overflow-hidden bg-[#0A1118]/60 min-h-[250px] md:min-h-[280px] group/spotify block shadow-[0_0_30px_rgba(29,185,84,0.1)] hover:shadow-[0_0_40px_rgba(29,185,84,0.25)] transition-all duration-500 ${isSpotifyInView ? "is-active shadow-[0_0_40px_rgba(29,185,84,0.25)]" : ""}`}
+                            className={`flex-1 relative z-10 rounded-2xl overflow-hidden bg-[#0A1118]/60 min-h-[220px] md:min-h-[280px] group/spotify block shadow-[0_0_30px_rgba(29,185,84,0.1)] hover:shadow-[0_0_40px_rgba(29,185,84,0.25)] transition-all duration-500 ${isSpotifyInView ? "is-active shadow-[0_0_40px_rgba(29,185,84,0.25)]" : ""}`}
                         >
                             {/* Animated borders */}
                             <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-[#1DB954] to-transparent group-hover/spotify:via-emerald-400 group-[.is-active]/spotify:via-emerald-400 transition-colors duration-500" />
@@ -318,7 +317,7 @@ export default function BentoGrid() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="md:col-span-2 lg:col-span-4 bg-binblau-card/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-white/10 relative overflow-hidden group"
+                        className="md:col-span-2 lg:col-span-4 bg-binblau-card/60 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-8 border border-white/10 relative overflow-hidden group"
                     >
                         <div className="flex justify-between items-start mb-6 md:mb-8 relative z-10">
                             <div>
@@ -329,7 +328,7 @@ export default function BentoGrid() {
                             </div>
                         </div>
 
-                        <div className="flex overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 gap-4 md:gap-6 relative z-10 pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scroll-pl-6 after:content-[''] after:w-1 after:shrink-0 md:after:hidden">
+                        <div className="flex overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 gap-4 md:gap-6 relative z-10 pb-4 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0 scroll-pl-5 after:content-[''] after:w-1 after:shrink-0 md:after:hidden">
                             {mockNews.map((news, i) => (
                                 <motion.div
                                     key={news.id}
@@ -339,7 +338,7 @@ export default function BentoGrid() {
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.3 + i * 0.1 }}
                                     whileHover={{ y: -4 }}
-                                    className="bg-binblau-bg/80 p-5 rounded-2xl border border-white/10 hover:border-gold/20 transition-all duration-300 cursor-pointer group/news w-[260px] sm:w-[320px] md:w-auto snap-start shrink-0"
+                                    className="bg-binblau-bg/80 p-5 rounded-2xl border border-white/10 hover:border-gold/20 transition-all duration-300 cursor-pointer group/news w-[78vw] max-w-[310px] sm:w-[320px] md:w-auto snap-start shrink-0"
                                 >
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="text-xs font-semibold text-gold bg-gold/10 px-2.5 py-1 rounded-md">

@@ -30,7 +30,7 @@ export default function Navbar() {
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-nav shadow-lg shadow-black/20" : "bg-gradient-to-b from-binblau-bg/90 via-binblau-bg/50 to-transparent"
                     }`}
             >
-                <div className="w-full px-6 md:px-12 xl:px-20 h-20 lg:h-28 flex items-center justify-between">
+                <div className="w-full px-5 sm:px-6 md:px-12 xl:px-20 h-20 lg:h-28 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 lg:gap-4 group">
                         <motion.div
@@ -46,7 +46,7 @@ export default function Navbar() {
                                 className="object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]"
                             />
                         </motion.div>
-                        <span className="font-display font-bold text-xl lg:text-2xl xl:text-3xl tracking-tight">
+                        <span className="font-display font-bold text-lg min-[380px]:text-xl lg:text-2xl xl:text-3xl tracking-tight">
                             Athletic{" "}
                             <span className="text-gradient-gold group-hover:gold-glow-text transition-all">
                                 Klub Lienz

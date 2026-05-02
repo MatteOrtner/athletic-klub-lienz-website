@@ -11,64 +11,58 @@ export default function About() {
             <div className="container mx-auto px-6 relative z-10">
 
                 {/* ====== MOBILE LAYOUT ====== */}
-                <div className="lg:hidden">
+                <div className="lg:hidden max-w-[430px] mx-auto">
                     {/* Heading */}
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-display font-bold mb-8 tracking-tight drop-shadow-md"
+                        className="text-[2.35rem] min-[380px]:text-[2.6rem] md:text-5xl font-display font-bold leading-[1.04] mb-7 tracking-tight drop-shadow-md"
                     >
                         Von der Runde <br />
                         <span className="text-gradient-gold">zum Verein.</span>
                     </motion.h2>
 
-                    {/* Main image card with first paragraph overlaid */}
+                    {/* Main image card with compact mobile collage */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="relative rounded-2xl overflow-hidden aspect-[3/4] md:aspect-[4/3] mb-6 border border-white/10 shadow-2xl"
+                        className="relative mb-8"
                     >
-                        <Image
-                            src="/images/about-large-v3.jpg"
-                            alt="Athletic Klub Lienz Team"
-                            fill
-                            sizes="(max-width: 1023px) 100vw, 0px"
-                            quality={74}
-                            className="object-cover object-top"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg/95 via-binblau-bg/30 to-transparent" />
+                        <div className="relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[4/3] border border-white/10 shadow-2xl">
+                            <Image
+                                src="/images/about-large-v3.jpg"
+                                alt="Athletic Klub Lienz Team"
+                                fill
+                                sizes="(max-width: 1023px) 100vw, 0px"
+                                quality={74}
+                                className="object-cover object-[58%_50%]"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg/95 via-binblau-bg/25 to-transparent" />
 
-                        <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                            <p className="text-white text-base md:text-lg leading-relaxed font-light drop-shadow-lg">
-                                <span className="font-semibold text-gold">Aus Lienz.</span> Für uns.
-                            </p>
+                            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                                <p className="text-white text-base md:text-lg leading-relaxed font-light drop-shadow-lg">
+                                    <span className="font-semibold text-gold">Aus Lienz.</span> Für uns.
+                                </p>
+                            </div>
                         </div>
-                    </motion.div>
 
-                    {/* Second row: small image + second paragraph side by side */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="flex gap-4 mb-8"
-                    >
-                        <div className="relative w-28 shrink-0 rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                        <div className="absolute -bottom-5 right-4 w-32 h-20 rounded-xl overflow-hidden border-[4px] border-binblau-bg shadow-xl">
                             <Image
                                 src="/images/about-small.jpg"
                                 alt="AKL in Action"
                                 fill
-                                sizes="(max-width: 1023px) 112px, 0px"
+                                sizes="128px"
                                 quality={72}
-                                className="object-cover"
+                                className="object-cover object-center"
                             />
                         </div>
-                        <p className="text-white/80 text-sm md:text-base leading-relaxed font-light self-center">
-                            Gleiche Leute, mehr Struktur.
-                        </p>
                     </motion.div>
+
+                    <p className="text-white/80 text-base md:text-lg leading-relaxed font-light mb-8 pr-8">
+                        Gleiche Leute. Mehr Struktur. Immer noch Kleinfeld.
+                    </p>
 
 
 

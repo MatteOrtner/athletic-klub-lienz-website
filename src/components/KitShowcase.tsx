@@ -6,8 +6,8 @@ import { Shirt } from "lucide-react";
 
 export default function KitShowcase() {
     return (
-        <section className="py-16 relative z-10 overflow-hidden">
-            <div className="container mx-auto px-6">
+        <section className="py-10 md:py-16 relative z-10 overflow-hidden">
+            <div className="container mx-auto px-4 sm:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -16,14 +16,14 @@ export default function KitShowcase() {
                     className="max-w-7xl mx-auto"
                 >
                     {/* Glass card container */}
-                    <div className="relative bg-binblau-card/40 backdrop-blur-sm rounded-3xl border border-white/10 overflow-hidden group hover:border-gold/20 transition-colors duration-500">
+                    <div className="relative bg-binblau-card/40 backdrop-blur-sm rounded-2xl md:rounded-3xl border border-white/10 overflow-hidden group hover:border-gold/20 transition-colors duration-500">
                         {/* Ambient glow */}
                         <div className="absolute -top-20 -right-20 w-72 h-72 bg-gold/5 rounded-full blur-[100px] group-hover:bg-gold/10 transition-all duration-700" />
                         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-binblau/10 rounded-full blur-[80px]" />
 
                         <div className="grid md:grid-cols-2 gap-0 items-center">
                             {/* Video Side */}
-                            <div className="relative aspect-[4/5] md:aspect-auto h-full min-h-[480px] md:min-h-[420px] bg-binblau-bg/60 overflow-hidden">
+                            <div className="relative aspect-[4/5] md:aspect-auto h-full min-h-[360px] sm:min-h-[440px] md:min-h-[420px] bg-binblau-bg/60 overflow-hidden">
                                 <video
                                     muted
                                     loop
@@ -43,7 +43,7 @@ export default function KitShowcase() {
                             </div>
 
                             {/* Text Side */}
-                            <div className="relative z-10 p-4 sm:p-8 md:p-12 flex flex-col justify-center">
+                            <div className="relative z-10 p-5 sm:p-8 md:p-12 flex flex-col justify-center">
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}
                                     whileInView={{ opacity: 1, x: 0 }}

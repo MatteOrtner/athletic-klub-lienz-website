@@ -205,7 +205,7 @@ function PlayerRow({
     return (
         <div
             ref={rowRef}
-            className="grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-4 md:gap-4"
+            className="grid grid-cols-1 min-[380px]:grid-cols-2 md:grid-cols-5 gap-4 md:gap-4"
         >
             {players.map((player, i) => (
                 <PlayerCard
@@ -248,9 +248,9 @@ export default function Squad() {
                 className="absolute bottom-20 -right-20 w-96 h-96 border border-white/5 rounded-full"
             />
 
-            <div className="container mx-auto px-2 sm:px-6 relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 {/* Section header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -278,7 +278,7 @@ export default function Squad() {
                 </div>
 
                 {/* Mobile grid: 2 players per row, each row triggers walkout independently */}
-                <div className="md:hidden max-w-[1400px] mx-auto space-y-2 sm:space-y-6">
+                <div className="md:hidden max-w-[1400px] mx-auto space-y-4 sm:space-y-6">
                     {mobileRows.map((rowPlayers, rowIdx) => (
                         <PlayerRow
                             key={rowIdx}

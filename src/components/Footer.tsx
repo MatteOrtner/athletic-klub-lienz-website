@@ -5,11 +5,11 @@ import { clubInfo, INSTAGRAM_EMBED_URL, SPOTIFY_ARTIST_URL } from "@/lib/constan
 
 export default function Footer() {
     return (
-        <footer className="bg-binblau-deep border-t border-white/5 py-12">
-            <div className="container mx-auto px-6">
-                <div className="grid md:grid-cols-3 gap-10 mb-10">
+        <footer className="bg-binblau-deep border-t border-white/5 py-10 md:py-12">
+            <div className="container mx-auto px-5 sm:px-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-8 md:mb-10">
                     {/* Brand */}
-                    <div>
+                    <div className="sm:col-span-2 lg:col-span-1">
                         <Link href="/" className="flex items-center gap-3 mb-4 group inline-flex">
                             <div className="w-10 h-10 relative shrink-0">
                                 <Image
@@ -36,30 +36,30 @@ export default function Footer() {
                             Links
                         </h4>
                         <div className="space-y-3">
-                            <a
-                                href="#hero"
+                            <Link
+                                href="/#hero"
                                 className="block text-sm text-white/50 hover:text-gold transition-colors"
                             >
                                 Home
-                            </a>
-                            <a
-                                href="#about"
+                            </Link>
+                            <Link
+                                href="/#about"
                                 className="block text-sm text-white/50 hover:text-gold transition-colors"
                             >
                                 Über uns
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="/squad"
                                 className="block text-sm text-white/50 hover:text-gold transition-colors"
                             >
                                 Kader
-                            </a>
-                            <a
-                                href="#bento"
+                            </Link>
+                            <Link
+                                href="/#bento"
                                 className="block text-sm text-white/50 hover:text-gold transition-colors"
                             >
                                 Aktuell
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -96,14 +96,14 @@ export default function Footer() {
                                 className="flex items-center gap-2 text-sm text-white/50 hover:text-gold transition-colors"
                             >
                                 <Mail className="w-4 h-4 text-gold/60 shrink-0" />
-                                <span>AthleticKlubLienz@gmx.at</span>
+                                <span className="break-all">AthleticKlubLienz@gmx.at</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="border-t border-white/5 pt-7 md:pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div className="text-xs text-white/30">
                         © {new Date().getFullYear()} Athletic Klub Lienz
                     </div>

@@ -3,7 +3,7 @@
 
 import type { ClubInfo, Player, NewsArticle } from "./types";
 
-export const SITE_URL = "https://www.athleticklublienz.com";
+export const SITE_URL = "https://athletic-klub-lienz-website.vercel.app";
 
 // ============================================
 // CLUB INFO
