@@ -126,7 +126,7 @@ export default function BentoGrid() {
                                     </div>
 
                                     <h4 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
-                                        Obertilliach
+                                        Pfingstturnier Obertilliach
                                     </h4>
 
                                     <div className="flex flex-wrap items-center gap-6 text-base text-white/80">
