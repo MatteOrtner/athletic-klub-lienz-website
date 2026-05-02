@@ -22,14 +22,14 @@ export default function Hero() {
                     sizes="100vw"
                 />
                 {/* Global dark tint specifically for better text legibility */}
-                <div className="absolute inset-0 bg-black/5 md:bg-black/15" />
+                <div className="absolute inset-0 bg-black/0 md:bg-black/15" />
 
                 {/* 
                     Solid fade from the bottom upward ensures the text is always legible and separated from the bright/busy parts of the photo.
                     Keeping the fade low enough so the bottom row of players remains visible.
                 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg via-binblau-bg/20 to-transparent md:from-binblau-bg/90 md:via-transparent" />
-                <div className="absolute inset-y-0 left-0 w-full md:w-[48%] lg:w-[42%] bg-gradient-to-r from-binblau-bg/82 via-binblau-bg/52 to-transparent z-[2] pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-binblau-bg/45 via-binblau-bg/5 to-transparent md:from-binblau-bg/90 md:via-transparent" />
+                <div className="hidden md:block absolute inset-y-0 left-0 md:w-[48%] lg:w-[42%] bg-gradient-to-r from-binblau-bg/82 via-binblau-bg/52 to-transparent z-[2] pointer-events-none" />
             </div>
 
             {/* Ambient Particles */}

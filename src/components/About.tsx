@@ -48,19 +48,19 @@ export default function About() {
                             </div>
                         </div>
 
-                        <div className="absolute -bottom-5 right-4 w-32 h-20 rounded-xl overflow-hidden border-[4px] border-binblau-bg shadow-xl">
+                        <div className="absolute -bottom-9 right-3 w-[156px] h-[96px] min-[390px]:w-[176px] min-[390px]:h-[108px] rounded-2xl overflow-hidden border-[5px] border-binblau-bg shadow-[0_18px_35px_rgba(0,0,0,0.45)]">
                             <Image
                                 src="/images/about-small.jpg"
                                 alt="AKL in Action"
                                 fill
-                                sizes="128px"
+                                sizes="176px"
                                 quality={72}
-                                className="object-cover object-center"
+                                className="object-cover object-[50%_45%]"
                             />
                         </div>
                     </motion.div>
 
-                    <p className="text-white/80 text-base md:text-lg leading-relaxed font-light mb-8 pr-8">
+                    <p className="text-white/80 text-base md:text-lg leading-relaxed font-light mb-8 pr-4 pt-1">
                         Gleiche Leute. Mehr Struktur. Immer noch Kleinfeld.
                     </p>
 
