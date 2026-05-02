@@ -22,6 +22,7 @@ const timelineEvents = [
         year: "2022",
         title: "Anras",
         image: "/images/anras-2022.jpeg",
+        frameClassName: "aspect-[3/4] md:aspect-[3/4] md:max-w-[420px]",
     },
     {
         year: "2022",
@@ -47,11 +48,13 @@ const timelineEvents = [
         year: "2025",
         title: "Anras",
         image: "/images/anras-2025.jpeg",
+        frameClassName: "aspect-[4/3] md:aspect-[4/3]",
     },
     {
         year: "2025",
         title: "Vidrol",
         image: "/images/vidrol-2025.jpeg",
+        frameClassName: "aspect-[3/4] md:aspect-[3/4] md:max-w-[420px]",
     },
     {
         year: "2025",
