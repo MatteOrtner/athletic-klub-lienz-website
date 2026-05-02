@@ -9,7 +9,7 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden bg-binblau-bg"
+            className="relative min-h-[100svh] flex flex-col md:justify-end overflow-hidden bg-binblau-bg"
         >
             {/* Team Photo Background (Perfectly sized at top on mobile, full background on desktop) */}
             <div className="absolute top-0 left-0 right-0 h-[320px] min-[390px]:h-[335px] sm:h-[380px] md:h-auto md:bottom-0 md:inset-0 z-0">
