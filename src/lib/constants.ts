@@ -169,6 +169,6 @@ export const mockNews: NewsArticle[] = [
 // EXTERNAL LINKS
 // ============================================
 
-export const INSTAGRAM_EMBED_URL = "https://www.instagram.com/_athletic_binblau/";
+export const INSTAGRAM_EMBED_URL = "https://www.instagram.com/athleticklublienz/";
 export const SPOTIFY_ARTIST_URL =
     "https://open.spotify.com/intl-de/artist/6iFYyJs3sVSTN39RFwBjvv?si=CRniUZYUT22eTkDRcGOWHw";

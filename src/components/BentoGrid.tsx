@@ -159,7 +159,7 @@ export default function BentoGrid() {
                                     <Instagram className="w-5 h-5 text-pink-400" />
                                     <h3 className="text-xl font-bold">Instagram</h3>
                                 </div>
-                                <p className="text-white/60 text-sm">@_athletic_binblau</p>
+                                <p className="text-white/60 text-sm">@athleticklublienz</p>
                             </div>
                             <a
                                 href={INSTAGRAM_EMBED_URL}

@@ -77,7 +77,7 @@ export default function Footer() {
                                 className="flex items-center gap-2 text-sm text-white/50 hover:text-gold transition-colors"
                             >
                                 <Instagram className="w-4 h-4 text-gold/60 shrink-0" />
-                                <span>@_athletic_binblau</span>
+                                <span>@athleticklublienz</span>
 
                             </a>
                             <a

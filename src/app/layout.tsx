@@ -118,7 +118,7 @@ export default function RootLayout({
                             sport: "Soccer",
                             foundingDate: "2017",
                             sameAs: [
-                                "https://www.instagram.com/_athletic_binblau",
+                                "https://www.instagram.com/athleticklublienz/",
                             ],
                         }),
                     }}
